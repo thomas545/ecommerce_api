@@ -5,6 +5,12 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
 
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from allauth.socialaccount.providers.twitter.views import TwitterOAuthAdapter
+from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+from rest_auth.registration.views import SocialConnectView
+from rest_auth.social_serializers import TwitterConnectSerializer
+
 from .models import Profile, Address
 from .serializers import ProfileSerializer, UserSerializer, AddressSerializer, CreateAddressSerializer
 from django.contrib.auth.models import User
@@ -56,3 +62,11 @@ class createAddressAPIView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user, primary=True)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class FacebookConnectView(SocialConnectView):
+    adapter_class = FacebookOAuth2Adapter
+
+class TwitterConnectView(SocialConnectView):
+    serializer_class = TwitterConnectSerializer
+    adapter_class = TwitterOAuthAdapter
