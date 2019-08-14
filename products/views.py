@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
 from rest_framework import permissions, status
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
@@ -9,10 +8,14 @@ from .serializers import (CategoryListSerializer, ProductSerializer,
                         CreateProductSerializer, ProductViewsSerializer,
                         ProductDetailSerializer)
 from .permissions import IsOwnerAuth
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+
 
 class CategoryListAPIView(ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = CategoryListSerializer
+    filter_backends = [DjangoFilterBackend]
     # queryset = Category.objects.all()
 
     def get_queryset(self):
@@ -27,11 +30,16 @@ class CategoryAPIView(RetrieveAPIView):
 
 class ListProductAPIView(ListAPIView):
     serializer_class = ProductSerializer
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
+    search_fields = ('title','user__username',)
+    ordering_fields = ('created',)
+    filter_fields = ('views',)
+    queryset = Product.objects.all()
 
-    def get_queryset(self):
-        user = self.request.user
-        queryset = Product.objects.filter(user=user)
-        return queryset
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     queryset = Product.objects.filter(user=user)
+    #     return queryset
 
 class CreateProductAPIView(CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]

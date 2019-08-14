@@ -9,6 +9,8 @@ from rest_framework_jwt.views import verify_jwt_token
 
 
 urlpatterns = [
+    path('jet/', include('jet.urls', 'jet')),
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
     # path('create-token/', obtain_jwt_token),
     # path('refresh-token/', refresh_jwt_token),
