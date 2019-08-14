@@ -12,10 +12,10 @@ from rest_auth.registration.views import RegisterView, VerifyEmailView
 
 urlpatterns = [
     path('', include('rest_auth.urls')),
+    path('registration/', views.RegisterAPIView.as_view(), name='account_signup'),
     path('registration/', include('rest_auth.registration.urls')),
 
-    path('register/', RegisterView.as_view(), name='rest_register'),
-    path('login/', LoginView.as_view(), name='rest_login'),
+    path('login/', LoginView.as_view(), name='account_login'),
     path('logout/', LogoutView.as_view(), name='rest_logout'),
 
     path('password/reset/', PasswordResetView.as_view(), name='rest_password_reset'),
@@ -26,8 +26,8 @@ urlpatterns = [
 
     path('password/change/', PasswordChangeView.as_view(), name='rest_password_change'),
 
-    path('confirm-email/sent/', TemplateView.as_view(), name='account_confirm_email'),
-    path('verify-email/<str:key>', VerifyEmailView.as_view(), name='rest_verify_email'),
+    path('account-confirm-email/sent/', TemplateView.as_view(), name='account_confirm_email'),
+    path('account-confirm-email/<str:key>', VerifyEmailView.as_view(), name='rest_verify_email'),
 
     path('profile/<int:pk>/', views.ProfileAPIView.as_view()),
     path('user/<str:username>/', views.UserDetailView.as_view()),

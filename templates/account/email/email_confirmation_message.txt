@@ -2,7 +2,7 @@
 
 You're receiving this e-mail because user {{ user_display }} has given yours as an e-mail address to connect their account.
 
-To confirm this is correct, go to http://35.176.144.11:4200/account-confirm-email/{{ key }}
+To confirm this is correct, go to http://localhost:2000/account-confirm-email/{{ key }}
 {% endblocktrans %}{% endautoescape %}
 {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}Thank you from {{ site_name }}!
 {{ site_domain }}{% endblocktrans %}

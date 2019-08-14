@@ -135,6 +135,16 @@ JWT_AUTH = {
 REST_USE_JWT = True
 SITE_ID = 1
 
+# ACCOUNT_EMAIL_VERIFICATION SETTINGS
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+
+AUTHENTICATION_BACKENDS = (
+    # default
+    'django.contrib.auth.backends.ModelBackend',
+    # # email login
+    # 'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
