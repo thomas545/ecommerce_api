@@ -21,6 +21,7 @@ from django.utils.decorators import method_decorator
 
 from .models import Profile, Address
 from .serializers import ProfileSerializer, UserSerializer, AddressSerializer, CreateAddressSerializer
+from .send_mail import send_register_mail
 from django.contrib.auth.models import User
 
 sensitive_post_parameters_m = method_decorator(
@@ -60,6 +61,7 @@ class RegisterAPIView(RegisterView):
         confirmation = EmailConfirmationHMAC(email)
         key = confirmation.key
         # TODO Send mail confirmation here .
+        send_register_mail(user, key)
         print("account-confirm-email/" + key)
         return user
 

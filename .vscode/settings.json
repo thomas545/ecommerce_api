@@ -23,6 +23,7 @@
     "eslint.enable": true,
     // "editor.fontSize": 13,
     // "editor.formatOnSave": false,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.formatting.provider": "autopep8"
     
 }
