@@ -1,4 +1,7 @@
+amqp==2.5.1
 Babel==2.7.0
+billiard==3.6.1.0
+celery==4.3.0
 certifi==2019.6.16
 chardet==3.0.4
 defusedxml==0.6.0
@@ -17,6 +20,8 @@ djangorestframework-jwt==1.11.0
 entrypoints==0.3
 flake8==3.7.8
 idna==2.8
+importlib-metadata==0.19
+kombu==4.6.4
 mccabe==0.6.1
 oauthlib==3.1.0
 phonenumbers==8.10.16
@@ -31,3 +36,5 @@ requests-oauthlib==1.2.0
 six==1.12.0
 sqlparse==0.3.0
 urllib3==1.25.3
+vine==1.3.0
+zipp==0.5.2
