@@ -1,11 +1,12 @@
 import smtplib
 from email.mime.text import MIMEText
 from django.conf import settings
+from celery import shared_task
 
 url = "http://localhost:2000/"
 
 
-
+@shared_task
 def send_register_mail(user, key):
     body = """<p>
     Hello from E-commerce!<br><br>
