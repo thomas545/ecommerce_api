@@ -17,3 +17,10 @@ class CartItemSerializer(serializers.ModelSerializer):
         model = CartItem
         fields = ['cart', 'product', 'quantity']
 
+
+
+class CartItemUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CartItem
+        fields = ['product', 'quantity']
+
