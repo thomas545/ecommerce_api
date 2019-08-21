@@ -1,17 +1,15 @@
 import datetime
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from decouple import config
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
+SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hwi+ftu(%p9im4xqqegou(8+dosotui0qc0s7nn=!u!pt6vu-h'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_countries',
     'mptt',
+    'fcm_django',
 
     'products',
     'cart',
@@ -114,10 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# email settings
-EMAIL_HOST_USER='email'
-EMAIL_HOST_PASSWORD='password'
-EMAIL_PORT=587
 
 
 REST_FRAMEWORK = {
@@ -143,6 +138,16 @@ JWT_AUTH = {
 #     'REGISTER_SERIALIZER': 'rest_auth.registration.serializers.RegisterSerializer'
 # }
 
+FCM_DJANGO_SETTINGS = {
+        "FCM_SERVER_KEY": "[your api key]",
+         # true if you want to have only one active device per registered user at a time
+         # default: False
+        "ONE_DEVICE_PER_USER": True,
+         # devices to which notifications cannot be sent,
+         # are deleted upon receiving error response from FCM
+         # default: False
+        "DELETE_INACTIVE_DEVICES": False,
+}
 
 REST_USE_JWT = True
 SITE_ID = 1
@@ -179,8 +184,6 @@ PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
