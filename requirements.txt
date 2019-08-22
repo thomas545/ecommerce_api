@@ -33,6 +33,7 @@ pycodestyle==2.5.0
 pyfcm==1.4.5
 pyflakes==2.1.1
 PyJWT==1.7.1
+PySocks==1.7.0
 python-decouple==3.1
 python3-openid==3.1.0
 pytz==2019.2
@@ -41,6 +42,7 @@ requests-oauthlib==1.2.0
 requests-toolbelt==0.9.1
 six==1.12.0
 sqlparse==0.3.0
+twilio==6.29.4
 urllib3==1.25.3
 vine==1.3.0
 zipp==0.5.2

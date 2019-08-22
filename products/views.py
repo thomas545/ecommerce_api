@@ -11,7 +11,7 @@ from .permissions import IsOwnerAuth
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from notifications.utils import push_notifications
-
+from notifications.twilio import send_message
 
 class CategoryListAPIView(ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -51,7 +51,7 @@ class ListUserProductAPIView(ListAPIView):
 
     def get_queryset(self):
         user = self.request.user
-        queryset = Product.objects.filter(user=1)
+        queryset = Product.objects.filter(user=user)
         return queryset
 
 class CreateProductAPIView(CreateAPIView):
@@ -59,10 +59,12 @@ class CreateProductAPIView(CreateAPIView):
     serializer_class = CreateProductSerializer
 
     def create(self, request, *args, **kwargs):
+        user = request.user
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save(user=request.user)
+        serializer.save(user=user)
         push_notifications(request.user, request.data['title'], "you have add a new product")
+        send_message(user.profile.phone_number, "Congratulations, you Created New Product")
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class DestroyProductAPIView(DestroyAPIView):
