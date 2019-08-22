@@ -18,6 +18,8 @@ class Category(MPTTModel):
     parent = TreeForeignKey(
         'self', null=True, blank=True, related_name='children',
         on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name_plural = "Categories"

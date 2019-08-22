@@ -3,20 +3,25 @@ from rest_framework import permissions, status
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Category, Product, ProductViews
-from .serializers import (CategoryListSerializer, ProductSerializer,
-                        CreateProductSerializer, ProductViewsSerializer,
-                        ProductDetailSerializer)
-from .permissions import IsOwnerAuth
+from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
+
+from .models import Category, Product, ProductViews
+from .serializers import (CategoryListSerializer, ProductSerializer,
+                        CreateProductSerializer, ProductViewsSerializer,ProductDetailSerializer)
+
+from .permissions import IsOwnerAuth
 from notifications.utils import push_notifications
 from notifications.twilio import send_message
 
 class CategoryListAPIView(ListAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = CategoryListSerializer
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = (DjangoFilterBackend,filters.SearchFilter,filters.OrderingFilter,)
+    search_fields = ('name',)
+    ordering_fields = ('created',)
+    filter_fields = ('created',)
     # queryset = Category.objects.all()
 
     def get_queryset(self):
@@ -64,7 +69,8 @@ class CreateProductAPIView(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save(user=user)
         push_notifications(request.user, request.data['title'], "you have add a new product")
-        send_message(user.profile.phone_number, "Congratulations, you Created New Product")
+        if user.profile.phone_number:
+            send_message(user.profile.phone_number, "Congratulations, you Created New Product")
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class DestroyProductAPIView(DestroyAPIView):
@@ -95,5 +101,16 @@ class ProductDetailView(APIView):
         serializer = ProductDetailSerializer(product, context={'request': request})
         
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def put(self, request, pk):
+        user = request.user
+        product = get_object_or_404(Product, pk=pk)
+        if product.user != user:
+            raise PermissionDenied("this product don't belong to you.")
+
+        serializer = ProductDetailSerializer(product, data=request.data, context={'request': request})
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
     
 
