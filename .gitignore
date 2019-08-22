@@ -4,9 +4,8 @@
 *.pot
 *.pyc
 __pycache__/
-*__pycache__/*
+cpython-37.pyc
 __pycache__
-*__pycache__*
 db.sqlite3
 media
 .DB*
