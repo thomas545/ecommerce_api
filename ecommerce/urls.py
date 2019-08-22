@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 from rest_framework.routers import DefaultRouter
-from fcm_django.api.rest_framework import FCMDeviceAuthorizedViewSet
+from fcm_django.api.rest_framework import FCMDeviceAuthorizedViewSet # this package for push notifications and messages
 
 
 router = DefaultRouter()
@@ -20,6 +20,7 @@ urlpatterns = [
     path('', include('products.urls')),
     path('', include('user_profile.urls')),
     path('', include('cart.urls')),
+    path('', include('notifications.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

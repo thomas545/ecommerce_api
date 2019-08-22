@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'mptt',
     'fcm_django',
 
+    'notifications',
     'products',
     'cart',
     'user_profile',
@@ -139,7 +140,7 @@ JWT_AUTH = {
 # }
 
 FCM_DJANGO_SETTINGS = {
-        "FCM_SERVER_KEY": "[your api key]",
+        "FCM_SERVER_KEY": config("FCM_SERVER_KEY"),
          # true if you want to have only one active device per registered user at a time
          # default: False
         "ONE_DEVICE_PER_USER": True,

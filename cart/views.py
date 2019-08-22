@@ -8,6 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from .models import Cart, CartItem
 from products.models import Product
+from notifications.utils import push_notifications
 
 
 class CartItemAPIView(ListCreateAPIView):
@@ -44,6 +45,7 @@ class CartItemAPIView(ListCreateAPIView):
         total = float(product.price) * float(quantity)
         cart.total = total
         cart.save()
+        push_notifications(cart.user, "New cart product", "you added a product to your cart " + product.title)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
@@ -87,6 +89,10 @@ class CartItemView(RetrieveUpdateDestroyAPIView):
         if cart_item.cart.user != request.user:
             raise PermissionDenied("Sorry this cart not belong to you")
         cart_item.delete()
+        push_notifications(cart_item.cart.user, 
+                            "deleted cart product", 
+                            "you have been deleted this product: " +cart_item.product.title +" from your cart")
+                            
         return Response(
             {"detail": _("your item has been deleted.")}, 
             status=status.HTTP_204_NO_CONTENT

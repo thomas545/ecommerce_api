@@ -10,6 +10,7 @@ from .serializers import (CategoryListSerializer, ProductSerializer,
 from .permissions import IsOwnerAuth
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
+from notifications.utils import push_notifications
 
 
 class CategoryListAPIView(ListAPIView):
@@ -41,6 +42,18 @@ class ListProductAPIView(ListAPIView):
     #     queryset = Product.objects.filter(user=user)
     #     return queryset
 
+class ListUserProductAPIView(ListAPIView):
+    serializer_class = ProductSerializer
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
+    search_fields = ('title','user__username',)
+    ordering_fields = ('created',)
+    filter_fields = ('views',)
+
+    def get_queryset(self):
+        user = self.request.user
+        queryset = Product.objects.filter(user=1)
+        return queryset
+
 class CreateProductAPIView(CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = CreateProductSerializer
@@ -49,6 +62,7 @@ class CreateProductAPIView(CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user)
+        push_notifications(request.user, request.data['title'], "you have add a new product")
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class DestroyProductAPIView(DestroyAPIView):
