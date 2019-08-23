@@ -1,7 +1,3 @@
-Ecommerce Project
-
-
-
 
 # Ecommerce
 ### External Documentation:
@@ -88,12 +84,7 @@ Headers: `Authorization: JWT YOUR_TOKEN_HERE`
 
 
 ### Admin Credentials
-Username: `admin`  
-Password: `admin` 
-=======
-to create super user run this command:
-python manage.py dosuperuser
-
-username : admin , password : admin
+### Username: `admin`  
+### Password: `admin` 
 
 
