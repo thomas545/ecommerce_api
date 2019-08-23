@@ -4,7 +4,7 @@ import os
 from decouple import config
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 SECRET_KEY = config('SECRET_KEY')
@@ -130,10 +130,10 @@ JWT_AUTH = {
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=100),
 }
 
-# REST_AUTH_SERIALIZERS = {
-#     'LOGIN_SERIALIZER': 'path.to.custom.LoginSerializer',
-#     'TOKEN_SERIALIZER': 'path.to.custom.TokenSerializer',
-# }
+REST_AUTH_SERIALIZERS = {
+    # 'LOGIN_SERIALIZER': 'path.to.custom.LoginSerializer',
+    'USER_DETAILS_SERIALIZER': 'user_profile.serializers.UserSerializer',
+}
 # REST_AUTH_REGISTER_SERIALIZERS = {
 #     'REGISTER_SERIALIZER': 'rest_auth.registration.serializers.RegisterSerializer'
 # }
@@ -159,12 +159,11 @@ ACCOUNT_EMAIL_REQUIRED = True
 AUTHENTICATION_BACKENDS = (
     # default
     'django.contrib.auth.backends.ModelBackend',
-    # # email login
-    # 'allauth.account.auth_backends.AuthenticationBackend',
+    # email login
+    'user_profile.auth_backends.LoginEmailBackend',
 )
 
 # Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
