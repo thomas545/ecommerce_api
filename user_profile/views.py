@@ -18,11 +18,11 @@ from rest_auth.app_settings import JWTSerializer
 from rest_auth.utils import jwt_encode
 from django.views.decorators.debug import sensitive_post_parameters
 from django.utils.decorators import method_decorator
+from django.contrib.auth.models import User
 
 from .models import Profile, Address
 from .serializers import ProfileSerializer, UserSerializer, AddressSerializer, CreateAddressSerializer
 from .send_mail import send_register_mail
-from django.contrib.auth.models import User
 
 sensitive_post_parameters_m = method_decorator(
     sensitive_post_parameters('password1', 'password2')

@@ -134,9 +134,9 @@ REST_AUTH_SERIALIZERS = {
     # 'LOGIN_SERIALIZER': 'path.to.custom.LoginSerializer',
     'USER_DETAILS_SERIALIZER': 'user_profile.serializers.UserSerializer',
 }
-# REST_AUTH_REGISTER_SERIALIZERS = {
-#     'REGISTER_SERIALIZER': 'rest_auth.registration.serializers.RegisterSerializer'
-# }
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'user_profile.serializers.CustomRegisterSerializer'
+}
 
 FCM_DJANGO_SETTINGS = {
         "FCM_SERVER_KEY": config("FCM_SERVER_KEY"),

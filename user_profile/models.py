@@ -29,6 +29,7 @@ class Profile(TimeStampedModel):
     phone_number = PhoneNumberField(blank=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
     about = models.TextField(blank=True, null=True)
+    birth_date = models.DateField(blank=True, null=True)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, *args, **kwargs):
