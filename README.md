@@ -1,7 +1,7 @@
 Ecommerce Project
 
 
-<<<<<<< HEAD
+
 
 # Ecommerce
 ### External Documentation:
@@ -95,5 +95,5 @@ to create super user run this command:
 python manage.py dosuperuser
 
 username : admin , password : admin
->>>>>>> 58e3a6a9b3dbe2d4e208ec093b4535a4b00dbf63
+
 
