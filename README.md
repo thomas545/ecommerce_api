@@ -1,6 +1,6 @@
 
 # Ecommerce
-### External Documentation:
+### Documentation:
 
 1. [Django](https://docs.djangoproject.com/en/2.0/releases/2.0/)
 2. [Markdown](https://bitbucket.org/tutorials/markdowndemo), used for the formatting of this README file.
