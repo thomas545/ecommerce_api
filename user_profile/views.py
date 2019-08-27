@@ -7,8 +7,9 @@ from rest_framework.exceptions import PermissionDenied, NotAcceptable, Validatio
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from allauth.socialaccount.providers.twitter.views import TwitterOAuthAdapter
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
-from rest_auth.registration.views import SocialConnectView
+from rest_auth.registration.views import SocialConnectView, SocialLoginView
 from rest_auth.social_serializers import TwitterConnectSerializer
 from allauth.account.models import EmailAddress, EmailConfirmationHMAC
 from rest_auth.views import (LoginView, PasswordResetView, PasswordResetConfirmView, 
@@ -114,9 +115,15 @@ class createAddressAPIView(CreateAPIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
-class FacebookConnectView(SocialConnectView):
+class FacebookConnectView(SocialLoginView):
     adapter_class = FacebookOAuth2Adapter
 
-class TwitterConnectView(SocialConnectView):
+class TwitterConnectView(SocialLoginView):
     serializer_class = TwitterConnectSerializer
     adapter_class = TwitterOAuthAdapter
+
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
+    client_class = OAuth2Client
+    callback_url = "https://www.google.com"
+

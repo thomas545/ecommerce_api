@@ -161,6 +161,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # email login
     'user_profile.auth_backends.LoginEmailBackend',
+    # phone number login
+    # 'user_profile.auth_backends.LoginPhoneNumberBackend',
 )
 
 # Internationalization

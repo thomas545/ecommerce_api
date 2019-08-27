@@ -31,6 +31,9 @@ class Profile(TimeStampedModel):
     about = models.TextField(blank=True, null=True)
     birth_date = models.DateField(blank=True, null=True)
 
+    def __str__(self):
+        return "%s"% self.user.username
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, *args, **kwargs):
     if created:
