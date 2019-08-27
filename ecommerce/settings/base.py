@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_countries',
     'mptt',
     'fcm_django',
+    'randompinfield',
 
     'notifications',
     'products',
@@ -180,6 +181,12 @@ USE_TZ = True
 # Phone number country settings
 PHONENUMBER_DEFAULT_REGION = 'EG'
 PHONENUMBER_DB_FORMAT = 'INTERNATIONAL'
+
+# TWILIO SETTINGS
+TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID')
+TWILIO_AUTH_TOKEN = config('TWILIO_TOKEN')
+TWILIO_FROM_NUMBER = config('TWILIO_FROM')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

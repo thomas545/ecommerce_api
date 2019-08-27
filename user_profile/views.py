@@ -2,7 +2,7 @@ from django.conf import settings
 from rest_framework.response import Response
 from rest_framework import permissions, status
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, GenericAPIView
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
@@ -21,7 +21,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
 
-from .models import Profile, Address
+from .models import Profile, Address, SMSVerification
 from .serializers import ProfileSerializer, UserSerializer, AddressSerializer, CreateAddressSerializer
 from .send_mail import send_register_mail
 
@@ -66,6 +66,31 @@ class RegisterAPIView(RegisterView):
         print("account-confirm-email/" + key)
         return user
 
+
+class SMSResendView(GenericAPIView):
+    permission_classes = (permissions.AllowAny,)
+    allowed_methods = ('POST',)
+
+    def resend_or_create(self):
+        phone = self.request.data.get('phone')
+        send_new = self.request.data.get('new')
+        sms_verification = None
+
+        user = User.objects.filter(profile__phone=phone).first()
+
+        if not send_new:
+            sms_verification = SMSVerification.objects.filter(user=user, verified=False) \
+                .order_by('-created_at').first()
+
+        if sms_verification is None:
+            sms_verification = SMSVerification.objects.create(user=user, phone=phone)
+
+        return sms_verification.send_confirmation()
+
+    def post(self, request, *args, **kwargs):
+        success = self.resend_or_create()
+
+        return Response(dict(success=success), status=status.HTTP_200_OK)
 
 class ProfileAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]

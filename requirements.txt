@@ -15,7 +15,9 @@ django-jet==1.0.8
 django-js-asset==1.2.2
 django-mptt==0.10.0
 django-phonenumber-field==3.0.1
+django-randompinfield==0.4.7
 django-rest-auth==0.9.5
+django-twilio==0.10.0
 django-uuidfield==0.5.0
 djangorestframework==3.10.2
 djangorestframework-jwt==1.11.0
