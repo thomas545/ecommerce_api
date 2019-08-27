@@ -67,7 +67,7 @@ class RegisterAPIView(RegisterView):
         return user
 
 
-class SMSResendView(GenericAPIView):
+class SMSVerificationAPIView(GenericAPIView):
     permission_classes = (permissions.AllowAny,)
     allowed_methods = ('POST',)
 

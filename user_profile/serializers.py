@@ -7,7 +7,7 @@ from drf_extra_fields.fields import Base64ImageField
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
-from .models import Profile, Address
+from .models import Profile, Address, SMSVerification
 
 
 class CustomRegisterSerializer(RegisterSerializer):
@@ -39,7 +39,10 @@ class CustomRegisterSerializer(RegisterSerializer):
     def custom_signup(self, request, user):
         self.create_profile(user, self.get_cleaned_data_profile()) 
 
-
+class SMSVerificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SMSVerification
+        fields = "__all__"
 
 
 class ProfileSerializer(serializers.ModelSerializer):
