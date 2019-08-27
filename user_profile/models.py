@@ -1,19 +1,19 @@
-import logging
+import logging                                                     # this for sms
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
-from django.conf import settings
+from django.db.models.signals import post_save                      # this for sms
+from django.dispatch import receiver                                # this for sms
+from django.conf import settings                                    # this for sms
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
-from rest_framework.authtoken.models import Token
-from allauth.account.signals import user_signed_up
+from rest_framework.authtoken.models import Token                   # this for sms
+from allauth.account.signals import user_signed_up                  # signal for sms
 from phonenumber_field.modelfields import PhoneNumberField
 from django_countries.fields import CountryField
-from randompinfield import RandomPinField
-import phonenumbers
-from twilio.rest import TwilioRestClient
+from randompinfield import RandomPinField                           # this for sms
+import phonenumbers                                                 # this for sms
+from twilio.rest import TwilioRestClient                            # this for sms
 
-from core.models import TimeStampedModel
+from core.models import TimeStampedModel                            
 
 
 def user_directory_path(instance, filename):
