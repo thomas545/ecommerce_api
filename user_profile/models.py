@@ -1,17 +1,17 @@
-import logging                                                     # this for sms
+import logging
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.db.models.signals import post_save, pre_save            # this for sms
-from django.dispatch import receiver                                # this for sms
-from django.conf import settings                                    # this for sms
+from django.db.models.signals import post_save, pre_save
+from django.dispatch import receiver
+from django.conf import settings 
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
-from rest_framework.authtoken.models import Token                   # this for sms
-from allauth.account.signals import user_signed_up                  # signal for sms
+from rest_framework.authtoken.models import Token
+from allauth.account.signals import user_signed_up
 from phonenumber_field.modelfields import PhoneNumberField
 from django_countries.fields import CountryField
-from randompinfield import RandomPinField                           # this for sms
-import phonenumbers                                                 # this for sms
-from twilio.rest import Client                                      # this for sms
+from randompinfield import RandomPinField
+import phonenumbers
+from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 
 from .signals import register_signal
