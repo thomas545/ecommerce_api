@@ -22,7 +22,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
 
 from .models import Profile, Address, SMSVerification
-from .serializers import ProfileSerializer, UserSerializer, AddressSerializer, CreateAddressSerializer
+from .serializers import ProfileSerializer, UserSerializer, AddressSerializer, CreateAddressSerializer, SMSVerificationSerializer
 from .send_mail import send_register_mail
 
 sensitive_post_parameters_m = method_decorator(
@@ -62,13 +62,14 @@ class RegisterAPIView(RegisterView):
         confirmation = EmailConfirmationHMAC(email)
         key = confirmation.key
         # TODO Send mail confirmation here .
-        send_register_mail(user, key)
+        # send_register_mail(user, key)
         print("account-confirm-email/" + key)
         return user
 
 
 class SMSVerificationAPIView(GenericAPIView):
     permission_classes = (permissions.AllowAny,)
+    serializer_class = SMSVerificationSerializer
     allowed_methods = ('POST',)
 
     def resend_or_create(self):
@@ -76,11 +77,11 @@ class SMSVerificationAPIView(GenericAPIView):
         send_new = self.request.data.get('new')
         sms_verification = None
 
-        user = User.objects.filter(profile__phone=phone).first()
+        user = User.objects.filter(profile__phone_number=phone).first()
 
         if not send_new:
             sms_verification = SMSVerification.objects.filter(user=user, verified=False) \
-                .order_by('-created_at').first()
+                .order_by('-created').first()
 
         if sms_verification is None:
             sms_verification = SMSVerification.objects.create(user=user, phone=phone)
