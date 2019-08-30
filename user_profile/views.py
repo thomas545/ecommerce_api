@@ -106,6 +106,7 @@ class VerifySMSView(APIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         pin = int(request.data.get("pin"))
+        # TODO get user SMSVerification instead of below confirmation variable
         confirmation = get_object_or_404(SMSVerification, pk=pk)
         confirmation.confirm(pin=pin)
         return Response("Your Phone Number Is Verfied.", status=status.HTTP_200_OK)
