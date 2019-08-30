@@ -6,6 +6,7 @@ from django.dispatch import receiver
 from django.conf import settings 
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from rest_framework.authtoken.models import Token
+from rest_framework.exceptions import NotAcceptable
 from allauth.account.signals import user_signed_up
 from phonenumber_field.modelfields import PhoneNumberField
 from django_countries.fields import CountryField
@@ -96,15 +97,19 @@ class SMSVerification(TimeStampedModel):
             logging.warning('Twilio credentials are not set')
 
     def confirm(self, pin):
-        if self.pin == pin:
-            self.user.auth_token.delete()
-            self.user.auth_token = Token.objects.create(user=self.user)
+        if pin == self.pin and self.verified == False:
+            # TODO if you want login by phone use this code in comment
+            # self.user.auth_token.delete()
+            # self.user.auth_token = Token.objects.create(user=self.user)
             self.verified = True
             self.save()
+        else:
+            raise NotAcceptable("your Pin is wrong, or this phone is verified before.")
 
         return self.verified
 
 @receiver(post_save, sender=Profile)
 def send_sms_verification(sender, instance, created, *args, **kwargs):
-    verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
-    verification.send_confirmation()
+    if instance.user.profile.phone_number:
+        verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
+        verification.send_confirmation()
