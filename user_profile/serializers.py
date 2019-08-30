@@ -2,7 +2,7 @@ from rest_framework import serializers
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_auth.registration.serializers import RegisterSerializer
 from rest_framework.validators import UniqueValidator
-
+from rest_framework.exceptions import ValidationError
 from drf_extra_fields.fields import Base64ImageField
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
@@ -44,6 +44,8 @@ class SMSVerificationSerializer(serializers.ModelSerializer):
         model = SMSVerification
         fields = "__all__"
 
+class SMSPinSerializer(serializers.Serializer):
+    pin = serializers.IntegerField()
 
 class ProfileSerializer(serializers.ModelSerializer):
     user = serializers.SlugRelatedField(slug_field='username',read_only=True)

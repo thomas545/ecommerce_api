@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import permissions, status
 from rest_framework.views import APIView
@@ -22,7 +23,8 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
 
 from .models import Profile, Address, SMSVerification
-from .serializers import ProfileSerializer, UserSerializer, AddressSerializer, CreateAddressSerializer, SMSVerificationSerializer
+from .serializers import (ProfileSerializer, UserSerializer, AddressSerializer, 
+                            CreateAddressSerializer, SMSVerificationSerializer, SMSPinSerializer)
 from .send_mail import send_register_mail
 
 sensitive_post_parameters_m = method_decorator(
@@ -92,6 +94,21 @@ class ResendSMSAPIView(GenericAPIView):
         success = self.resend_or_create()
 
         return Response(dict(success=success), status=status.HTTP_200_OK)
+
+class VerifySMSView(APIView):
+    permission_classes = (permissions.AllowAny,)
+    allowed_methods = ('POST', 'OPTIONS', 'HEAD')
+
+    def get_serializer(self, *args, **kwargs):
+        return SMSPinSerializer(*args, **kwargs)
+
+    def post(self, request, pk):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        pin = int(request.data.get("pin"))
+        confirmation = get_object_or_404(SMSVerification, pk=pk)
+        confirmation.confirm(pin=pin)
+        return Response("Your Phone Number Is Verfied.", status=status.HTTP_200_OK)
 
 class ProfileAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]

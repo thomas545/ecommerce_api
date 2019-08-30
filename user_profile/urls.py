@@ -29,6 +29,7 @@ urlpatterns = [
     path('account-confirm-email/sent/', TemplateView.as_view(), name='account_confirm_email'),
     path('account-confirm-email/<str:key>', VerifyEmailView.as_view(), name='rest_verify_email'),
 
+    path('verify-sms/<int:pk>/', views.VerifySMSView.as_view()),
     path('resend-sms/', views.ResendSMSAPIView.as_view()),
 
     path('profile/<int:pk>/', views.ProfileAPIView.as_view()),
