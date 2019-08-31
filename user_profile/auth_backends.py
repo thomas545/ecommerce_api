@@ -5,16 +5,15 @@ from django.core.exceptions import PermissionDenied
 # User = get_user_model()
 
 
-
-
 class EmailBackend(AllowAllUsersModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         if username is None:
             username = kwargs.get("username")
         try:
-            # if username[0] == '+' or '00':
-            #     user = User.objects.get(profile__phone_number=username)
-            user = User.objects.get(email=username)
+            if username[0] == '+':
+                user = User.objects.get(profile__phone_number=username)
+            else:
+                user = User.objects.get(email=username)
         except User.DoesNotExist:
             raise PermissionDenied("This User does't exist.")
 
