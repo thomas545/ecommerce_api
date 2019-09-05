@@ -15,7 +15,7 @@ urlpatterns = [
     path('registration/', views.RegisterAPIView.as_view(), name='account_signup'),
     path('registration/', include('rest_auth.registration.urls')),
 
-    path('login/', LoginView.as_view(), name='account_login'),
+    path('login/', views.LoginAPIView.as_view(), name='account_login'),
     path('logout/', LogoutView.as_view(), name='rest_logout'),
 
     path('password/reset/', PasswordResetView.as_view(), name='rest_password_reset'),

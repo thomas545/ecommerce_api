@@ -31,6 +31,32 @@ sensitive_post_parameters_m = method_decorator(
     sensitive_post_parameters('password1', 'password2')
 )
 
+class LoginAPIView(LoginView):
+    queryset = ''
+
+    def get_response(self):
+        serializer_class = self.get_response_serializer()
+        if getattr(settings, 'REST_USE_JWT', False):
+            data = {
+                'user': self.user,
+                'token': self.token
+            }
+            serializer = serializer_class(instance=data,
+                                          context={'request': self.request})
+        else:
+            serializer = serializer_class(instance=self.token,
+                                          context={'request': self.request})
+        response = Response(serializer.data, status=status.HTTP_200_OK)
+        return response
+
+    def post(self, request, *args, **kwargs):
+        self.request = request
+        self.serializer = self.get_serializer(data=self.request.data,
+                                              context={'request': request})
+        self.serializer.is_valid(raise_exception=True)
+        self.login()
+        return self.get_response()
+
 class RegisterAPIView(RegisterView):
 
     @sensitive_post_parameters_m
@@ -171,3 +197,7 @@ class GoogleLogin(SocialLoginView):
     client_class = OAuth2Client
     callback_url = "https://www.google.com"
 
+
+
+# if user.profile.phone_number.verified != True and profile.phone == sms.phone:
+#     raise you cant login by phone number
