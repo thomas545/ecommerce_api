@@ -33,26 +33,23 @@ sensitive_post_parameters_m = method_decorator(
 )
 
 class DeactivateUserView(CreateAPIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = DeactivateUserSerializer
 
     def create(self, request, *args, **kwargs):
-        # user = request.user
-        user = User.objects.get(username='tomas00')
-        print(request.data)
+        user = request.user
+        # TODO validation and try exception
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save(user=user)
-        user.is_active = False
-        user.save()
         return Response("your account will deactivate after 30 days.")
 
 class CanselDeactivateUserView(APIView):
-    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
     
     def post(self, request, *args, **kwargs):
-        # user = request.user
-        user = User.objects.get(username='tomas00')
+        user = request.user
+        # TODO validation and try exception
         deactivate = DeactivateUser.objects.get(user=user)
         deactivate.deactive = False
         deactivate.save()
