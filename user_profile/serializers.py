@@ -7,8 +7,12 @@ from drf_extra_fields.fields import Base64ImageField
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
 
-from .models import Profile, Address, SMSVerification
+from .models import Profile, Address, SMSVerification, DeactivateUser
 
+class DeactivateUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DeactivateUser
+        exclude = ["deactive", "user"]
 
 class CustomRegisterSerializer(RegisterSerializer):
     first_name = serializers.CharField(required=True, write_only=True)

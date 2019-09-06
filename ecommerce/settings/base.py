@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'mptt',
     'fcm_django',
     'randompinfield',
+    'django_crontab',
 
     'notifications',
     'products',
@@ -193,3 +194,7 @@ STATIC_URL = '/static/'
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# for cron jobs
+from . import cron_jobs
+CRONJOBS = cron_jobs.CRONJOBS 

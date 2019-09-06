@@ -32,6 +32,9 @@ urlpatterns = [
     path('verify-sms/<int:pk>/', views.VerifySMSView.as_view()),
     path('resend-sms/', views.ResendSMSAPIView.as_view()),
 
+    path('deactive-user/', views.DeactivateUserView.as_view()),
+    path('reactive-user/', views.CanselDeactivateUserView.as_view()),
+
     path('profile/<int:pk>/', views.ProfileAPIView.as_view()),
     path('user/<str:username>/', views.UserDetailView.as_view()),
     path('addresses/', views.ListAddressAPIView.as_view()),

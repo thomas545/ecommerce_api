@@ -98,7 +98,7 @@ class SMSVerification(TimeStampedModel):
 
     def confirm(self, pin):
         if pin == self.pin and self.verified == False:
-            # TODO if you want login by phone use this code in comment
+            # TODO if you want login by phone use auth backends custom
             # self.user.auth_token.delete()
             # self.user.auth_token = Token.objects.create(user=self.user)
             self.verified = True
@@ -113,3 +113,7 @@ def send_sms_verification(sender, instance, created, *args, **kwargs):
     if instance.user.profile.phone_number:
         verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
         verification.send_confirmation()
+
+class DeactivateUser(TimeStampedModel):
+    user = models.OneToOneField(User, related_name='deactivate', on_delete=models.CASCADE)
+    deactive = models.BooleanField(default=True)
