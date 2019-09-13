@@ -7,6 +7,6 @@ from . import views
 
 
 urlpatterns = [
-    # path('/', views..as_view()),
+    path('order/<int:pk>/', views.OrderView.as_view()),
 
 ]

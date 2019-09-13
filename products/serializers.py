@@ -33,10 +33,10 @@ class ProductDetailSerializer(serializers.ModelSerializer):
     seller = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
     category = serializers.SerializerMethodField()
     image = Base64ImageField()
+
     def get_category(self, obj):
         return obj.category.name
 
-        
     class Meta:
         model = Product
         fields = "__all__"

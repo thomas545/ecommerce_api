@@ -26,9 +26,26 @@ class Order(TimeStampedModel):
     is_paid = models.BooleanField(default=False)
     address = models.ForeignKey(Address, related_name="order_address", on_delete=models.CASCADE)
 
+    @staticmethod
+    def create_order(buyer, order_number, address, is_paid=False):
+        order = Order()
+        order.buyer = buyer
+        order.order_number = order_number
+        order.address = address
+        order.is_paid = is_paid
+        order.save()
 
 class OrderItem(TimeStampedModel):
     order = models.ForeignKey(Order, related_name='order_items', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='product_order', on_delete=models.CASCADE)
     quantity = models.IntegerField()
     total = models.DecimalField(max_digits=10, decimal_places=2)
+
+    @staticmethod
+    def create_order_item(order, product, quantity, total):
+        order_item = OrderItem()
+        order_item.order = order
+        order_item.product = product
+        order_item.quantity = quantity
+        order_item.total = total
+        order_item.save()
