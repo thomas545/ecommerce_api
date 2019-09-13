@@ -224,7 +224,3 @@ class GoogleLogin(SocialLoginView):
     client_class = OAuth2Client
     callback_url = "https://www.google.com"
 
-
-
-# if user.profile.phone_number.verified != True and profile.phone == sms.phone:
-#     raise you cant login by phone number

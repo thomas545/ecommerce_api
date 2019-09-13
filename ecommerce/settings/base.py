@@ -133,7 +133,7 @@ JWT_AUTH = {
 }
 
 REST_AUTH_SERIALIZERS = {
-    # 'LOGIN_SERIALIZER': 'path.to.custom.LoginSerializer',
+    'LOGIN_SERIALIZER': 'user_profile.serializers.LoginSerializer',
     'USER_DETAILS_SERIALIZER': 'user_profile.serializers.UserSerializer',
 }
 REST_AUTH_REGISTER_SERIALIZERS = {

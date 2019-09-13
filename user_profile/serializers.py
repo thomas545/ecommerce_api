@@ -1,4 +1,6 @@
-from rest_framework import serializers
+from django.contrib.auth import get_user_model, authenticate
+from django.conf import settings
+from rest_framework import serializers, exceptions
 from phonenumber_field.serializerfields import PhoneNumberField
 from rest_auth.registration.serializers import RegisterSerializer
 from rest_framework.validators import UniqueValidator
@@ -6,8 +8,112 @@ from rest_framework.exceptions import ValidationError
 from drf_extra_fields.fields import Base64ImageField
 from django.contrib.auth import get_user_model
 from django.utils.translation import ugettext_lazy as _
-
+from allauth.account.models import EmailAddress
 from .models import Profile, Address, SMSVerification, DeactivateUser
+
+# Get the UserModel
+UserModel = get_user_model()
+
+class LoginSerializer(serializers.Serializer):
+    username = serializers.CharField(required=False, allow_blank=True)
+    password = serializers.CharField(style={'input_type': 'password'})
+
+    def authenticate(self, **kwargs):
+        return authenticate(self.context['request'], **kwargs)
+
+    def _validate_email(self, email, password):
+        user = None
+
+        if email and password:
+            user = self.authenticate(email=email, password=password)
+        else:
+            msg = _('Must include "email" and "password".')
+            raise exceptions.ValidationError(msg)
+
+        return user
+
+    def _validate_username(self, username, password):
+        user = None
+
+        if username and password:
+            user = self.authenticate(username=username, password=password)
+        else:
+            msg = _('Must include "username or "email" or "phone number" and "password".')
+            raise exceptions.ValidationError(msg)
+
+        return user
+
+    def _validate_username_email(self, username, email, password):
+        user = None
+
+        if email and password:
+            user = self.authenticate(email=email, password=password)
+        elif username and password:
+            user = self.authenticate(username=username, password=password)
+        else:
+            msg = _('Must include either "username" or "email" or "phone number" and "password".')
+            raise exceptions.ValidationError(msg)
+
+        return user
+
+    def validate(self, attrs):
+        username = attrs.get('username')
+        password = attrs.get('password')
+
+        user = None
+
+        if 'allauth' in settings.INSTALLED_APPS:
+            from allauth.account import app_settings
+
+            # Authentication through email
+            if app_settings.AUTHENTICATION_METHOD == app_settings.AuthenticationMethod.EMAIL:
+                user = self._validate_email(email, password)
+
+            # Authentication through username
+            elif app_settings.AUTHENTICATION_METHOD == app_settings.AuthenticationMethod.USERNAME:
+                user = self._validate_username(username, password)
+
+            # Authentication through either username or email
+            else:
+                user = self._validate_username_email(username, email, password)
+
+        else:
+            if username:
+                user = self._validate_username_email(username, '', password)
+
+        # Did we get back an active user?
+        if user:
+            if not user.is_active:
+                msg = _('User account is inactive.')
+                raise exceptions.ValidationError(msg)
+        else:
+            msg = _("please check your username or email or phone number or password.")
+            raise exceptions.ValidationError(msg)
+
+        # TODO user can't login if phone number and email address not verified.
+
+        # If required, is the email verified?
+        if 'rest_auth.registration' in settings.INSTALLED_APPS:
+            from allauth.account import app_settings
+            if app_settings.EMAIL_VERIFICATION == app_settings.EmailVerificationMethod.MANDATORY:
+                try:
+                    email_address = user.emailaddress_set.get(email=user.email)
+                except EmailAddress.DoesNotExist:
+                    raise serializers.ValidationError(_("This account don't have E-mail address!, so that you can't login."))
+                if not email_address.verified:
+                    raise serializers.ValidationError(_('E-mail is not verified.'))
+
+        # If required, is the phone number verified?
+        try:
+            phone_number = user.sms.get(phone=user.profile.phone_number)
+        except SMSVerification.DoesNotExist:
+            raise serializers.ValidationError(_("This account don't have Phone Number!"))
+        if not phone_number.verified:
+            raise serializers.ValidationError(_('Phone Number is not verified.'))
+
+        attrs['user'] = user
+        return attrs
+
 
 class DeactivateUserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -62,7 +168,9 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ['user', 'profile_picture', 'phone_number', 'gender', 'about']
-
+    '''
+    TODO update profile and if phone Number not verified user can't update in his profile.
+    '''
         
 class UserSerializer(serializers.ModelSerializer):
     profile_picture = serializers.ImageField(source='profile.profile_picture')
