@@ -70,7 +70,7 @@ class Address(TimeStampedModel):
 
 
 class SMSVerification(TimeStampedModel):
-    user = models.ForeignKey(User, related_name='sms', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name='sms', on_delete=models.CASCADE)
     verified = models.BooleanField(default=False)
     pin = RandomPinField(length=6)
     sent = models.BooleanField(default=False)
@@ -98,9 +98,6 @@ class SMSVerification(TimeStampedModel):
 
     def confirm(self, pin):
         if pin == self.pin and self.verified == False:
-            # TODO if you want login by phone use auth backends custom
-            # self.user.auth_token.delete()
-            # self.user.auth_token = Token.objects.create(user=self.user)
             self.verified = True
             self.save()
         else:
@@ -109,10 +106,26 @@ class SMSVerification(TimeStampedModel):
         return self.verified
 
 @receiver(post_save, sender=Profile)
-def send_sms_verification(sender, instance, created, *args, **kwargs):
-    if instance.user.profile.phone_number:
-        verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
-        verification.send_confirmation()
+def send_sms_verification(sender, instance, *args, **kwargs):
+    try:
+        sms = instance.user.sms
+        if sms:
+            pin = sms.pin
+            sms.delete()
+            verification = SMSVerification.objects.create(user=instance.user, 
+                                        phone=instance.user.profile.phone_number, 
+                                        sent=True, verified=True, pin=pin)
+    except:
+        if instance.user.profile.phone_number:
+            verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
+            # TODO Remove send confirm from here and make view for it.
+            verification.send_confirmation()
+    
+    # if instance.user.profile.phone_number:
+    #     verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
+    #     # TODO Remove send confirm from here and make view for it.
+    #     verification.send_confirmation()
+
 
 class DeactivateUser(TimeStampedModel):
     user = models.OneToOneField(User, related_name='deactivate', on_delete=models.CASCADE)
