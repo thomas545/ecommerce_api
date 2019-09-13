@@ -12,7 +12,10 @@ def schedule_deactivate_user():
         user_deactivate = deactive.user.deactivate.deactive
         created = deactive.user.deactivate.created
         if user_deactivate == True and (now - created).total_seconds() > 2592000:
+            if deactive.user.is_authenticated and (now - created).total_seconds() < 2592000:
+                user_deactivate = False
+                deactive.user.deactivate.save()
             deactive.user.is_active = False
             deactive.user.save()
             # TODO send mail for user tell him his account not active
-        
+
