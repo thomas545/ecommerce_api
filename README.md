@@ -56,6 +56,14 @@ then: `python manage.py migrate`
 `python manage.py runserver`
 3. Navigate to: `http://localhost:8000/admin/`
  
+##### Steps for install Celery and work it.
+1. pip install -r requirements.txt
+2. sudo apt-get install -y erlang
+3. sudo apt-get install rabbitmq-server
+4. sudo systemctl enable rabbitmq-server
+5. sudo systemctl start rabbitmq-server to check if rabbitmq is working run: systemctl status rabbitmq-server
+6. run local server for backend
+7. run this command in new terminal in project path with activating virtual env: celery -A ecommerce worker -l info
 
 ### API Endpoints
 ##### Register
