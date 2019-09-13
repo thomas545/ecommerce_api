@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'randompinfield',
     'django_crontab',
 
+    'checkout',
+    'order',
     'notifications',
     'products',
     'cart',

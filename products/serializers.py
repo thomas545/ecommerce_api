@@ -12,7 +12,7 @@ class CategoryListSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
+    seller = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
     category = serializers.SerializerMethodField()
 
     def get_category(self, obj):
@@ -30,7 +30,7 @@ class CreateProductSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class ProductDetailSerializer(serializers.ModelSerializer):
-    user = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
+    seller = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
     category = serializers.SerializerMethodField()
     image = Base64ImageField()
     def get_category(self, obj):
