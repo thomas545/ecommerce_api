@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Order, OrderItem
-from user_profile.serializers import AddressSerializer
+from user_profile.serializers import AddressSerializer, UserMiniSerializer
 from products.serializers import ProductDetailSerializer
 
 
@@ -11,7 +11,8 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
 class OrderMiniSerializer(serializers.ModelSerializer):
-    address = AddressSerializer(required=False, read_only=True)
+    address = AddressSerializer(required=False)
+    buyer = UserMiniSerializer(required=False)
     class Meta:
         model = Order
         fields = "__all__"

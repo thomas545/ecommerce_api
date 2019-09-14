@@ -185,6 +185,15 @@ class UserSerializer(serializers.ModelSerializer):
                     'last_login', 'gender', 'about', 
                     'phone_number', 'profile_picture', 'is_active']
 
+class UserMiniSerializer(serializers.ModelSerializer):
+    profile_picture = serializers.ImageField(source='profile.profile_picture')
+    gender = serializers.CharField(source='profile.gender')
+    phone_number = PhoneNumberField(source='profile.phone_number')
+
+    class Meta:
+        model = get_user_model()
+        fields = ['username','profile_picture','gender','phone_number']
+
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:

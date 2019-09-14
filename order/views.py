@@ -28,10 +28,11 @@ class OrderView(APIView):
 
         total = quantity * product.price
         order = Order().create_order(user, order_number, user_address, True)
-        OrderItem().create_order_item(order, product, quantity, total)
+        order_item = OrderItem().create_order_item(order, product, quantity, total)
+        serializer = OrderItemMiniSerializer(order_item)
         push_notifications(user, "Request Order", "your order: #"+str(order_number) +" has been sent successfully.")
         # TODO Payment Integration here.
         # TODO send Email to seller and buyer
-        return Response("Your order created successfully.")
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         
