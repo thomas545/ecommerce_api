@@ -11,8 +11,9 @@ def schedule_deactivate_user():
     for deactive in deactivates:
         user_deactivate = deactive.user.deactivate.deactive
         created = deactive.user.deactivate.created
+        last_login = timedelta(days=deactive.user.last_login.day).total_seconds()
         if user_deactivate == True and (now - created).total_seconds() > 2592000:
-            if deactive.user.is_authenticated and (now - created).total_seconds() < 2592000:
+            if last_login < 2592000:
                 user_deactivate = False
                 deactive.user.deactivate.save()
             deactive.user.is_active = False
