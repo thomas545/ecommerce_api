@@ -34,6 +34,7 @@ class Order(TimeStampedModel):
         order.address = address
         order.is_paid = is_paid
         order.save()
+        return order
 
 class OrderItem(TimeStampedModel):
     order = models.ForeignKey(Order, related_name='order_items', on_delete=models.CASCADE)
@@ -49,3 +50,4 @@ class OrderItem(TimeStampedModel):
         order_item.quantity = quantity
         order_item.total = total
         order_item.save()
+        return order_item
