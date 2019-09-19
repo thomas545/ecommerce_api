@@ -35,7 +35,7 @@ class Product(TimeStampedModel):
     price = models.DecimalField(decimal_places=2, max_digits=10, null=True, blank=True)
     image = models.ImageField(upload_to=product_image_path, blank=True)
     description = models.TextField(null=True, blank=True)
-    quantity = models.IntegerField(default=0)
+    quantity = models.IntegerField(default=1)
     views = models.IntegerField(default=0)
 
 class ProductViews(TimeStampedModel):

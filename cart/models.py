@@ -23,4 +23,4 @@ def create_user_cart(sender, created, instance, *args, **kwargs):
 class CartItem(TimeStampedModel):
     cart = models.ForeignKey(Cart, related_name='cart_item', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='cart_product', on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=0)
+    quantity = models.IntegerField(default=1)
