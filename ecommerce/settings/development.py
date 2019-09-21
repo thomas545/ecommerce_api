@@ -18,3 +18,10 @@ def show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': show_toolbar,
 }
+
+# Email config
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ecommerce@gmail.com'
+EMAIL_HOST_PASSWORD = 213123
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -3,7 +3,7 @@ import os
 from celery import Celery
 from django.conf import settings
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecommerce.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecommerce.settings.development')
 
 app = Celery('ecommerce')
 

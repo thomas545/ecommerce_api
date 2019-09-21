@@ -105,7 +105,7 @@ class LoginSerializer(serializers.Serializer):
 
         # If required, is the phone number verified?
         try:
-            phone_number = user.sms.get(phone=user.profile.phone_number)
+            phone_number = user.sms #.get(phone=user.profile.phone_number)
         except SMSVerification.DoesNotExist:
             raise serializers.ValidationError(_("This account don't have Phone Number!"))
         if not phone_number.verified:

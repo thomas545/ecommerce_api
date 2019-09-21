@@ -21,12 +21,12 @@ from rest_auth.utils import jwt_encode
 from django.views.decorators.debug import sensitive_post_parameters
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User
-
+from django.utils.translation import ugettext_lazy as _
 from .models import Profile, Address, SMSVerification, DeactivateUser
 from .serializers import (ProfileSerializer, UserSerializer, AddressSerializer, 
                             CreateAddressSerializer, SMSVerificationSerializer, 
                             SMSPinSerializer, DeactivateUserSerializer)
-from .send_mail import send_register_mail
+from .send_mail import send_register_mail, send_reset_password_email
 
 sensitive_post_parameters_m = method_decorator(
     sensitive_post_parameters('password1', 'password2')
@@ -117,7 +117,7 @@ class RegisterAPIView(RegisterView):
         confirmation = EmailConfirmationHMAC(email)
         key = confirmation.key
         # TODO Send mail confirmation here .
-        # send_register_mail(user, key)
+        # send_register_mail.delay(user, key)
         print("account-confirm-email/" + key)
         return user
 
@@ -224,3 +224,18 @@ class GoogleLogin(SocialLoginView):
     client_class = OAuth2Client
     callback_url = "https://www.google.com"
 
+
+class PasswordResetViewCustom(APIView):
+    def post(self, request, *args, **kwargs):
+        
+        email = request.data.get('email', None)
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            raise NotAcceptable(_('Please enter a valid email.'))
+        print(urlsafe_base64_encode(force_bytes(user.pk)).decode(),default_token_generator.make_token(user))
+        send_reset_password_email.delay(user)
+        return Response(
+            {"detail": _("Password reset e-mail has been sent.")},
+            status=status.HTTP_200_OK
+        )
