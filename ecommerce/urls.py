@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('notifications.urls')),
     path('', include('order.urls')),
     path('', include('checkout.urls')),
+    path('', include('chat.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

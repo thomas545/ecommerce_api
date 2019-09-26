@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'fcm_django',
     'randompinfield',
     'django_crontab',
+    'channels',
 
+    'chat',
     'checkout',
     'order',
     'notifications',
@@ -86,6 +88,26 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
+
+# channels redis layers config.
+ASGI_APPLICATION = "ecommerce.routing.application"
+
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [('127.0.0.1', 6379)],
+#         },
+#     },
+# }
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+    },
+}
 
 
 # Database
