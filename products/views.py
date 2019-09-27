@@ -53,12 +53,12 @@ class ListProductAPIView(ListAPIView):
     def get_queryset(self):
         queryset = Product.objects.all()
         # we did cache but not use it yet.
-        if 'result' in cache:
-            serializer = self.get_serializer(queryset, many=True)
-            serializer = cache.get('result')
-        else:
-            serializer = self.get_serializer(queryset, many=True)
-            cache.set('result', serializer.data, timeout=DEFAULT_TIMEOUT)
+        # if 'result' in cache:
+        #     serializer = self.get_serializer(queryset, many=True)
+        #     serializer = cache.get('result')
+        # else:
+        #     serializer = self.get_serializer(queryset, many=True)
+        #     cache.set('result', serializer.data, timeout=DEFAULT_TIMEOUT)
         return queryset
 
 
