@@ -9,16 +9,19 @@ DEBUG = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = 587
+EMAIL_PORT = config('EMAIL_PORT', cast=int, default=587)
 EMAIL_USE_TLS = True
 
 
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-#         'LOCATION': '127.0.0.1:11211',
-#     }
-# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
 
 
 DATABASES = {
@@ -31,3 +34,22 @@ DATABASES = {
         'PORT': config('DATABASE_PORT')
     }
 }
+
+
+
+# Configure as cache backend (Redis)
+'''
+redis://: creates a normal TCP socket connection
+rediss://: creates a SSL wrapped TCP socket connection
+unix:// creates a Unix Domain Socket connection
+'''
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://127.0.0.1:6379/1",
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#             "SERIALIZER": "django_redis.serializers.json.JSONSerializer",
+#         }
+#     }
+# }
