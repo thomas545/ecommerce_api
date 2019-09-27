@@ -22,6 +22,17 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = "__all__"
 
+class ProductMiniSerializer(serializers.ModelSerializer):
+        
+    class Meta:
+        model = Product
+        fields = ['title']
+    
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data = serializers.ModelSerializer.to_representation(self, instance)
+        return data
+
 
 class CreateProductSerializer(serializers.ModelSerializer):
 
