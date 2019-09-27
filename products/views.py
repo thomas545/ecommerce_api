@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
 
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
 from rest_framework import permissions, status
@@ -50,6 +51,8 @@ class ListProductAPIView(ListAPIView):
     filter_fields = ('views',)
     # queryset = Product.objects.all()
 
+    # Cache page for the requested url
+    @method_decorator(cache_page(60*60*2))
     def get_queryset(self):
         queryset = Product.objects.all()
         # we did cache but not use it yet.
@@ -61,7 +64,9 @@ class ListProductAPIView(ListAPIView):
         #     cache.set('result', serializer.data, timeout=DEFAULT_TIMEOUT)
         return queryset
 
-
+    # Cache requested url for each user for 2 hours
+    @method_decorator(cache_page(60*60*2))
+    @method_decorator(vary_on_cookie)
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
 
