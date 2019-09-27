@@ -51,8 +51,6 @@ class ListProductAPIView(ListAPIView):
     filter_fields = ('views',)
     # queryset = Product.objects.all()
 
-    # Cache page for the requested url
-    @method_decorator(cache_page(60*60*2))
     def get_queryset(self):
         queryset = Product.objects.all()
         # we did cache but not use it yet.
