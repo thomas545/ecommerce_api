@@ -14,11 +14,17 @@ from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
+from django_elasticsearch_dsl_drf.constants import LOOKUP_FILTER_GEO_DISTANCE
+from django_elasticsearch_dsl_drf.filter_backends import (FilteringFilterBackend, OrderingFilterBackend, 
+                                                SearchFilterBackend, DefaultOrderingFilterBackend)
+from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
+
+
 from .models import Category, Product, ProductViews
 from .serializers import (CategoryListSerializer, ProductSerializer,
                         CreateProductSerializer, ProductViewsSerializer, 
-                        ProductDetailSerializer, ProductMiniSerializer)
-
+                        ProductDetailSerializer, ProductMiniSerializer, ProductDocumentSerializer)
+from .document import ProductDocument
 from .permissions import IsOwnerAuth
 from notifications.utils import push_notifications
 from notifications.twilio import send_message
@@ -46,21 +52,21 @@ class CategoryAPIView(RetrieveAPIView):
 class ListProductAPIView(ListAPIView):
     serializer_class = ProductSerializer
     filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
-    search_fields = ('title','user__username',)
+    search_fields = ('title',)
     ordering_fields = ('created',)
     filter_fields = ('views',)
-    # queryset = Product.objects.all()
+    queryset = Product.objects.all()
 
-    def get_queryset(self):
-        queryset = Product.objects.all()
-        # we did cache but not use it yet.
-        # if 'result' in cache:
-        #     serializer = self.get_serializer(queryset, many=True)
-        #     serializer = cache.get('result')
-        # else:
-        #     serializer = self.get_serializer(queryset, many=True)
-        #     cache.set('result', serializer.data, timeout=DEFAULT_TIMEOUT)
-        return queryset
+    # def get_queryset(self):
+    #     queryset = Product.objects.all()
+    #     # we did cache but not use it yet.
+    #     # if 'result' in cache:
+    #     #     serializer = self.get_serializer(queryset, many=True)
+    #     #     serializer = cache.get('result')
+    #     # else:
+    #     #     serializer = self.get_serializer(queryset, many=True)
+    #     #     cache.set('result', serializer.data, timeout=DEFAULT_TIMEOUT)
+    #     return queryset
 
     # Cache requested url for each user for 2 hours
     @method_decorator(cache_page(60*60*2))

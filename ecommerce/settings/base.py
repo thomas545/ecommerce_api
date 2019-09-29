@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'randompinfield',
     'django_crontab',
     'channels',
+    'django_elasticsearch_dsl',
+    'django_elasticsearch_dsl_drf',
 
     'chat',
     'checkout',
@@ -157,6 +159,22 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+# Elasticsearch configuration
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
+from elasticsearch_dsl import connections
+
+connections.configure(
+    default={'hosts': 'localhost'},
+    dev={
+        'hosts': ['localhost:9200'],
+        'sniff_on_start': True
+    }
+)
+ELASTICSEARCH_DSL_SIGNAL_PROCESSOR = 'django_elasticsearch_dsl.signals.RealTimeSignalProcessor'
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
