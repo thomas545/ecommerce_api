@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .models import Category, Product, ProductViews
 from drf_extra_fields.fields import Base64ImageField
 from django_elasticsearch_dsl_drf.serializers import DocumentSerializer
+from .documents import ProductDocument
 
 class CategoryListSerializer(serializers.ModelSerializer):
     # lft = serializers.SlugRelatedField(slug_field='lft', read_only=True)
@@ -65,6 +66,7 @@ class ProductDocumentSerializer(DocumentSerializer):
     def get_category(self, obj):
         return obj.category.name
 
-    class Meta:
-        model = Product
+    class Meta(object):
+        # model = Product
+        document = ProductDocument
         fields = "__all__"

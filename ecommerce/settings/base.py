@@ -165,17 +165,31 @@ ELASTICSEARCH_DSL = {
         'hosts': 'localhost:9200'
     },
 }
-from elasticsearch_dsl import connections
 
-connections.configure(
-    default={'hosts': 'localhost'},
-    dev={
-        'hosts': ['localhost:9200'],
-        'sniff_on_start': True
-    }
-)
-ELASTICSEARCH_DSL_SIGNAL_PROCESSOR = 'django_elasticsearch_dsl.signals.RealTimeSignalProcessor'
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+#         'URL': 'http://localhost:9200/',
+#         'INDEX_NAME': 'products',
+#     },
+# }
+# from elasticsearch_dsl import connections
 
+# connections.configure(
+#     default={'hosts': 'localhost'},
+#     dev={
+#         'hosts': ['localhost:9200'],
+#         'sniff_on_start': True
+#     }
+# )
+# # Name of the Elasticsearch index
+# ELASTICSEARCH_INDEX_NAMES = {
+#     'products/documents/product': 'products',
+# }
+
+# ELASTICSEARCH_DSL_SIGNAL_PROCESSOR = 'django_elasticsearch_dsl.signals.RealTimeSignalProcessor'
+
+# Rest Auth configuration
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
     'JWT_ALLOW_REFRESH': True,
@@ -190,6 +204,7 @@ REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'user_profile.serializers.CustomRegisterSerializer'
 }
 
+# FCM (push notifications) configuration
 FCM_DJANGO_SETTINGS = {
         "FCM_SERVER_KEY": config("FCM_SERVER_KEY"),
          # true if you want to have only one active device per registered user at a time

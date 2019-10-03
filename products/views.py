@@ -17,17 +17,30 @@ from rest_framework import filters
 from django_elasticsearch_dsl_drf.constants import LOOKUP_FILTER_GEO_DISTANCE
 from django_elasticsearch_dsl_drf.filter_backends import (FilteringFilterBackend, OrderingFilterBackend, 
                                                 SearchFilterBackend, DefaultOrderingFilterBackend)
-from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
 
+from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet, BaseDocumentViewSet
 
 from .models import Category, Product, ProductViews
 from .serializers import (CategoryListSerializer, ProductSerializer,
                         CreateProductSerializer, ProductViewsSerializer, 
                         ProductDetailSerializer, ProductMiniSerializer, ProductDocumentSerializer)
-from .document import ProductDocument
+from .documents import ProductDocument
 from .permissions import IsOwnerAuth
 from notifications.utils import push_notifications
 from notifications.twilio import send_message
+
+
+class ProductDocumentView(DocumentViewSet):
+    document = ProductDocument
+    serializer_class = ProductDocumentSerializer
+    filter_backends = [
+        FilteringFilterBackend,OrderingFilterBackend,
+        DefaultOrderingFilterBackend,SearchFilterBackend]
+    search_fields = ('title',)
+    filter_fields = {'created': 'created'}
+    ordering_fields = {'created': 'created',}
+    ordering = ('created',)
+    queryset = Product.objects.all()
 
 
 class CategoryListAPIView(ListAPIView):
