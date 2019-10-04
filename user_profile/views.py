@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, GenericAPIView
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
 
+from allauth.account.views import ConfirmEmailView
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from allauth.socialaccount.providers.twitter.views import TwitterOAuthAdapter
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
@@ -13,9 +14,10 @@ from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from rest_auth.registration.views import SocialConnectView, SocialLoginView
 from rest_auth.social_serializers import TwitterConnectSerializer
 from allauth.account.models import EmailAddress, EmailConfirmationHMAC
-from rest_auth.views import (LoginView, PasswordResetView, PasswordResetConfirmView, 
-                                PasswordChangeView, LogoutView)
+from rest_auth.views import LoginView, PasswordResetView, PasswordResetConfirmView, PasswordChangeView, LogoutView
+from rest_auth.serializers import PasswordResetConfirmSerializer
 from rest_auth.registration.views import RegisterView, VerifyEmailView
+from rest_auth.registration.serializers import VerifyEmailSerializer
 from rest_auth.app_settings import JWTSerializer
 from rest_auth.utils import jwt_encode
 from django.views.decorators.debug import sensitive_post_parameters
@@ -25,7 +27,7 @@ from django.utils.translation import ugettext_lazy as _
 from .models import Profile, Address, SMSVerification, DeactivateUser
 from .serializers import (ProfileSerializer, UserSerializer, AddressSerializer, 
                             CreateAddressSerializer, SMSVerificationSerializer, 
-                            SMSPinSerializer, DeactivateUserSerializer)
+                            SMSPinSerializer, DeactivateUserSerializer, PasswordChangeSerializer)
 from .send_mail import send_register_mail, send_reset_password_email
 
 sensitive_post_parameters_m = method_decorator(
@@ -225,7 +227,7 @@ class GoogleLogin(SocialLoginView):
     callback_url = "https://www.google.com"
 
 
-class PasswordResetViewCustom(APIView):
+class PasswordResetView(APIView):
     def post(self, request, *args, **kwargs):
         
         email = request.data.get('email', None)
@@ -233,9 +235,53 @@ class PasswordResetViewCustom(APIView):
             user = User.objects.get(email=email)
         except User.DoesNotExist:
             raise NotAcceptable(_('Please enter a valid email.'))
-        print(urlsafe_base64_encode(force_bytes(user.pk)).decode(),default_token_generator.make_token(user))
         send_reset_password_email.delay(user)
         return Response(
             {"detail": _("Password reset e-mail has been sent.")},
             status=status.HTTP_200_OK
         )
+
+class PasswordResetConfirmView(GenericAPIView):
+    permission_classes = (permissions.AllowAny,)
+    serializer_class = PasswordResetConfirmSerializer
+
+    @sensitive_post_parameters_m
+    def dispatch(self, *args, **kwargs):
+        return super(PasswordResetConfirmView, self).dispatch(*args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(
+            {"detail": _("Password has been reset with the new password.")}
+        )
+
+class PasswordChangeView(GenericAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    serializer_class = PasswordChangeSerializer
+
+    @sensitive_post_parameters_m
+    def dispatch(self, *args, **kwargs):
+        return super(PasswordChangeView, self).dispatch(*args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response({"detail": _("Congratulations, password has been Changed.")})
+
+class VerifyEmailView(APIView, ConfirmEmailView):
+    permission_classes = (permissions.AllowAny,)
+    allowed_methods = ('POST', 'OPTIONS', 'HEAD')
+
+    def get_serializer(self, *args, **kwargs):
+        return VerifyEmailSerializer(*args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.kwargs['key'] = serializer.validated_data['key']
+        confirmation = self.get_object()
+        confirmation.confirm(self.request)
+        return Response({'detail': _('ok')}, status=status.HTTP_200_OK)

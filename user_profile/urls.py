@@ -11,23 +11,17 @@ from rest_auth.registration.views import RegisterView, VerifyEmailView
 
 
 urlpatterns = [
-    path('', include('rest_auth.urls')),
     path('login/', views.LoginAPIView.as_view(), name='account_login'),
+    path('reset/password/', views.PasswordResetView.as_view(), name='rest_password_reset'),
+    path('password/change/', views.PasswordChangeView.as_view(), name='rest_password_change'),
+    path('', include('rest_auth.urls')),
     path('registration/', views.RegisterAPIView.as_view(), name='account_signup'),
-    # path('reset/password/', views.PasswordResetViewCustom.as_view(), name='rest_password_reset'),
     path('registration/', include('rest_auth.registration.urls')),
     path('logout/', LogoutView.as_view(), name='rest_logout'),
-
-    path('password/reset/', PasswordResetView.as_view(), name='rest_password_reset'),
-
-    path('password/reset/confirm/<str:uidb64>/<str:token>/', 
-            PasswordResetConfirmView.as_view(), 
-            name='password_reset_confirm'),
-
-    path('password/change/', PasswordChangeView.as_view(), name='rest_password_change'),
-
     path('account-confirm-email/sent/', TemplateView.as_view(), name='account_confirm_email'),
-    path('account-confirm-email/<str:key>', VerifyEmailView.as_view(), name='rest_verify_email'),
+    path('account-confirm-email/<str:key>', views.VerifyEmailView.as_view(), name='rest_verify_email'),
+    path('password/reset/confirm/<str:uidb64>/<str:token>/', views.PasswordResetConfirmView.as_view(), 
+        name='password_reset_confirm'),
 
     path('verify-sms/<int:pk>/', views.VerifySMSView.as_view()),
     path('resend-sms/', views.ResendSMSAPIView.as_view()),
