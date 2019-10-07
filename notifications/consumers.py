@@ -31,7 +31,8 @@ class NotificationConsumer(WebsocketConsumer):
             self.channel_name
         )
 
-    # Receive message from WebSocket
+    # Receive message from WebSocket 
+    # you can do this out of consumers in function or class based views or signal or normal func 
     # def receive(self, text_data):
     #     text_data_json = json.loads(text_data)
     #     notification = text_data_json['notification']
@@ -46,14 +47,16 @@ class NotificationConsumer(WebsocketConsumer):
     #     )
 
     # Receive message from room group
-    def show_notification(self, event):
+    def push_notification(self, event):
         title = event['title']
         body = event['body']
         created = event['created']
+        status = event['status']
 
         # Send message to WebSocket
         self.send(text_data=json.dumps({
             'title': title,
             'body': body,
-            'created': created
+            'created': created,
+            'status': status
         }))

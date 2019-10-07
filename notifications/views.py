@@ -18,7 +18,7 @@ class NotificationListView(ListAPIView):
 
     def get_queryset(self):
         user = self.request.user 
-        queryset = Notification.objects.filter(user=user).order_by('-created')
+        queryset = Notification.objects.filter(user=user, status=Notification.MARKED_UNREAD).order_by('-created')
         return queryset
 
 class NotificationAPIView(RetrieveDestroyAPIView):
@@ -44,8 +44,17 @@ class NotificationAPIView(RetrieveDestroyAPIView):
             {"detail": _("this notification is deleted successfuly.")},
             status=status.HTTP_204_NO_CONTENT
             )
-        
 
+class MarkedAllAsReadNotificationView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        user = request.user
+        notifications = Notification.objects.filter(user=user, status=Notification.MARKED_UNREAD)
+        for notification in notifications:
+            notification.status = Notification.MARKED_READ
+            notification.save()
+        return Response("No Notifications UnRead", status=status.HTTP_200_OK)
 
 class CreateDeviceAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]

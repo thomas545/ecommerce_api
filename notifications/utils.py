@@ -19,7 +19,8 @@ def push_notifications(user, title, body):
                                             {"type": "new notification",
                                                 'title': title,
                                                 'body': body,
-                                                'created': str(serializer.data.get('created'))
+                                                'created': str(serializer.data.get('created')),
+                                                'status': str(serializer.data.get('status'))
                                                 })
 
     devices = FCMDevice.objects.filter(user=user)
