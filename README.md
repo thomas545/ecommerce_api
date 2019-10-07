@@ -8,7 +8,7 @@
 
 ### Installation:
 
-##### you must install Elastic Search on your computer (you can use brew)
+##### -> you must install Elastic Search on your computer (you can use brew)
 
 ##### System Dependencies:
 
