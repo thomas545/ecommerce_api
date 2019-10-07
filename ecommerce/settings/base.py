@@ -187,7 +187,7 @@ ELASTICSEARCH_DSL = {
 #     'products/documents/product': 'products',
 # }
 
-# ELASTICSEARCH_DSL_SIGNAL_PROCESSOR = 'django_elasticsearch_dsl.signals.RealTimeSignalProcessor'
+ELASTICSEARCH_DSL_SIGNAL_PROCESSOR = 'django_elasticsearch_dsl.signals.RealTimeSignalProcessor'
 
 # Rest Auth configuration
 JWT_AUTH = {

@@ -33,13 +33,13 @@ from notifications.twilio import send_message
 class ProductDocumentView(DocumentViewSet):
     document = ProductDocument
     serializer_class = ProductDocumentSerializer
-    filter_backends = [
-        FilteringFilterBackend,OrderingFilterBackend,
-        DefaultOrderingFilterBackend,SearchFilterBackend]
+    lookup_field = 'id'
+    filter_backends = [FilteringFilterBackend,OrderingFilterBackend,
+                        DefaultOrderingFilterBackend,SearchFilterBackend]
     search_fields = ('title',)
-    filter_fields = {'created': 'created'}
-    ordering_fields = {'created': 'created',}
-    ordering = ('created',)
+    filter_fields = {'title': 'title.raw'}
+    ordering_fields = {'created': 'created'}
+    # ordering = ('-created',)
     queryset = Product.objects.all()
 
 
