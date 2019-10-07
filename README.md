@@ -7,6 +7,9 @@
 3. [Django JET](http://jet.readthedocs.io/en/latest/)
 
 ### Installation:
+
+##### you must install Elastic Search on your computer (you can use brew)
+
 ##### System Dependencies:
 
 1. Install git on Linux:  
