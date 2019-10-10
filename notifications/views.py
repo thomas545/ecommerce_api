@@ -52,9 +52,11 @@ class MarkedAllAsReadNotificationView(APIView):
         user = request.user
         notifications = Notification.objects.filter(user=user, status=Notification.MARKED_UNREAD)
         for notification in notifications:
+            if notification.user != user:
+                raise PermissionDenied("this notifications don't belong to you.")
             notification.status = Notification.MARKED_READ
             notification.save()
-        return Response("No Notifications UnRead", status=status.HTTP_200_OK)
+        return Response("No new notifications.", status=status.HTTP_200_OK)
 
 class CreateDeviceAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
