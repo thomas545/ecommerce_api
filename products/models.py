@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 from core.models import TimeStampedModel
 from mptt.models import MPTTModel, TreeForeignKey
 
@@ -37,6 +39,13 @@ class Product(TimeStampedModel):
     description = models.TextField(null=True, blank=True)
     quantity = models.IntegerField(default=1)
     views = models.IntegerField(default=0)
+
+# @receiver(post_save, sender=Product)
+# def create_index_elasticsearch(sender, instance, *args, **kwargs):
+#     print(instance)
+    # from .serializers import ProductDocumentSerializer
+    # serializer = ProductDocumentSerializer(instance)
+    # serializer.save()
 
 class ProductViews(TimeStampedModel):
     ip = models.CharField(max_length=250)

@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'randompinfield',
     'django_crontab',
     'channels',
-    'django_elasticsearch_dsl',
-    'django_elasticsearch_dsl_drf',
+    # 'django_elasticsearch_dsl',
+    # 'django_elasticsearch_dsl_drf',
 
     'chat',
     'checkout',
@@ -62,9 +62,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'core.middlewares.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'core.middlewares.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -167,11 +165,11 @@ REST_FRAMEWORK = {
 }
 
 # Elasticsearch configuration
-ELASTICSEARCH_DSL = {
-    'default': {
-        'hosts': 'localhost:9200'
-    },
-}
+# ELASTICSEARCH_DSL = {
+#     'default': {
+#         'hosts': 'localhost:9200'
+#     },
+# }
 
 # HAYSTACK_CONNECTIONS = {
 #     'default': {

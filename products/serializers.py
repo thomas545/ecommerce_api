@@ -41,6 +41,7 @@ class CreateProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = "__all__"
+        # read_only_fields = ('id', 'seller', 'category', 'title', 'price', 'image', 'description', 'quantity', 'views',)
 
 class ProductDetailSerializer(serializers.ModelSerializer):
     seller = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
