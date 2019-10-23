@@ -79,7 +79,7 @@ oauthlib==3.1.0
 paramiko==2.6.0
 pbr==5.4.3
 phonenumbers==8.10.16
-Pillow==6.1.0
+Pillow==6.2.0
 pycodestyle==2.5.0
 pycparser==2.19
 pyfcm==1.4.5
