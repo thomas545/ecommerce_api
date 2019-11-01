@@ -17,4 +17,10 @@ urlpatterns = [
     path('product/<int:pk>/delete/', views.DestroyProductAPIView.as_view()),
     path('product/<int:pk>/', views.ProductDetailView.as_view()),
     path('product/views/', views.ProductViewsAPIView.as_view()),
+
+    # Try requests lib and microservices here. #
+    path('micro/', views.ListMicroServiceView.as_view()),
+    path('micro/create/', views.MicroServiceCreateView.as_view()),
+    path('get/', views.GETRequests.as_view()),
+    path('post/', views.POSTRequests.as_view()),
 ]

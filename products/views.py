@@ -29,6 +29,8 @@ from .permissions import IsOwnerAuth
 from notifications.utils import push_notifications
 from notifications.twilio import send_message
 
+import json
+import requests
 
 class ProductDocumentView(DocumentViewSet):
     document = ProductDocument
@@ -163,3 +165,52 @@ class ProductDetailView(APIView):
         return Response(serializer.data)
     
 
+
+# Try requests lib and microservices here. #
+class ListMicroServiceView(ListAPIView):
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
+class MicroServiceCreateView(CreateAPIView):
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
+
+class GETRequests(APIView):
+    def get(self, request, *args, **kwargs):
+        url = "http://127.0.0.1:8000/micro/"
+        response = requests.get(url) 
+        json_content = json.loads(response.content)
+        '''
+        Response:
+
+        "id": 1,
+            "seller": "admin",
+            "category": "books",
+            "created": "2019-08-11T14:01:13.585305Z",
+            "modified": "2019-08-13T09:52:43.092079Z",
+            "title": "Django Rest Framework",
+            "price": "20.00",
+            "image": null,
+            "description": "Django Rest Framework 1 \r\nDjango Rest Framework \r\nDjango Rest Framework \r\nDjango Rest Framework",
+            "quantity": 2,
+            "views": 1
+        '''
+        print(response.headers)
+        return Response(json_content)
+
+class POSTRequests(APIView):
+    def post(self, request, *args, **kwargs):
+        url = "http://127.0.0.1:8000/micro/create/"
+        content_type = 'application/json; charset=utf-8'
+        data = {
+                "id": 60,
+                "seller": "tomas",
+                "title": "post from requests",
+                "price": "1000.00",
+                "description": "post from requests",
+                "quantity": 9,
+                "views": 100
+                }
+        response = requests.post(url, data=data) 
+        # json_content = json.loads(response.content)
+        # print(response.json())
+        return Response("Success")
