@@ -4,7 +4,7 @@ from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from core.models import TimeStampedModel
 from mptt.models import MPTTModel, TreeForeignKey
-
+from .signals import post_signal
 User = get_user_model()
 
 def category_image_path(instance, filename):
@@ -40,9 +40,11 @@ class Product(TimeStampedModel):
     quantity = models.IntegerField(default=1)
     views = models.IntegerField(default=0)
 
-# @receiver(post_save, sender=Product)
-# def create_index_elasticsearch(sender, instance, *args, **kwargs):
-#     print(instance)
+@receiver(post_save, sender=Product)
+def create_index_elasticsearch(sender, instance, *args, **kwargs):
+    print("first", instance)
+    post_signal(sender, instance)
+    print('success2')
     # from .serializers import ProductDocumentSerializer
     # serializer = ProductDocumentSerializer(instance)
     # serializer.save()
