@@ -68,6 +68,21 @@ then: `python manage.py migrate`
 6. run local server for backend
 7. run this command in new terminal in project path with activating virtual env: celery -A ecommerce worker -l info
 
+
+## Setup for Django Channels 
+1. [Django Channels Deploy](https://channels.readthedocs.io/en/latest/deploying.html)
+2. [Daphne](https://github.com/django/daphne)
+3. [Django Channels configration on server](https://github.com/django/channels/issues/972)
+
+#### - if you face any problems on server pleas run these commands on production
+1. sudo service supervisor stop
+2. sudo service supervisor start
+3. sudo supervisorctl reread
+4. sudo supervisorctl update
+5. sudo service nginx restart
+6. sudo service apache2 restart
+
+
 ### API Endpoints
 ##### Register
 Method: `POST`  
