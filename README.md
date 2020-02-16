@@ -113,7 +113,7 @@ Headers: `Authorization: JWT YOUR_TOKEN_HERE`
 ### Username: `admin`  
 ### Password: `admin` 
 
-#### For Dump and Load data
+### For Dump and Load data
 
 ##### you should creating a folder to do this operations
 
