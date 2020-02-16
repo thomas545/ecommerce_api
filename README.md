@@ -113,4 +113,14 @@ Headers: `Authorization: JWT YOUR_TOKEN_HERE`
 ### Username: `admin`  
 ### Password: `admin` 
 
+#### For Dump and Load data
+
+##### you should creating a folder to do this operations
+
+##### for dump data from database:
+
+###### python manage.py dumpdata products --format json --indent 4 > products/fixures/products.json
+
+##### For loading data into database:
+###### python manage.py loaddata products/fixures/products.json
 
