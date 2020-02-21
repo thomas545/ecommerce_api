@@ -76,6 +76,10 @@ class LoginAPIView(LoginView):
             serializer = serializer_class(instance=self.token,
                                           context={'request': self.request})
         response = Response(serializer.data, status=status.HTTP_200_OK)
+
+        deactivate = DeactivateUser.objects.filter(user=self.user, deactive=True)
+        if deactivate:
+            deactivate.update(deactive=False)
         return response
 
     def post(self, request, *args, **kwargs):

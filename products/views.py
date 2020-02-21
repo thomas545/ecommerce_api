@@ -28,6 +28,7 @@ from .documents import ProductDocument
 from .permissions import IsOwnerAuth
 from notifications.utils import push_notifications
 from notifications.twilio import send_message
+from core.decorators import time_calculator
 
 import json
 import requests
@@ -54,8 +55,13 @@ class CategoryListAPIView(ListAPIView):
     filter_fields = ('created',)
     # queryset = Category.objects.all()
 
+    @time_calculator
+    def time(self):
+        return 0
+
     def get_queryset(self):
         queryset = Category.objects.all()
+        self.time()
         return queryset
 
 class CategoryAPIView(RetrieveAPIView):
@@ -83,6 +89,10 @@ class ListProductAPIView(ListAPIView):
     #     #     cache.set('result', serializer.data, timeout=DEFAULT_TIMEOUT)
     #     return queryset
 
+    @time_calculator
+    def time(self):
+        return 0
+
     # Cache requested url for each user for 2 hours
     @method_decorator(cache_page(60*60*2))
     @method_decorator(vary_on_cookie)
@@ -95,6 +105,7 @@ class ListProductAPIView(ListAPIView):
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
+        self.time()
         return Response(serializer.data)
 
 class ListUserProductAPIView(ListAPIView):
