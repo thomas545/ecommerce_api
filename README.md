@@ -124,3 +124,6 @@ Headers: `Authorization: JWT YOUR_TOKEN_HERE`
 ##### For loading data into database:
 ###### python manage.py loaddata products/fixures/products.json
 
+## dump and restoredatabase:
+#### pg_dump dbname=ecommerce -f /tmp/ecommerce.psql
+#### pg_restore -v --host=<host> --port=5432 --username=<username> --password --dbname=ecommerce /tmp/ecommerce.psql
