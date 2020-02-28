@@ -21,7 +21,7 @@ from django_elasticsearch_dsl_drf.filter_backends import (FilteringFilterBackend
 from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet, BaseDocumentViewSet
 
 from .models import Category, Product, ProductViews
-from .serializers import (CategoryListSerializer, ProductSerializer,
+from .serializers import (CategoryListSerializer, ProductSerializer,SerpyProductSerializer,
                         CreateProductSerializer, ProductViewsSerializer, 
                         ProductDetailSerializer, ProductMiniSerializer, ProductDocumentSerializer)
 from .documents import ProductDocument
@@ -32,6 +32,26 @@ from core.decorators import time_calculator
 
 import json
 import requests
+
+
+class SerpyListProductAPIView(ListAPIView):
+    serializer_class = SerpyProductSerializer
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
+    search_fields = ('title',)
+    ordering_fields = ('created',)
+    filter_fields = ('views',)
+    queryset = Product.objects.all()
+
+    # def get_queryset(self):
+    #     import cProfile
+    #     from django.contrib.auth.models import User
+    #     u = User.objects.get(id=5)
+    #     p = Product.objects.create(seller=u, category=Category.objects.get(id=1), title='test', price=20, description='dsfdsfdsf', quantity=10)
+    #     cProfile.runctx('for i in range(5000): SerpyProductSerializer(p).data', globals(), locals(), sort='tottime')
+    #     queryset = Product.objects.all()
+    #     return queryset
+
+
 
 class ProductDocumentView(DocumentViewSet):
     document = ProductDocument
@@ -79,14 +99,12 @@ class ListProductAPIView(ListAPIView):
     queryset = Product.objects.all()
 
     # def get_queryset(self):
+    #     import cProfile
+    #     from django.contrib.auth.models import User
+    #     u = User.objects.get(id=5)
+    #     p = Product.objects.create(seller=u, category=Category.objects.get(id=1), title='test', price=20, description='dsfdsfdsf', quantity=10)
+    #     cProfile.runctx('for i in range(5000): ProductSerializer(p).data', globals(), locals(), sort='tottime')
     #     queryset = Product.objects.all()
-    #     # we did cache but not use it yet.
-    #     # if 'result' in cache:
-    #     #     serializer = self.get_serializer(queryset, many=True)
-    #     #     serializer = cache.get('result')
-    #     # else:
-    #     #     serializer = self.get_serializer(queryset, many=True)
-    #     #     cache.set('result', serializer.data, timeout=DEFAULT_TIMEOUT)
     #     return queryset
 
     @time_calculator

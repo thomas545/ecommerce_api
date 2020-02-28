@@ -1,10 +1,12 @@
 import json
+import serpy
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from .models import Category, Product, ProductViews
 from drf_extra_fields.fields import Base64ImageField
 from django_elasticsearch_dsl_drf.serializers import DocumentSerializer
 from .documents import ProductDocument
+from ecommerce.serializers import LightSerializer, LightDictSerializer
 
 class CategoryListSerializer(serializers.ModelSerializer):
     # lft = serializers.SlugRelatedField(slug_field='lft', read_only=True)
@@ -23,6 +25,17 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = "__all__"
+
+
+class SerpyProductSerializer(serpy.Serializer):
+    seller = serpy.StrField()
+    category = serpy.StrField()
+    title = serpy.StrField()
+    price = serpy.FloatField()
+    image = serpy.StrField()
+    description = serpy.StrField()
+    quantity = serpy.IntField()
+    views = serpy.IntField()
 
 class ProductMiniSerializer(serializers.ModelSerializer):
         
