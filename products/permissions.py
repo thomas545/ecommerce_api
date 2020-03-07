@@ -11,3 +11,9 @@ class IsOwnerAuth(BasePermission):
         if request.user and request.user.is_authenticated:
             return True
         return False
+
+class ModelViewSetsPermission(BasePermission):
+    def has_permission(self, request, view):
+        if request.method in ['POST', 'PUT', 'DELETE']:
+            return False
+        return True

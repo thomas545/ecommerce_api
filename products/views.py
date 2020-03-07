@@ -4,6 +4,7 @@ from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
+from django.utils.translation import ugettext_lazy as _
 
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
 from rest_framework import permissions, status
@@ -13,6 +14,7 @@ from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
+from rest_framework import viewsets
 
 from django_elasticsearch_dsl_drf.constants import LOOKUP_FILTER_GEO_DISTANCE
 from django_elasticsearch_dsl_drf.filter_backends import (FilteringFilterBackend, OrderingFilterBackend, 
@@ -25,13 +27,14 @@ from .serializers import (CategoryListSerializer, ProductSerializer,SerpyProduct
                         CreateProductSerializer, ProductViewsSerializer, 
                         ProductDetailSerializer, ProductMiniSerializer, ProductDocumentSerializer)
 from .documents import ProductDocument
-from .permissions import IsOwnerAuth
+from .permissions import IsOwnerAuth, ModelViewSetsPermission
 from notifications.utils import push_notifications
 from notifications.twilio import send_message
 from core.decorators import time_calculator
 
 import json
 import requests
+
 
 
 class SerpyListProductAPIView(ListAPIView):
@@ -50,6 +53,28 @@ class SerpyListProductAPIView(ListAPIView):
     #     cProfile.runctx('for i in range(5000): SerpyProductSerializer(p).data', globals(), locals(), sort='tottime')
     #     queryset = Product.objects.all()
     #     return queryset
+
+
+class ListProductView(viewsets.ModelViewSet):
+    permission_classes = (ModelViewSetsPermission,)
+    serializer_class = CreateProductSerializer
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
+    search_fields = ('title',)
+    ordering_fields = ('created',)
+    filter_fields = ('views',)
+    queryset = Product.objects.all()
+
+    # def list(self, request, *args, **kwargs):
+    #     queryset = self.filter_queryset(self.get_queryset())
+    #     print("queryset -> ", queryset)
+    #     serializer = self.get_serializer(queryset, many=True)
+    #     return Response(serializer)
+
+    def update(self, request, *args, **kwargs):
+        from django.contrib.auth.models import User
+        if User.objects.get(username="tomas33") != self.get_object().seller:
+            raise NotAcceptable(_("you don't own product"))
+        return super(ListProductView, self).update(request, *args, **kwargs)
 
 
 
@@ -243,3 +268,5 @@ class POSTRequests(APIView):
         # json_content = json.loads(response.content)
         # print(response.json())
         return Response("Success")
+
+
