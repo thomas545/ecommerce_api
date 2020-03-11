@@ -2,6 +2,7 @@ import datetime
 import os
 
 from decouple import config
+from django.utils.translation import ugettext_lazy as _
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -246,6 +247,13 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
+
+LANGUAGES = [
+    ('ar', _('Arabic')),
+    ('en', _('English')),
+]
 
 # Phone number country settings
 PHONENUMBER_DEFAULT_REGION = 'EG'
