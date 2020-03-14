@@ -39,6 +39,7 @@ urlpatterns = [
     path('twitter/', views.TwitterConnectView.as_view()),
 
 
-    path('perm/', views.ListPermission.as_view()),
+    path('perm/<str:username>/', views.RetrievePermissionView.as_view()),
+    path('perm/<str:username>/update/', views.UpdatePermissionView.as_view()),
 
 ]
