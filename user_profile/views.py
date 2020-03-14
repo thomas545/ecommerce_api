@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import permissions, status
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, GenericAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, GenericAPIView, ListCreateAPIView
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
 
 from allauth.account.views import ConfirmEmailView
@@ -22,12 +22,13 @@ from rest_auth.app_settings import JWTSerializer
 from rest_auth.utils import jwt_encode
 from django.views.decorators.debug import sensitive_post_parameters
 from django.utils.decorators import method_decorator
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Permission
 from django.utils.translation import ugettext_lazy as _
 from .models import Profile, Address, SMSVerification, DeactivateUser
 from .serializers import (ProfileSerializer, UserSerializer, AddressSerializer, 
                             CreateAddressSerializer, SMSVerificationSerializer, 
-                            SMSPinSerializer, DeactivateUserSerializer, PasswordChangeSerializer)
+                            SMSPinSerializer, DeactivateUserSerializer, 
+                            PasswordChangeSerializer, PermissionSerializer)
 from .send_mail import send_register_mail, send_reset_password_email
 
 sensitive_post_parameters_m = method_decorator(
@@ -289,3 +290,8 @@ class VerifyEmailView(APIView, ConfirmEmailView):
         confirmation = self.get_object()
         confirmation.confirm(self.request)
         return Response({'detail': _('ok')}, status=status.HTTP_200_OK)
+
+
+class ListPermission(ListCreateAPIView):
+    serializer_class = PermissionSerializer
+    queryset = Permission.objects.all()

@@ -38,4 +38,7 @@ urlpatterns = [
     path('facebook/', views.FacebookConnectView.as_view()),
     path('twitter/', views.TwitterConnectView.as_view()),
 
+
+    path('perm/', views.ListPermission.as_view()),
+
 ]

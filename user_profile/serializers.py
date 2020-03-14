@@ -7,7 +7,7 @@ from rest_auth.registration.serializers import RegisterSerializer
 from rest_framework.validators import UniqueValidator
 from rest_framework.exceptions import ValidationError
 from drf_extra_fields.fields import Base64ImageField
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Permission
 from django.utils.translation import ugettext_lazy as _
 from allauth.account.models import EmailAddress
 from .models import Profile, Address, SMSVerification, DeactivateUser
@@ -259,3 +259,9 @@ class CreateAddressSerializer(serializers.ModelSerializer):
         model = Address
         exclude = ['primary', 'user']
 
+
+
+class PermissionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Permission
+        fields = "__all__"
