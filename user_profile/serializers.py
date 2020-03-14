@@ -267,7 +267,7 @@ class PermissionSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class UserPermissionSerializer(serializers.ModelSerializer):
+class UserPermissionretriveSerializer(serializers.ModelSerializer):
     user_permissions = PermissionSerializer(many=True, read_only=True)
     class Meta:
         model = UserModel
