@@ -301,3 +301,13 @@ class RetrievePermissionView(RetrieveAPIView):
 class UpdatePermissionView(UpdateAPIView):
     serializer_class = UserPermissionSerializer
     queryset = User.objects.all()
+    lookup_field = "username"
+
+    def partial_update(self, request, *args, **kwargs):
+        kwargs['partial'] = True
+        return self.update(request, *args, **kwargs)
+
+    # def update(self, request, *args, **kwargs):
+    #     partial = True
+    #     return super(UpdatePermissionView, self).update(request, *args, **kwargs)
+

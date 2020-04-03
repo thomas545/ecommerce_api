@@ -127,3 +127,7 @@ Headers: `Authorization: JWT YOUR_TOKEN_HERE`
 ## dump and restoredatabase:
 #### pg_dump dbname=ecommerce -f /tmp/ecommerce.psql
 #### pg_restore -v --host=<host> --port=5432 --username=<username> --password --dbname=ecommerce /tmp/ecommerce.psql
+
+
+###### Note:
+###### https://upload.pypi.org/legacy/
