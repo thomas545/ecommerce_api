@@ -4,17 +4,35 @@ version: '3'
 services:
   db:
     image: postgres
+    # image: sqlite3
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: bash -c “python manage.py makemigrations && python manage.py migrate && python manage.py runserver localhost:8000”
+    container_name: ecommerce-docker
     volumes:
-      - .:/code
+      - .:/ecommerce-docker
     ports:
       - "8000:8000"
     depends_on:
       - db
 
 
+# — — — — docker-compose.yml
+# version: ‘3’
+# services:
+#  web:
+#  build: .
+#  command: bash -c “python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000”
+#  container_name: <decommerce-container>
+#  volumes:
+#  — .:/<dir-in-container>
+#  ports:
+#  — “8000:8000”
+ 
+ 
+#  — — — — requirements.txt
+# Django==2.1.5
+# gunicorn==19.9.0
 
 # version: '3'
 
