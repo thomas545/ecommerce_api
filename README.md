@@ -5,6 +5,8 @@
 1. [Django](https://docs.djangoproject.com/en/2.0/releases/2.0/)
 2. [Django Rest Framework](https://www.django-rest-framework.org/)
 3. [API Translation](https://pypi.org/project/googletrans/)
+4. [Upload Package to Pypi](https://upload.pypi.org/legacy/)
+
 
 ### Installation:
 
@@ -129,5 +131,3 @@ Headers: `Authorization: JWT YOUR_TOKEN_HERE`
 #### pg_restore -v --host=<host> --port=5432 --username=<username> --password --dbname=ecommerce /tmp/ecommerce.psql
 
 
-###### Note:
-###### https://upload.pypi.org/legacy/
