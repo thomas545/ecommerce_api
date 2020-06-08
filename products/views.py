@@ -34,8 +34,9 @@ from core.decorators import time_calculator
 
 import json
 import requests
+from googletrans import Translator
 
-
+translator = Translator()
 
 class SerpyListProductAPIView(ListAPIView):
     serializer_class = SerpyProductSerializer
@@ -110,9 +111,18 @@ class CategoryListAPIView(ListAPIView):
         return queryset
 
 class CategoryAPIView(RetrieveAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
     serializer_class = CategoryListSerializer
     queryset = Category.objects.all()
+
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance)
+        data = {}
+        for k, v in serializer.data.items():
+            data[k] = translator.translate(str(v) , dest='ar').text
+        
+        return Response(data)
 
 
 class ListProductAPIView(ListAPIView):

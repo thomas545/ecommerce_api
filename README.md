@@ -3,8 +3,8 @@
 ### Documentation:
 
 1. [Django](https://docs.djangoproject.com/en/2.0/releases/2.0/)
-2. [Markdown](https://bitbucket.org/tutorials/markdowndemo), used for the formatting of this README file.
-3. [Django JET](http://jet.readthedocs.io/en/latest/)
+2. [Django Rest Framework](https://www.django-rest-framework.org/), used for the formatting of this README file.
+3. [API Translation](https://pypi.org/project/googletrans/)
 
 ### Installation:
 
