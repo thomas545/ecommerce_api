@@ -3,7 +3,7 @@
 ### Documentation:
 
 1. [Django](https://docs.djangoproject.com/en/2.0/releases/2.0/)
-2. [Django Rest Framework](https://www.django-rest-framework.org/), used for the formatting of this README file.
+2. [Django Rest Framework](https://www.django-rest-framework.org/)
 3. [API Translation](https://pypi.org/project/googletrans/)
 
 ### Installation:
