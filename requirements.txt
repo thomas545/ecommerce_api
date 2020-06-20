@@ -86,7 +86,7 @@ jira==2.0.0
 jmespath==0.10.0
 jsonschema==3.2.0
 kombu==4.6.10
-livereload==2.6.1
+livereload==2.6.2
 MarkupPy==1.14
 MarkupSafe==1.1.1
 mccabe==0.6.1
