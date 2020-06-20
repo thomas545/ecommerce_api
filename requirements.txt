@@ -117,7 +117,7 @@ PyPDF2==1.26.0
 PySocks==1.7.1
 PyStaticConfiguration==0.10.5
 python-dateutil==2.8.1
-python-decouple==3.1
+python-decouple==3.3
 python-magic==0.4.15
 python-memcached==1.59
 python3-openid==3.1.0
