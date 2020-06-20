@@ -39,7 +39,7 @@ django-countries==6.1.2
 django-crontab==0.7.1
 django-debug-toolbar==2.2
 django-elasticsearch-dsl==7.1.1
-django-elasticsearch-dsl-drf==0.20.3
+django-elasticsearch-dsl-drf==0.20.8
 django-extra-fields==1.2.3
 django-filter==2.2.0
 django-import-export==1.2.0
