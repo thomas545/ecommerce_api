@@ -101,7 +101,7 @@ pathspec==0.8.0
 pathtools==0.1.2
 pbr==5.4.5
 phonenumbers==8.12.6
-Pillow==6.1.0
+Pillow==7.1.2
 port-for==0.3.1
 psycopg2-binary==2.8.4
 pycodestyle==2.5.0
