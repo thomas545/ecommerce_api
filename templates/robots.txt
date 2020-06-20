@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /private/
+Disallow: /junk/
+Noarchive: /restricted-content/
