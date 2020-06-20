@@ -124,7 +124,7 @@ python3-openid==3.1.0
 pytz==2020.1
 PyYAML==5.3.1
 redis==3.5.3
-regex==2020.5.14
+regex==2020.6.8
 requests==2.20.1
 requests-oauthlib==1.2.0
 requests-toolbelt==0.9.1
