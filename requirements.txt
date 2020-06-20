@@ -23,7 +23,7 @@ celery==4.4.5
 certifi==2020.4.5.2
 cffi==1.14.0
 channels==2.4.0
-channels-redis==2.4.0
+channels-redis==2.4.2
 chardet==3.0.4
 click==7.1.2
 configparser==4.0.2
