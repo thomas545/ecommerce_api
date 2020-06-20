@@ -76,7 +76,7 @@ googletrans==3.0.0
 gunicorn==20.0.4
 hiredis==1.0.1
 hyperlink==19.0.0
-idna==2.7
+idna==2.9
 imagesize==1.2.0
 importlib-metadata==0.19
 incremental==17.5.0
