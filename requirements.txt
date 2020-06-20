@@ -85,7 +85,7 @@ Jinja2==2.11.2
 jira==2.0.0
 jmespath==0.10.0
 jsonschema==3.2.0
-kombu==4.6.4
+kombu==4.6.10
 livereload==2.6.1
 MarkupPy==1.14
 MarkupSafe==1.1.1
