@@ -147,7 +147,7 @@ texttable==1.6.2
 thehive4py==1.7.1
 toml==0.10.1
 tornado==6.0.4
-twilio==6.0.0
+twilio==6.42.0
 Twisted==19.7.0
 txaio==18.8.1
 typed-ast==1.4.1
