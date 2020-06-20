@@ -103,7 +103,7 @@ pbr==5.4.5
 phonenumbers==8.12.6
 Pillow==7.1.2
 port-for==0.4
-psycopg2-binary==2.8.4
+psycopg2-binary==2.8.5
 pycodestyle==2.5.0
 pycparser==2.19
 pyfcm==1.4.5
