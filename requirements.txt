@@ -51,7 +51,7 @@ django-phonenumber-field==4.0.0
 django-randompinfield==0.4.7
 django-redis==4.12.1
 django-rest-auth==0.9.5
-django-twilio==0.10.0
+django-twilio==0.13.0.post1
 django-uuidfield==0.5.0
 djangorestframework==3.10.2
 djangorestframework-jwt==1.11.0
