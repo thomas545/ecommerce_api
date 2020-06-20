@@ -83,7 +83,7 @@ incremental==17.5.0
 jdcal==1.4.1
 Jinja2==2.11.2
 jira==2.0.0
-jmespath==0.9.4
+jmespath==0.10.0
 jsonschema==2.6.0
 kombu==4.6.4
 livereload==2.6.1
