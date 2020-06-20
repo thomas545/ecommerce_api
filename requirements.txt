@@ -105,7 +105,7 @@ Pillow==7.1.2
 port-for==0.4
 psycopg2-binary==2.8.5
 pycodestyle==2.6.0
-pycparser==2.19
+pycparser==2.20
 pyfcm==1.4.5
 pyflakes==2.1.1
 Pygments==2.6.1
