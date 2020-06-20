@@ -99,7 +99,7 @@ packaging==20.4
 paramiko==2.7.1
 pathspec==0.8.0
 pathtools==0.1.2
-pbr==5.4.3
+pbr==5.4.5
 phonenumbers==8.10.16
 Pillow==6.1.0
 port-for==0.3.1
