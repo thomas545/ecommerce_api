@@ -192,6 +192,13 @@ class DestroyProductAPIView(DestroyAPIView):
     serializer_class = ProductDetailSerializer
     queryset = Product.objects.all()
 
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.is_deleted = True
+        instance.save()
+        return Response({"detail": "Product deleted"})
+
+
 class ProductViewsAPIView(ListAPIView):
     # permission_classes = [IsOwnerAuth]
     serializer_class = ProductViewsSerializer
