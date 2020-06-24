@@ -46,6 +46,7 @@ class Product(TimeStampedModel):
     description = models.TextField(null=True, blank=True)
     quantity = models.IntegerField(default=1)
     views = models.IntegerField(default=0)
+    is_deleted = models.BooleanField(default=False)
 
 
 @receiver(post_save, sender=Product)
