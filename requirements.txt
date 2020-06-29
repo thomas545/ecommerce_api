@@ -137,7 +137,7 @@ pytz==2020.1
 PyYAML==5.3.1
 redis==3.5.3
 regex==2020.6.8
-requests==2.20.1
+requests==2.24.0
 requests-oauthlib==1.2.0
 requests-toolbelt==0.9.1
 rfc3986==1.4.0
