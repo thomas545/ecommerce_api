@@ -28,7 +28,7 @@ chardet==3.0.4
 click==7.1.2
 configparser==5.0.0
 constantly==15.1.0
-croniter==0.3.30
+croniter==0.3.34
 cryptography==2.7
 daphne==2.3.0
 defusedxml==0.6.0
