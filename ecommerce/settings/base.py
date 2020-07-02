@@ -106,9 +106,9 @@ CACHE_MIDDLEWARE_SECONDS = 3600   # this number equal 1h
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
 
 # Security Settings -> maybe not useless if you using DRF and JWT
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_HOST = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_HOST = True
 
 # channels redis layers config.
 ASGI_APPLICATION = "ecommerce.routing.application"

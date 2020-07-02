@@ -207,8 +207,8 @@ class ProductViewsAPIView(ListAPIView):
 
 class ProductDetailView(APIView):
 
-    def get(self, request, pk):
-        product = Product.objects.get(pk=pk)
+    def get(self, request, uuid):
+        product = Product.objects.get(uuid=uuid)
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
             ip = x_forwarded_for.split(',')[0]

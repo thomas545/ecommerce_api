@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
-from core.models import TimeStampedModel
+from core.models import TimeStampedModel, Extensions
 from mptt.models import MPTTModel, TreeForeignKey
 from .signals import post_signal
 
@@ -33,7 +33,7 @@ class Category(MPTTModel):
         return self.name
 
 
-class Product(TimeStampedModel):
+class Product(Extensions):
     seller = models.ForeignKey(
         User, related_name="user_product", on_delete=models.CASCADE
     )
@@ -48,6 +48,9 @@ class Product(TimeStampedModel):
     views = models.IntegerField(default=0)
     is_deleted = models.BooleanField(default=False)
 
+
+    def __str__(self):
+        return str(self.uuid)
 
 @receiver(post_save, sender=Product)
 def create_index_elasticsearch(sender, instance, *args, **kwargs):
