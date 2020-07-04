@@ -1,5 +1,5 @@
 
-# Ecommerce
+# Ecommerce --> http://52.12.244.222/
 ### Documentation:
 
 1. [Django](https://docs.djangoproject.com/en/2.0/releases/2.0/)
@@ -23,7 +23,7 @@
 4. Create a virtual environment on Linux or Mac:  
 `virtualenv -p python3 ~/.virtualenvs/ecommerce`
 5. Activate the virtual environment on Linux or Mac:  
-`source ~/.virtualenvs/ecommerce/bin/ecommerce`
+`source ~/.virtualenvs/ecommerce/bin/activate`
 6. Install requirements in the virtualenv:  
 `pip3 install -r requirements.txt`
 
