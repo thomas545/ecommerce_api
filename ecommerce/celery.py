@@ -5,7 +5,7 @@ from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ecommerce.settings.development')
 
-app = Celery('ecommerce')
+app = Celery('ecommerce', broker=settings.BROKER_URL, backend=settings.BACKEND_URL)
 
 app.config_from_object('django.conf:settings')
 
