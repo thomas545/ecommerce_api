@@ -1,3 +1,7 @@
+import logging
+import json
+import requests
+
 from django.core.cache import cache
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
@@ -6,7 +10,12 @@ from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
 from django.utils.translation import ugettext_lazy as _
 
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
+from rest_framework.generics import (
+    ListAPIView,
+    RetrieveAPIView,
+    CreateAPIView,
+    DestroyAPIView,
+)
 from rest_framework import permissions, status
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
 from rest_framework.response import Response
@@ -17,33 +26,48 @@ from rest_framework import filters
 from rest_framework import viewsets
 
 from django_elasticsearch_dsl_drf.constants import LOOKUP_FILTER_GEO_DISTANCE
-from django_elasticsearch_dsl_drf.filter_backends import (FilteringFilterBackend, OrderingFilterBackend, 
-                                                SearchFilterBackend, DefaultOrderingFilterBackend)
+from django_elasticsearch_dsl_drf.filter_backends import (
+    FilteringFilterBackend,
+    OrderingFilterBackend,
+    SearchFilterBackend,
+    DefaultOrderingFilterBackend,
+)
 
 from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet, BaseDocumentViewSet
 
-from .models import Category, Product, ProductViews
-from .serializers import (CategoryListSerializer, ProductSerializer,SerpyProductSerializer,
-                        CreateProductSerializer, ProductViewsSerializer, 
-                        ProductDetailSerializer, ProductMiniSerializer, ProductDocumentSerializer)
+from .models import Category, Product, ProductViews, User
+from .serializers import (
+    CategoryListSerializer,
+    ProductSerializer,
+    SerpyProductSerializer,
+    CreateProductSerializer,
+    ProductViewsSerializer,
+    ProductDetailSerializer,
+    ProductMiniSerializer,
+    ProductDocumentSerializer,
+)
 from .documents import ProductDocument
 from .permissions import IsOwnerAuth, ModelViewSetsPermission
 from notifications.utils import push_notifications
 from notifications.twilio import send_message
 from core.decorators import time_calculator
 
-import json
-import requests
 from googletrans import Translator
 
 translator = Translator()
+logger = logging.getLogger(__name__)
+
 
 class SerpyListProductAPIView(ListAPIView):
     serializer_class = SerpyProductSerializer
-    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
-    search_fields = ('title',)
-    ordering_fields = ('created',)
-    filter_fields = ('views',)
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter,
+    )
+    search_fields = ("title",)
+    ordering_fields = ("created",)
+    filter_fields = ("views",)
     queryset = Product.objects.all()
 
     # def get_queryset(self):
@@ -59,10 +83,14 @@ class SerpyListProductAPIView(ListAPIView):
 class ListProductView(viewsets.ModelViewSet):
     permission_classes = (ModelViewSetsPermission,)
     serializer_class = CreateProductSerializer
-    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
-    search_fields = ('title',)
-    ordering_fields = ('created',)
-    filter_fields = ('views',)
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter,
+    )
+    search_fields = ("title",)
+    ordering_fields = ("created",)
+    filter_fields = ("views",)
     queryset = Product.objects.all()
 
     # def list(self, request, *args, **kwargs):
@@ -73,21 +101,25 @@ class ListProductView(viewsets.ModelViewSet):
 
     def update(self, request, *args, **kwargs):
         from django.contrib.auth.models import User
+
         if User.objects.get(username="tomas33") != self.get_object().seller:
             raise NotAcceptable(_("you don't own product"))
         return super(ListProductView, self).update(request, *args, **kwargs)
 
 
-
 class ProductDocumentView(DocumentViewSet):
     document = ProductDocument
     serializer_class = ProductDocumentSerializer
-    lookup_field = 'id'
-    filter_backends = [FilteringFilterBackend,OrderingFilterBackend,
-                        DefaultOrderingFilterBackend,SearchFilterBackend]
-    search_fields = ('title',)
-    filter_fields = {'title': 'title.raw'}
-    ordering_fields = {'created': 'created'}
+    lookup_field = "id"
+    filter_backends = [
+        FilteringFilterBackend,
+        OrderingFilterBackend,
+        DefaultOrderingFilterBackend,
+        SearchFilterBackend,
+    ]
+    search_fields = ("title",)
+    filter_fields = {"title": "title.raw"}
+    ordering_fields = {"created": "created"}
     # ordering = ('-created',)
     queryset = Product.objects.all()
 
@@ -95,10 +127,14 @@ class ProductDocumentView(DocumentViewSet):
 class CategoryListAPIView(ListAPIView):
     # permission_classes = [permissions.IsAuthenticated]
     serializer_class = CategoryListSerializer
-    filter_backends = (DjangoFilterBackend,filters.SearchFilter,filters.OrderingFilter,)
-    search_fields = ('name',)
-    ordering_fields = ('created',)
-    filter_fields = ('created',)
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter,
+    )
+    search_fields = ("name",)
+    ordering_fields = ("created",)
+    filter_fields = ("created",)
     # queryset = Category.objects.all()
 
     @time_calculator
@@ -110,6 +146,7 @@ class CategoryListAPIView(ListAPIView):
         self.time()
         return queryset
 
+
 class CategoryAPIView(RetrieveAPIView):
     # permission_classes = [permissions.IsAuthenticated]
     serializer_class = CategoryListSerializer
@@ -120,17 +157,21 @@ class CategoryAPIView(RetrieveAPIView):
         serializer = self.get_serializer(instance)
         data = {}
         for k, v in serializer.data.items():
-            data[k] = translator.translate(str(v) , dest='ar').text
-        
+            data[k] = translator.translate(str(v), dest="ar").text
+
         return Response(data)
 
 
 class ListProductAPIView(ListAPIView):
     serializer_class = ProductSerializer
-    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
-    search_fields = ('title',)
-    ordering_fields = ('created',)
-    filter_fields = ('views',)
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter,
+    )
+    search_fields = ("title",)
+    ordering_fields = ("created",)
+    filter_fields = ("views",)
     queryset = Product.objects.all()
 
     # def get_queryset(self):
@@ -147,7 +188,7 @@ class ListProductAPIView(ListAPIView):
         return 0
 
     # Cache requested url for each user for 2 hours
-    @method_decorator(cache_page(60*60*2))
+    @method_decorator(cache_page(60 * 60 * 2))
     @method_decorator(vary_on_cookie)
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
@@ -161,17 +202,26 @@ class ListProductAPIView(ListAPIView):
         self.time()
         return Response(serializer.data)
 
+
 class ListUserProductAPIView(ListAPIView):
     serializer_class = ProductSerializer
-    filter_backends = (DjangoFilterBackend, filters.SearchFilter,filters.OrderingFilter,)
-    search_fields = ('title','user__username',)
-    ordering_fields = ('created',)
-    filter_fields = ('views',)
+    filter_backends = (
+        DjangoFilterBackend,
+        filters.SearchFilter,
+        filters.OrderingFilter,
+    )
+    search_fields = (
+        "title",
+        "user__username",
+    )
+    ordering_fields = ("created",)
+    filter_fields = ("views",)
 
     def get_queryset(self):
         user = self.request.user
         queryset = Product.objects.filter(user=user)
         return queryset
+
 
 class CreateProductAPIView(CreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -181,11 +231,20 @@ class CreateProductAPIView(CreateAPIView):
         user = request.user
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save(user=user)
-        push_notifications(request.user, request.data['title'], "you have add a new product")
-        if user.profile.phone_number:
-            send_message(user.profile.phone_number, "Congratulations, you Created New Product")
+        serializer.save(seller=user)
+        push_notifications(user, request.data["title"], "you have add a new product")
+        # if user.profile.phone_number:
+        #     send_message(user.profile.phone_number, "Congratulations, you Created New Product")
+        logger.info(
+            "product ( "
+            + str(serializer.data.get("title"))
+            + " ) created"
+            + " by ( "
+            + str(user.username)
+            + " )"
+        )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 class DestroyProductAPIView(DestroyAPIView):
     permission_classes = [IsOwnerAuth]
@@ -206,21 +265,20 @@ class ProductViewsAPIView(ListAPIView):
 
 
 class ProductDetailView(APIView):
-
     def get(self, request, uuid):
         product = Product.objects.get(uuid=uuid)
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
         if x_forwarded_for:
-            ip = x_forwarded_for.split(',')[0]
+            ip = x_forwarded_for.split(",")[0]
         else:
-            ip = request.META.get('REMOTE_ADDR')
+            ip = request.META.get("REMOTE_ADDR")
 
         if not ProductViews.objects.filter(product=product, ip=ip).exists():
             ProductViews.objects.create(product=product, ip=ip)
 
             product.views += 1
             product.save()
-        serializer = ProductDetailSerializer(product, context={'request': request})
+        serializer = ProductDetailSerializer(product, context={"request": request})
 
         return Response(serializer.data, status=status.HTTP_200_OK)
 
@@ -230,27 +288,31 @@ class ProductDetailView(APIView):
         if product.user != user:
             raise PermissionDenied("this product don't belong to you.")
 
-        serializer = ProductDetailSerializer(product, data=request.data, context={'request': request})
+        serializer = ProductDetailSerializer(
+            product, data=request.data, context={"request": request}
+        )
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
-    
 
 
 # Try requests lib and microservices here. #
 class ListMicroServiceView(ListAPIView):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
+
+
 class MicroServiceCreateView(CreateAPIView):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
 
+
 class GETRequests(APIView):
     def get(self, request, *args, **kwargs):
         url = "http://127.0.0.1:8000/micro/"
-        response = requests.get(url) 
+        response = requests.get(url)
         json_content = json.loads(response.content)
-        '''
+        """
         Response:
 
         "id": 1,
@@ -264,26 +326,26 @@ class GETRequests(APIView):
             "description": "Django Rest Framework 1 \r\nDjango Rest Framework \r\nDjango Rest Framework \r\nDjango Rest Framework",
             "quantity": 2,
             "views": 1
-        '''
+        """
         print(response.headers)
         return Response(json_content)
+
 
 class POSTRequests(APIView):
     def post(self, request, *args, **kwargs):
         url = "http://127.0.0.1:8000/micro/create/"
-        content_type = 'application/json; charset=utf-8'
+        content_type = "application/json; charset=utf-8"
         data = {
-                "id": 60,
-                "seller": "tomas",
-                "title": "post from requests",
-                "price": "1000.00",
-                "description": "post from requests",
-                "quantity": 9,
-                "views": 100
-                }
-        response = requests.post(url, data=data) 
+            "id": 60,
+            "seller": "tomas",
+            "title": "post from requests",
+            "price": "1000.00",
+            "description": "post from requests",
+            "quantity": 9,
+            "views": 100,
+        }
+        response = requests.post(url, data=data)
         # json_content = json.loads(response.content)
         # print(response.json())
         return Response("Success")
-
 
