@@ -15,4 +15,7 @@ User-agent: *
 Disallow:
 Noarchive: /restricted-content/
 """
-MIDDLEWARE += ['core.middlewares.GooglebotMiddleware', ]
+MIDDLEWARE += [
+    "core.middlewares.GooglebotMiddleware",
+]
+

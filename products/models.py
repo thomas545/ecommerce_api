@@ -48,18 +48,16 @@ class Product(Extensions):
     views = models.IntegerField(default=0)
     is_deleted = models.BooleanField(default=False)
 
-
     def __str__(self):
         return str(self.uuid)
 
-@receiver(post_save, sender=Product)
-def create_index_elasticsearch(sender, instance, *args, **kwargs):
-    print("first", instance)
-    post_signal(sender, instance)
-    print("success2")
-    # from .serializers import ProductDocumentSerializer
-    # serializer = ProductDocumentSerializer(instance)
-    # serializer.save()
+
+# @receiver(post_save, sender=Product)
+# def create_index_elasticsearch(sender, instance, *args, **kwargs):
+#     post_signal(sender, instance)
+#     from .serializers import ProductDocumentSerializer
+#     serializer = ProductDocumentSerializer(instance)
+#     serializer.save()
 
 
 class ProductViews(TimeStampedModel):

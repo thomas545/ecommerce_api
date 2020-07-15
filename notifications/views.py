@@ -8,7 +8,11 @@ from django.utils.translation import ugettext_lazy as _
 
 from fcm_django.models import FCMDevice
 from .models import Notification
-from .serializers import FCMDeviceSerializer, NotificationSerializer, NotificationMiniSerializer
+from .serializers import (
+    FCMDeviceSerializer,
+    NotificationSerializer,
+    NotificationMiniSerializer,
+)
 from .permissions import IsOwner
 
 
@@ -17,9 +21,12 @@ class NotificationListView(ListAPIView):
     serializer_class = NotificationMiniSerializer
 
     def get_queryset(self):
-        user = self.request.user 
-        queryset = Notification.objects.filter(user=user, status=Notification.MARKED_UNREAD).order_by('-created')
+        user = self.request.user
+        queryset = Notification.objects.filter(
+            user=user, status=Notification.MARKED_UNREAD
+        ).order_by("-created")
         return queryset
+
 
 class NotificationAPIView(RetrieveDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -38,19 +45,24 @@ class NotificationAPIView(RetrieveDestroyAPIView):
         user = request.user
         notification = self.get_object()
         if notification.user != user:
-            raise PermissionDenied("this notification not belong to you, can't delete this notification")
+            raise PermissionDenied(
+                "this notification not belong to you, can't delete this notification"
+            )
         notification.delete()
         return Response(
             {"detail": _("this notification is deleted successfuly.")},
-            status=status.HTTP_204_NO_CONTENT
-            )
+            status=status.HTTP_204_NO_CONTENT,
+        )
+
 
 class MarkedAllAsReadNotificationView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         user = request.user
-        notifications = Notification.objects.filter(user=user, status=Notification.MARKED_UNREAD)
+        notifications = Notification.objects.filter(
+            user=user, status=Notification.MARKED_UNREAD
+        )
         for notification in notifications:
             if notification.user != user:
                 raise PermissionDenied("this notifications don't belong to you.")
@@ -58,13 +70,16 @@ class MarkedAllAsReadNotificationView(APIView):
             notification.save()
         return Response("No new notifications.", status=status.HTTP_200_OK)
 
+
 class CreateDeviceAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
-    
-    def post(self, request,):
+
+    def post(
+        self, request,
+    ):
         user = request.user
-        registration_id = request.data.get('registration_id', None)
-        type = request.data.get('type', None)
+        registration_id = request.data.get("registration_id", None)
+        type = request.data.get("type", None)
         device = FCMDevice.objects.filter(registration_id=registration_id, type=type)
         if device.count() > 0:
             raise NotAcceptable("This Device is Founded.")

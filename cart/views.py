@@ -1,5 +1,9 @@
 from django.shortcuts import get_object_or_404
-from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import (
+    ListCreateAPIView,
+    ListAPIView,
+    RetrieveUpdateDestroyAPIView,
+)
 from .serializers import CartItemSerializer, CartItemUpdateSerializer
 from rest_framework import permissions, status
 from rest_framework.response import Response
@@ -13,7 +17,7 @@ from notifications.utils import push_notifications
 
 class CartItemAPIView(ListCreateAPIView):
     serializer_class = CartItemSerializer
-    
+
     def get_queryset(self):
         user = self.request.user
         queryset = CartItem.objects.filter(cart__user=user)
@@ -22,9 +26,9 @@ class CartItemAPIView(ListCreateAPIView):
     def create(self, request, *args, **kwargs):
         user = request.user
         cart = get_object_or_404(Cart, user=user)
-        product = get_object_or_404(Product, pk=request.data['product'])
+        product = get_object_or_404(Product, pk=request.data["product"])
         current_item = CartItem.objects.filter(cart=cart, product=product)
-        
+
         if user == product.user:
             raise PermissionDenied("This Is Your Product")
 
@@ -32,10 +36,10 @@ class CartItemAPIView(ListCreateAPIView):
             raise NotAcceptable("You already have this item in your shopping cart")
 
         try:
-            quantity = int(request.data['quantity'])
+            quantity = int(request.data["quantity"])
         except Exception as e:
             raise ValidationError("Please Enter Your Quantity")
-        
+
         if quantity > product.quantity:
             raise NotAcceptable("You order quantity more than the seller have")
 
@@ -45,9 +49,14 @@ class CartItemAPIView(ListCreateAPIView):
         total = float(product.price) * float(quantity)
         cart.total = total
         cart.save()
-        push_notifications(cart.user, "New cart product", "you added a product to your cart " + product.title)
+        push_notifications(
+            cart.user,
+            "New cart product",
+            "you added a product to your cart " + product.title,
+        )
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 class CartItemView(RetrieveUpdateDestroyAPIView):
     serializer_class = CartItemSerializer
@@ -66,16 +75,16 @@ class CartItemView(RetrieveUpdateDestroyAPIView):
     def update(self, request, *args, **kwargs):
         cart_item = self.get_object()
         print(request.data)
-        product = get_object_or_404(Product, pk=request.data['product'])
+        product = get_object_or_404(Product, pk=request.data["product"])
 
         if cart_item.cart.user != request.user:
             raise PermissionDenied("Sorry this cart not belong to you")
 
         try:
-            quantity = int(request.data['quantity'])
+            quantity = int(request.data["quantity"])
         except Exception as e:
             raise ValidationError("Please, input vaild quantity")
-        
+
         if quantity > product.quantity:
             raise NotAcceptable("Your order quantity more than the seller have")
 
@@ -89,11 +98,15 @@ class CartItemView(RetrieveUpdateDestroyAPIView):
         if cart_item.cart.user != request.user:
             raise PermissionDenied("Sorry this cart not belong to you")
         cart_item.delete()
-        push_notifications(cart_item.cart.user, 
-                            "deleted cart product", 
-                            "you have been deleted this product: " +cart_item.product.title +" from your cart")
-                            
+        push_notifications(
+            cart_item.cart.user,
+            "deleted cart product",
+            "you have been deleted this product: "
+            + cart_item.product.title
+            + " from your cart",
+        )
+
         return Response(
-            {"detail": _("your item has been deleted.")}, 
-            status=status.HTTP_204_NO_CONTENT
-            )
+            {"detail": _("your item has been deleted.")},
+            status=status.HTTP_204_NO_CONTENT,
+        )

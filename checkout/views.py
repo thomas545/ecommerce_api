@@ -1,5 +1,10 @@
 from django.shortcuts import get_object_or_404
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
+from rest_framework.generics import (
+    ListAPIView,
+    RetrieveAPIView,
+    CreateAPIView,
+    DestroyAPIView,
+)
 from rest_framework import permissions, status
 from rest_framework.exceptions import PermissionDenied, NotAcceptable, ValidationError
 from rest_framework.response import Response
@@ -11,6 +16,7 @@ from user_profile.models import Address
 from user_profile.serializers import AddressSerializer
 from cart.models import Cart, CartItem
 from cart.serializers import CartItemMiniSerializer
+
 
 class CheckoutView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
@@ -24,11 +30,14 @@ class CheckoutView(APIView):
         total = ecommerce_feez + (product.price * product.quantity)
         data = {}
         data["address"] = AddressSerializer(user_address).data
-        data["product"] = ProductDetailSerializer(product, context={'request': request}).data
+        data["product"] = ProductDetailSerializer(
+            product, context={"request": request}
+        ).data
         data["feez"] = ecommerce_feez
         data["total"] = total
 
         return Response(data, status=status.HTTP_200_OK)
+
 
 class CheckoutCartView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
@@ -50,8 +59,7 @@ class CheckoutCartView(APIView):
 
         data["address"] = AddressSerializer(user_address).data
         data["items"] = CartItemMiniSerializer(cart_items, many=True).data
-        data['total'] = end_total
-        data['feez'] = ecommerce_feez
+        data["total"] = end_total
+        data["feez"] = ecommerce_feez
         return Response(data, status=status.HTTP_200_OK)
-
 
