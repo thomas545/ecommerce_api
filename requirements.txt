@@ -105,8 +105,10 @@ mock==3.0.5
 model-mommy==2.0.0
 msgpack==0.6.2
 natsort==7.0.1
+numpy==1.19.0
 oauthlib==3.1.0
 odfpy==1.4.0
+opencv-python==4.3.0.36
 openpyxl==3.0.0
 packaging==20.3
 paramiko==2.6.0
@@ -140,6 +142,7 @@ python-memcached==1.59
 python3-openid==3.1.0
 pytz==2019.2
 PyYAML==3.13
+qrcode==6.1
 readme-renderer==26.0
 redis==3.3.8
 regex==2020.5.14
@@ -147,6 +150,7 @@ requests==2.20.1
 requests-oauthlib==1.2.0
 requests-toolbelt==0.9.1
 rfc3986==1.4.0
+rstcheck==3.3.1
 s3transfer==0.2.1
 serpy==0.3.1
 six==1.12.0
