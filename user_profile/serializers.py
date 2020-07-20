@@ -153,7 +153,7 @@ class CustomRegisterSerializer(RegisterSerializer):
 class SMSVerificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = SMSVerification
-        fields = "__all__"
+        exclude = "modified"
 
 class SMSPinSerializer(serializers.Serializer):
     pin = serializers.IntegerField()
@@ -252,7 +252,7 @@ class UserMiniSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = Address
-        fields = "__all__"
+        exclude = "modified"
 
 class CreateAddressSerializer(serializers.ModelSerializer):
     class Meta:
@@ -264,7 +264,7 @@ class CreateAddressSerializer(serializers.ModelSerializer):
 class PermissionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Permission
-        fields = "__all__"
+        fields = ['name', 'codename', 'content_type']
 
 
 class UserPermissionretriveSerializer(serializers.ModelSerializer):

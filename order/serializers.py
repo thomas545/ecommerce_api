@@ -7,21 +7,23 @@ from products.serializers import ProductDetailSerializer
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = "__all__"
+        exclude = "modified"
 
 
 class OrderMiniSerializer(serializers.ModelSerializer):
     address = AddressSerializer(required=False)
     buyer = UserMiniSerializer(required=False)
+
     class Meta:
         model = Order
-        fields = "__all__"
+        exclude = "modified"
 
- 
+
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderItem
-        fields = "__all__"
+        exclude = "modified"
+
 
 class OrderItemMiniSerializer(serializers.ModelSerializer):
     order = OrderMiniSerializer(required=False, read_only=True)
@@ -29,4 +31,4 @@ class OrderItemMiniSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OrderItem
-        fields = "__all__"
+        exclude = "modified"

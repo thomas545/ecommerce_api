@@ -2,6 +2,7 @@ import serpy
 
 # custom serpy serializers:
 
+
 class LightSerializer(serpy.Serializer):
     def __init__(self, *args, **kwargs):
         kwargs.pop("read_only", None)

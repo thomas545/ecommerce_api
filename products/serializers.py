@@ -8,15 +8,16 @@ from django_elasticsearch_dsl_drf.serializers import DocumentSerializer
 from .documents import ProductDocument
 from ecommerce.serializers import LightSerializer, LightDictSerializer
 
+
 class CategoryListSerializer(serializers.ModelSerializer):
     # lft = serializers.SlugRelatedField(slug_field='lft', read_only=True)
     class Meta:
         model = Category
-        fields = "__all__"
+        exclude = "modified"
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    seller = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
+    seller = serializers.SlugRelatedField(slug_field="username", queryset=User.objects)
     category = serializers.SerializerMethodField()
 
     def get_category(self, obj):
@@ -24,7 +25,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = "__all__"
+        exclude = "modified"
 
 
 class SerpyProductSerializer(serpy.Serializer):
@@ -37,12 +38,12 @@ class SerpyProductSerializer(serpy.Serializer):
     quantity = serpy.IntField()
     views = serpy.IntField()
 
+
 class ProductMiniSerializer(serializers.ModelSerializer):
-        
     class Meta:
         model = Product
-        fields = ['title']
-    
+        fields = ["title"]
+
     def to_representation(self, instance):
         data = super().to_representation(instance)
         data = serializers.ModelSerializer.to_representation(self, instance)
@@ -50,14 +51,14 @@ class ProductMiniSerializer(serializers.ModelSerializer):
 
 
 class CreateProductSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Product
-        fields = "__all__"
+        exclude = ("modified",)
         # read_only_fields = ('id', 'seller', 'category', 'title', 'price', 'image', 'description', 'quantity', 'views',)
 
+
 class ProductDetailSerializer(serializers.ModelSerializer):
-    seller = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
+    seller = serializers.SlugRelatedField(slug_field="username", queryset=User.objects)
     category = serializers.SerializerMethodField()
     image = Base64ImageField()
 
@@ -66,15 +67,17 @@ class ProductDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = "__all__"
+        exclude = "modified"
+
 
 class ProductViewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductViews
-        fields = "__all__"
+        exclude = "modified"
+
 
 class ProductDocumentSerializer(DocumentSerializer):
-    seller = serializers.SlugRelatedField(slug_field='username', queryset=User.objects)
+    seller = serializers.SlugRelatedField(slug_field="username", queryset=User.objects)
     category = serializers.SerializerMethodField()
 
     def get_category(self, obj):
@@ -83,4 +86,4 @@ class ProductDocumentSerializer(DocumentSerializer):
     class Meta(object):
         # model = Product
         document = ProductDocument
-        fields = "__all__"
+        exclude = "modified"

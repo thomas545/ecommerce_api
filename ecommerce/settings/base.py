@@ -1,8 +1,8 @@
 import datetime
 import os
-
-from decouple import config
+from logging.config import dictConfig as loggings
 from django.utils.translation import ugettext_lazy as _
+from decouple import config
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -106,9 +106,9 @@ CACHE_MIDDLEWARE_SECONDS = 3600   # this number equal 1h
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
 
 # Security Settings -> maybe not useless if you using DRF and JWT
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_HOST = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_HOST = True
 
 # channels redis layers config.
 ASGI_APPLICATION = "ecommerce.routing.application"
@@ -151,6 +151,33 @@ DATABASES = {
 #     }
 # }
 
+loggings({
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'file': {
+            'format': 'time: %(asctime)s file: %(name)-12s log: %(levelname)-8s message: %(message)s'
+        }
+    },
+    'handlers': {
+        'product-app': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': os.path.join(BASE_DIR, 'logs/product.logs')
+        }
+    },
+    'loggers': {
+        # application name in key 
+        'products': {
+            'level': 'INFO',
+            'handlers': ['product-app'],
+            # required to avoid double logging with root logger
+            'propagate': True,
+        }
+    }
+})
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -169,7 +196,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 
 REST_FRAMEWORK = {
@@ -281,8 +307,8 @@ TWILIO_FROM_NUMBER = config('TWILIO_FROM')
 
 
 # Celery Settings
-# CELERY_BROKER_URL = 'redis://localhost:6379'
-# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+BROKER_URL = 'redis://localhost:6379/0'
+BACKEND_URL = 'redis://localhost:6379/1'
 # CELERY_ACCEPT_CONTENT = ['application/json']
 # CELERY_RESULT_SERIALIZER = 'json'
 # CELERY_TASK_SERIALIZER = 'json'
@@ -291,6 +317,7 @@ TWILIO_FROM_NUMBER = config('TWILIO_FROM')
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
