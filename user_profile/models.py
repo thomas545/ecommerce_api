@@ -1,9 +1,11 @@
 import logging
+from datetime import datetime, timezone, timedelta
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
-from django.conf import settings 
+from django.conf import settings
+from django.core.cache import cache
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import NotAcceptable
@@ -16,7 +18,7 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 
 from .signals import register_signal
-from core.models import TimeStampedModel                            
+from core.models import TimeStampedModel
 
 
 User = get_user_model()
@@ -24,22 +26,21 @@ User = get_user_model()
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/users/<username>/<filename>
-    return 'users/{0}/{1}'.format(instance.user.username, filename)
+    return "users/{0}/{1}".format(instance.user.username, filename)
 
 
 class Profile(TimeStampedModel):
-    GENDER_MALE = 'm'
-    GENDER_FEMALE = 'f'
-    OTHER = 'o'
+    GENDER_MALE = "m"
+    GENDER_FEMALE = "f"
+    OTHER = "o"
 
     GENDER_CHOICES = (
-        (GENDER_MALE, 'Male'),
-        (GENDER_FEMALE, 'Female'),
-        (OTHER,'Other'),
+        (GENDER_MALE, "Male"),
+        (GENDER_FEMALE, "Female"),
+        (OTHER, "Other"),
     )
 
-
-    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name="profile", on_delete=models.CASCADE)
     profile_picture = models.ImageField(upload_to=user_directory_path, blank=True)
     phone_number = PhoneNumberField(blank=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
@@ -47,7 +48,23 @@ class Profile(TimeStampedModel):
     birth_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return "%s"% self.user.username
+        return "%s" % self.user.username
+
+    @property
+    def last_seen(self):
+        return cache.get(f"seen_{self.user.username}")
+
+    @property
+    def online(self):
+        if self.last_seen:
+            now = datetime.now(timezone.utc)
+            if now > self.last_seen + timedelta(minutes=settings.USER_ONLINE_TIMEOUT):
+                return False
+            else:
+                return True
+        else:
+            return False
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, *args, **kwargs):
@@ -56,7 +73,7 @@ def create_user_profile(sender, instance, created, *args, **kwargs):
 
 
 class Address(TimeStampedModel):
-    user = models.ForeignKey(User, related_name='address', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="address", on_delete=models.CASCADE)
     country = CountryField(blank=False, null=False)
     city = models.CharField(max_length=100, blank=False, null=False)
     district = models.CharField(max_length=100, blank=False, null=False)
@@ -64,13 +81,16 @@ class Address(TimeStampedModel):
     postal_code = models.CharField(max_length=20, blank=True, null=True)
     primary = models.BooleanField(default=False)
     phone_number = PhoneNumberField(null=True, blank=True)
-    building_number = models.IntegerField(blank=True, null=True,validators=[MinValueValidator(1)])
-    apartment_number = models.IntegerField(blank=True, null=True,validators=[MinValueValidator(1)])
-
+    building_number = models.IntegerField(
+        blank=True, null=True, validators=[MinValueValidator(1)]
+    )
+    apartment_number = models.IntegerField(
+        blank=True, null=True, validators=[MinValueValidator(1)]
+    )
 
 
 class SMSVerification(TimeStampedModel):
-    user = models.OneToOneField(User, related_name='sms', on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name="sms", on_delete=models.CASCADE)
     verified = models.BooleanField(default=False)
     pin = RandomPinField(length=6)
     sent = models.BooleanField(default=False)
@@ -78,15 +98,23 @@ class SMSVerification(TimeStampedModel):
 
     def send_confirmation(self):
 
-        logging.debug('Sending PIN %s to phone %s' % (self.pin, self.phone))
+        logging.debug("Sending PIN %s to phone %s" % (self.pin, self.phone))
 
-        if all([settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN, settings.TWILIO_FROM_NUMBER]):
+        if all(
+            [
+                settings.TWILIO_ACCOUNT_SID,
+                settings.TWILIO_AUTH_TOKEN,
+                settings.TWILIO_FROM_NUMBER,
+            ]
+        ):
             try:
-                twilio_client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+                twilio_client = Client(
+                    settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN
+                )
                 twilio_client.messages.create(
                     body="Your forgeter activation code is %s" % self.pin,
                     to=str(self.user.profile.phone_number),
-                    from_=settings.TWILIO_FROM_NUMBER
+                    from_=settings.TWILIO_FROM_NUMBER,
                 )
                 self.sent = True
                 self.save()
@@ -94,7 +122,7 @@ class SMSVerification(TimeStampedModel):
             except TwilioRestException as e:
                 logging.error(e)
         else:
-            logging.warning('Twilio credentials are not set')
+            logging.warning("Twilio credentials are not set")
 
     def confirm(self, pin):
         if pin == self.pin and self.verified == False:
@@ -105,6 +133,7 @@ class SMSVerification(TimeStampedModel):
 
         return self.verified
 
+
 @receiver(post_save, sender=Profile)
 def send_sms_verification(sender, instance, *args, **kwargs):
     try:
@@ -112,15 +141,21 @@ def send_sms_verification(sender, instance, *args, **kwargs):
         if sms:
             pin = sms.pin
             sms.delete()
-            verification = SMSVerification.objects.create(user=instance.user, 
-                                        phone=instance.user.profile.phone_number, 
-                                        sent=True, verified=True, pin=pin)
+            verification = SMSVerification.objects.create(
+                user=instance.user,
+                phone=instance.user.profile.phone_number,
+                sent=True,
+                verified=True,
+                pin=pin,
+            )
     except:
         if instance.user.profile.phone_number:
-            verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
+            verification = SMSVerification.objects.create(
+                user=instance.user, phone=instance.user.profile.phone_number
+            )
             # TODO Remove send confirm from here and make view for it.
             verification.send_confirmation()
-    
+
     # if instance.user.profile.phone_number:
     #     verification = SMSVerification.objects.create(user=instance.user, phone=instance.user.profile.phone_number)
     #     # TODO Remove send confirm from here and make view for it.
@@ -128,5 +163,7 @@ def send_sms_verification(sender, instance, *args, **kwargs):
 
 
 class DeactivateUser(TimeStampedModel):
-    user = models.OneToOneField(User, related_name='deactivate', on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        User, related_name="deactivate", on_delete=models.CASCADE
+    )
     deactive = models.BooleanField(default=True)

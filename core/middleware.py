@@ -1,7 +1,7 @@
 import socket
-
+import datetime
 from django.conf import settings
-from django.core.cache import DEFAULT_CACHE_ALIAS, caches
+from django.core.cache import DEFAULT_CACHE_ALIAS, caches, cache
 from django.utils.cache import (
     get_cache_key,
     get_max_age,
@@ -12,6 +12,20 @@ from django.utils.cache import (
 from django.utils.deprecation import MiddlewareMixin
 from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.models import User
+
+
+class ActiveUserMiddleware(MiddlewareMixin):
+    """
+    Using Caching & Middlewares to Track Online Users
+    """
+
+    def process_request(self, request):
+        if request.user.is_authenticated:
+            now = datetime.datetime.now(datetime.timezone.utc)
+            cache.set(
+                f"seen_{request.user.username}", now, settings.USER_LASTSEEN_TIMEOUT
+            )
+        return None
 
 
 class GooglebotMiddleware(object):

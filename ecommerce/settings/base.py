@@ -63,13 +63,14 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
-    'django.middleware.locale.LocaleMiddleware'
+    'core.middleware.ActiveUserMiddleware'
 ]
 
 ROOT_URLCONF = 'ecommerce.urls'
@@ -101,6 +102,7 @@ CACHES = {
     }
 }
 
+# Cache settings 
 CACHE_MIDDLEWARE_ALIAS = 'default'
 CACHE_MIDDLEWARE_SECONDS = 3600   # this number equal 1h
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
@@ -325,3 +327,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # for cron jobs
 from . import cron_jobs
 CRONJOBS = cron_jobs.CRONJOBS 
+
+
+# Number of minutes of inactivity before a user is marked offline
+USER_ONLINE_TIMEOUT = 10
+
+# Number of seconds that we will keep track of inactive users for before 
+# their last seen is removed from the cache
+USER_LASTSEEN_TIMEOUT = 60 * 60 * 24 * 7
