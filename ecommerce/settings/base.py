@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'randompinfield',
     'django_crontab',
     'channels',
+    'django_extensions',
     # 'django_elasticsearch_dsl',
     # 'django_elasticsearch_dsl_drf',
 
