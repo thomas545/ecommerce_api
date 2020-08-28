@@ -1,11 +1,12 @@
 from django.urls import path, include
-from . import views
+from . import views, viewsets
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 
 router.register(r"products", views.ProductDocumentView)
 router.register(r"product-lists", views.ListProductView)
+router.register(r"product-search", viewsets.ProductSearchView)
 
 app_name = "products"
 
@@ -25,4 +26,8 @@ urlpatterns = [
     path("micro/create/", views.MicroServiceCreateView.as_view()),
     path("get/", views.GETRequests.as_view()),
     path("post/", views.POSTRequests.as_view()),
+]
+
+urlpatterns += [
+    path('search/', include('haystack.urls')),
 ]

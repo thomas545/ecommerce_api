@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django_crontab',
     'channels',
     'django_extensions',
+    'haystack',
+    'drf_haystack',
     # 'django_elasticsearch_dsl',
     # 'django_elasticsearch_dsl_drf',
 
@@ -154,6 +156,20 @@ DATABASES = {
 #     }
 # }
 
+
+# Haystack Settings
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'haystack_indexes',
+    },
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+
+# Logs
 loggings({
     'version': 1,
     'disable_existing_loggers': False,
