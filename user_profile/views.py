@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
-from rest_framework import permissions, status
+from rest_framework import permissions, status, viewsets
 from rest_framework.views import APIView
 from rest_framework.generics import (
     ListAPIView,
@@ -37,7 +37,7 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.utils.decorators import method_decorator
 from django.contrib.auth.models import User, Permission
 from django.utils.translation import ugettext_lazy as _
-from .models import Profile, Address, SMSVerification, DeactivateUser
+from .models import Profile, Address, SMSVerification, DeactivateUser, NationalIDImage
 from .serializers import (
     ProfileSerializer,
     UserSerializer,
@@ -49,6 +49,7 @@ from .serializers import (
     PermissionSerializer,
     PasswordChangeSerializer,
     UserPermissionSerializer,
+    NationalIDImageSerializer,
 )
 from .send_mail import send_register_mail, send_reset_password_email
 
@@ -345,3 +346,7 @@ class UpdatePermissionView(UpdateAPIView):
     #     partial = True
     #     return super(UpdatePermissionView, self).update(request, *args, **kwargs)
 
+
+class NationalIDImageViewSet(viewsets.ModelViewSet):
+    serializer_class = NationalIDImageSerializer
+    queryset = NationalIDImage.objects.all().select_related("user")

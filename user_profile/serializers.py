@@ -10,7 +10,7 @@ from drf_extra_fields.fields import Base64ImageField
 from django.contrib.auth.models import Permission
 from django.utils.translation import ugettext_lazy as _
 from allauth.account.models import EmailAddress
-from .models import Profile, Address, SMSVerification, DeactivateUser
+from .models import Profile, Address, SMSVerification, DeactivateUser, NationalIDImage
 
 # Get the UserModel
 UserModel = get_user_model()
@@ -330,3 +330,8 @@ class UserPermissionSerializer(serializers.ModelSerializer):
         model = UserModel
         fields = ("user_permissions",)
 
+
+class NationalIDImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NationalIDImage
+        fields = ("user", "image",)

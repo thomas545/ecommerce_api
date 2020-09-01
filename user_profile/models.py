@@ -18,8 +18,9 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 
 from .signals import register_signal
+from .managers import NationalIDImageManager
 from core.models import TimeStampedModel
-
+from core.handle_images import compress_image
 
 User = get_user_model()
 
@@ -27,6 +28,10 @@ User = get_user_model()
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/users/<username>/<filename>
     return "users/{0}/{1}".format(instance.user.username, filename)
+
+
+def national_image_path(instance, filename):
+    return f"national/{instance.user.username}/images/{filename}"
 
 
 class Profile(TimeStampedModel):
@@ -167,3 +172,31 @@ class DeactivateUser(TimeStampedModel):
         User, related_name="deactivate", on_delete=models.CASCADE
     )
     deactive = models.BooleanField(default=True)
+
+
+class NationalIDImage(models.Model):
+    user = models.ForeignKey(
+        User, related_name="national_ids", on_delete=models.CASCADE
+    )
+    image = models.ImageField(upload_to=national_image_path, blank=True)
+    is_deleted = models.BooleanField(default=False)
+
+    objects = NationalIDImageManager()
+
+    def __str__(self):
+        return self.user.username
+
+    def save(
+        self,
+        force_insert=False,
+        force_update=False,
+        using=None,
+        update_fields=None,
+        *args,
+        **kwargs,
+    ):
+        # if size greater than 300kb then it will send to compress image function
+        image = self.image
+        if image and image.size > (0.3 * 1024 * 1024):
+            self.image = compress_image(image)
+        super(NationalIDImage, self).save(*args, **kwargs)
