@@ -27,7 +27,7 @@ channels==3.0.0
 channels-redis==3.2.0
 chardet==3.0.4
 click==7.1.2
-colorama==0.4.3
+colorama==0.4.4
 configparser==4.0.2
 constantly==15.1.0
 croniter==0.3.30
