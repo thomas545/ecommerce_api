@@ -172,7 +172,7 @@ stomp.py==6.1.0
 tablib==2.0.0
 texttable==1.6.3
 thehive4py==1.7.2
-toml==0.10.1
+toml==0.10.2
 tornado==6.0.4
 tqdm==4.46.1
 twilio==6.0.0
