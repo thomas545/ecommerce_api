@@ -28,7 +28,7 @@ channels-redis==3.2.0
 chardet==3.0.4
 click==7.1.2
 colorama==0.4.4
-configparser==4.0.2
+configparser==5.0.1
 constantly==15.1.0
 croniter==0.3.30
 cryptography==2.7
