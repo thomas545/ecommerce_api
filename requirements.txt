@@ -183,7 +183,7 @@ typed-ast==1.4.1
 tzlocal==2.1
 urllib3==1.26.2
 vine==5.0.0
-watchdog==0.10.2
+watchdog==1.0.2
 webencodings==0.5.1
 websocket-client==0.56.0
 xlrd==1.2.0
