@@ -134,7 +134,7 @@ PyJWT==2.0.0
 PyNaCl==1.4.0
 pyparsing==2.4.7
 PyPDF2==1.26.0
-pyrsistent==0.16.0
+pyrsistent==0.17.3
 PySocks==1.7.0
 PyStaticConfiguration==0.10.4
 python-dateutil==2.6.1
