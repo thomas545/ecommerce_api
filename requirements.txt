@@ -36,7 +36,7 @@ daphne==3.0.1
 defusedxml==0.6.0
 diff-match-patch==20200713
 distro==1.5.0
-Django==2.1.11
+Django==3.1.5
 django-allauth==0.39.1
 django-countries==5.4
 django-crontab==0.7.1
