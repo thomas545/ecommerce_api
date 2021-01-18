@@ -30,7 +30,7 @@ click==7.1.2
 colorama==0.4.4
 configparser==5.0.1
 constantly==15.1.0
-croniter==0.3.30
+croniter==1.0.1
 cryptography==2.7
 daphne==2.3.0
 defusedxml==0.6.0
