@@ -115,7 +115,7 @@ opencv-python==4.5.1.48
 openpyxl==3.0.6
 packaging==20.8
 paramiko==2.7.2
-pathspec==0.8.0
+pathspec==0.8.1
 pathtools==0.1.2
 pbr==5.4.3
 phonenumbers==8.10.16
