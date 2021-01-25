@@ -89,7 +89,7 @@ httpcore==0.12.2
 httpx==0.16.1
 hyperframe==6.0.0
 hyperlink==21.0.0
-idna==2.7
+idna==3.1
 imagesize==1.2.0
 importlib-metadata==0.19
 incremental==17.5.0
