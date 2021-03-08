@@ -94,7 +94,7 @@ imagesize==1.2.0
 importlib-metadata==3.7.2
 incremental==17.5.0
 jdcal==1.4.1
-Jinja2==2.11.1
+Jinja2==2.11.3
 jira==2.0.0
 jmespath==0.9.4
 jsonschema==3.2.0
