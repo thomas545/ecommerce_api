@@ -58,7 +58,7 @@ django-redis==4.12.1
 django-rest-auth==0.9.5
 django-twilio==0.13.1.post0
 django-uuidfield==0.5.0
-djangorestframework==3.10.2
+djangorestframework==3.12.2
 djangorestframework-jwt==1.11.0
 docker==3.7.3
 docker-compose==1.24.1
