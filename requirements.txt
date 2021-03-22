@@ -70,7 +70,7 @@ drf-haystack==1.8.9
 drf-writable-nested==0.6.2
 elastalert==0.2.4
 elasticsearch==7.11.0
-elasticsearch-dsl==7.0.0
+elasticsearch-dsl==7.3.0
 entrypoints==0.3
 envparse==0.2.0
 et-xmlfile==1.0.1
