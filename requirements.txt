@@ -95,7 +95,7 @@ importlib-metadata==4.6.3
 incremental==17.5.0
 jdcal==1.4.1
 Jinja2==3.0.1
-jira==2.0.0
+jira==3.0.1
 jmespath==0.9.4
 jsonschema==3.2.0
 keyring==21.2.1
