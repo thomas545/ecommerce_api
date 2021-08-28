@@ -10,9 +10,9 @@ UserModel = get_user_model()
 
 class Order(Extensions):
     PENDING_STATE = "p"
-    COMLPLETED_STATE = "c"
+    COMPLETED_STATE = "c"
 
-    ORDER_CHOICES = ((PENDING_STATE, "pending"), (COMLPLETED_STATE, "completed"))
+    ORDER_CHOICES = ((PENDING_STATE, "pending"), (COMPLETED_STATE, "completed"))
 
     buyer = models.ForeignKey(UserModel, related_name="order", on_delete=models.CASCADE)
     order_number = models.CharField(max_length=250, blank=True, null=True)
