@@ -10,7 +10,7 @@ UserModel = get_user_model()
 
 class Order(Extensions):
     PENDING_STATE = "p"
-    COMLPLETED_STATE = "c"
+    COMPLETED_STATE = "c"
 
     ORDER_CHOICES = ((PENDING_STATE, "pending"), (COMLPLETED_STATE, "completed"))
 
