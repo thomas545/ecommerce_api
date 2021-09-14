@@ -10,12 +10,12 @@ class Server:
         self.server_socket.bind(("", 6000))
         self.server_socket.listen(5)
         self.videofeed = VideoFeed(1, "server", 1)
-        print "TCPServer Waiting for client on port 5000"
+        print("TCPServer Waiting for client on port 5000")
 
     def start(self):
         while 1:
             client_socket, address = self.server_socket.accept()
-            print "I got a connection from ", address
+            print("I got a connection from ", address)
             vsock = videosocket.videosocket(client_socket)
             while True:
 
@@ -25,11 +25,11 @@ class Server:
                 vsock.vsend(frame)
 
 
-# print frame
+# print(frame)
 #                self.videofeed.set_frame(frame)
 
 # data = client_socket.recv(921600)
-#                print "RECIEVED:" , data
+#                print("RECIEVED:" , data)
 
 if __name__ == "__main__":
     server = Server()

@@ -4,7 +4,6 @@ import Image
 
 class VideoFeed:
     def __init__(self, mode=1, name="w1", capture=1):
-        print name
         if mode == 1:
             cv.StartWindowThread()
             cv.NamedWindow(name, cv.CV_WINDOW_AUTOSIZE)
@@ -24,7 +23,6 @@ class VideoFeed:
                 self.capture = cv.CaptureFromCAM(camera_index)
         jpegImg = Image.fromstring("RGB", cv.GetSize(self.frame), self.frame.tostring())
         retStr = jpegImg.tostring("jpeg", "RGB")
-        print "Compressed Size = ", len(retStr)
         return retStr
 
     # jpeg.compress(self.frame,640,480,8)
