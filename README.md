@@ -1,6 +1,6 @@
 [![Python 3.6](https://img.shields.io/badge/python-3.6-yellow.svg)](https://www.python.org/downloads/release/python-360/)
 ![Django 2.2](https://img.shields.io/badge/Django-2.2-green.svg)
-![Build](https://github.com/thomas545/ecommerce_api/workflows/Django CI/badge.svg?branch=master)
+<!-- ![Build](https://github.com/thomas545/ecommerce_api/workflows/Django CI/badge.svg?branch=master) -->
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)](https://github.com/thomas545/ecommerce_api/blob/master/LICENSE)
 
 # Ecommerce
