@@ -177,7 +177,7 @@ thehive4py==1.6.0
 toml==0.10.1
 tornado==6.0.4
 tqdm==4.46.1
-twilio==7.0.0
+twilio==6.3.0
 twine==3.2.0
 Twisted==19.7.0
 txaio==18.8.1
