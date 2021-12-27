@@ -112,7 +112,7 @@ natsort==8.0.2
 numpy==1.21.5
 oauthlib==3.1.1
 odfpy==1.4.1
-opencv-python==4.3.0.36
+opencv-python==4.5.4.60
 openpyxl==3.0.0
 packaging==20.3
 paramiko==2.6.0
