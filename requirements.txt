@@ -86,7 +86,7 @@ hiredis==2.0.0
 hpack==4.0.0
 hstspreload==2021.12.1
 httpcore==0.14.4
-httpx==0.13.3
+httpx==0.21.3
 hyperframe==5.2.0
 hyperlink==19.0.0
 idna==2.7
