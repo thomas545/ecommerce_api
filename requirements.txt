@@ -113,7 +113,7 @@ numpy==1.22.1
 oauthlib==3.2.0
 odfpy==1.4.1
 opencv-python==4.5.5.62
-openpyxl==3.0.0
+openpyxl==3.0.9
 packaging==20.3
 paramiko==2.6.0
 pathspec==0.8.0
