@@ -128,7 +128,7 @@ psycopg2-binary==2.9.3
 pycodestyle==2.9.1
 pycparser==2.21
 pyfcm==1.5.4
-pyflakes==2.1.1
+pyflakes==2.5.0
 Pygments==2.6.1
 PyHamcrest==1.9.0
 PyJWT==1.7.1
