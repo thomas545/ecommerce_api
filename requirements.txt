@@ -49,7 +49,7 @@ django-filter==22.1
 django-haystack==3.2.1
 django-import-export==3.0.1
 django-jet==1.0.8
-django-js-asset==1.2.2
+django-js-asset==2.0.0
 django-mptt==0.10.0
 django-nine==0.2.2
 django-phonenumber-field==3.0.1
