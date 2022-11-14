@@ -139,7 +139,7 @@ pyrsistent==0.19.2
 PySocks==1.7.1
 PyStaticConfiguration==0.11.1
 python-dateutil==2.8.2
-python-decouple==3.1
+python-decouple==3.6
 python-dotenv==0.13.0
 python-magic==0.4.15
 python-memcached==1.59
