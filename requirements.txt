@@ -6,7 +6,7 @@ APScheduler==3.9.1.post1
 argh==0.26.2
 asgiref==3.5.2
 asn1crypto==1.5.1
-async-timeout==3.0.1
+async-timeout==4.0.2
 attrs==19.1.0
 autobahn==19.9.3
 Automat==0.7.0
