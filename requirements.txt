@@ -118,7 +118,7 @@ packaging==21.3
 paramiko==2.12.0
 pathspec==0.10.2
 pathtools==0.1.2
-pbr==5.4.3
+pbr==5.11.0
 phonenumbers==8.10.16
 Pillow==8.3.2
 pkginfo==1.5.0.1
