@@ -90,7 +90,7 @@ httpx==0.23.1
 hyperframe==6.0.1
 hyperlink==21.0.0
 idna==3.4
-imagesize==1.2.0
+imagesize==1.4.1
 importlib-metadata==0.19
 incremental==17.5.0
 jdcal==1.4.1
