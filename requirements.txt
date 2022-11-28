@@ -100,7 +100,7 @@ jira==3.4.1
 jmespath==1.0.1
 jsonschema==4.17.1
 keyring==23.11.0
-kombu==4.6.4
+kombu==5.2.4
 livereload==2.6.1
 MarkupPy==1.14
 MarkupSafe==1.1.1
