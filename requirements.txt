@@ -82,7 +82,7 @@ googletrans==3.0.0
 gunicorn==20.1.0
 h11==0.14.0
 h2==4.1.0
-hiredis==1.0.0
+hiredis==2.0.0
 hpack==3.0.0
 hstspreload==2020.6.16
 httpcore==0.9.1
