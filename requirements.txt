@@ -88,7 +88,7 @@ hstspreload==2022.12.1
 httpcore==0.16.2
 httpx==0.23.1
 hyperframe==6.0.1
-hyperlink==19.0.0
+hyperlink==21.0.0
 idna==2.7
 imagesize==1.2.0
 importlib-metadata==0.19
