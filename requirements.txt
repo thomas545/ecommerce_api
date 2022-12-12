@@ -120,7 +120,7 @@ pathspec==0.10.3
 pathtools==0.1.2
 pbr==5.11.0
 phonenumbers==8.13.2
-Pillow==8.3.2
+Pillow==9.3.0
 pkginfo==1.5.0.1
 port-for==0.3.1
 prison==0.1.3
