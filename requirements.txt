@@ -109,7 +109,7 @@ mock==4.0.3
 model-mommy==2.0.0
 msgpack==1.0.4
 natsort==8.2.0
-numpy==1.19.0
+numpy==1.24.0
 oauthlib==3.1.0
 odfpy==1.4.0
 opencv-python==4.3.0.36
