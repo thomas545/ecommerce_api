@@ -1,6 +1,6 @@
 aioredis==2.0.1
 alabaster==0.7.12
-amqp==2.5.1
+amqp==5.1.1
 appdirs==1.4.4
 APScheduler==3.6.1
 argh==0.26.2
