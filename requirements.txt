@@ -8,7 +8,7 @@ asgiref==3.5.2
 asn1crypto==1.5.1
 async-timeout==4.0.2
 attrs==22.1.0
-autobahn==19.9.3
+autobahn==22.12.1
 Automat==0.7.0
 aws-requests-auth==0.4.2
 Babel==2.7.0
