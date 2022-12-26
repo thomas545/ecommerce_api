@@ -91,7 +91,7 @@ hyperframe==6.0.1
 hyperlink==21.0.0
 idna==3.4
 imagesize==1.4.1
-importlib-metadata==0.19
+importlib-metadata==5.2.0
 incremental==17.5.0
 jdcal==1.4.1
 jeepney==0.7.1
