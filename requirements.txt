@@ -60,7 +60,7 @@ django-twilio==0.14.3
 django-uuidfield==0.5.0
 djangorestframework==3.14.0
 djangorestframework-jwt==1.11.0
-docker==3.7.3
+docker==6.0.1
 docker-compose==1.24.1
 docker-pycreds==0.4.0
 dockerpty==0.4.1
