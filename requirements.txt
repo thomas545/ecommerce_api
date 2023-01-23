@@ -73,7 +73,7 @@ elasticsearch==8.6.0
 elasticsearch-dsl==7.4.0
 entrypoints==0.4
 envparse==0.2.0
-et-xmlfile==1.0.1
+et-xmlfile==1.1.0
 exotel==0.1.5
 fcm-django==0.2.21
 flake8==3.7.8
