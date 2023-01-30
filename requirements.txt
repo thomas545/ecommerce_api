@@ -12,7 +12,7 @@ autobahn==23.1.1
 Automat==22.10.0
 aws-requests-auth==0.4.3
 Babel==2.11.0
-bcrypt==3.1.7
+bcrypt==4.0.1
 billiard==3.6.1.0
 black==19.10b0
 bleach==3.1.5
