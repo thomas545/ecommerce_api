@@ -146,7 +146,7 @@ python-memcached==1.59
 python3-openid==3.1.0
 pytz==2022.7.1
 PyYAML==6.0
-qrcode==6.1
+qrcode==7.4.2
 readme-renderer==26.0
 redis==3.3.8
 regex==2020.5.14
