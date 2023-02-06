@@ -4,7 +4,7 @@ amqp==5.1.1
 appdirs==1.4.4
 APScheduler==3.10.0
 argh==0.26.2
-asgiref==3.2.2
+asgiref==3.6.0
 asn1crypto==0.24.0
 async-timeout==3.0.1
 attrs==19.1.0
