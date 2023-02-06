@@ -150,7 +150,7 @@ qrcode==7.4.2
 readme-renderer==37.3
 redis==4.4.2
 regex==2022.10.31
-requests==2.20.1
+requests==2.28.2
 requests-oauthlib==1.2.0
 requests-toolbelt==0.9.1
 rfc3986==1.4.0
