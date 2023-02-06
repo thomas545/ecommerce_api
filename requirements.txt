@@ -22,7 +22,7 @@ botocore==1.29.64
 cached-property==1.5.2
 celery==5.2.7
 certifi==2022.12.7
-cffi==1.12.3
+cffi==1.15.1
 channels==2.3.0
 channels-redis==2.4.0
 chardet==3.0.4
