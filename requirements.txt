@@ -173,7 +173,7 @@ sqlparse==0.4.3
 stomp.py==8.1.0
 tablib==3.3.0
 texttable==1.6.7
-thehive4py==1.6.0
+thehive4py==1.8.1
 toml==0.10.1
 tornado==6.0.4
 tqdm==4.46.1
