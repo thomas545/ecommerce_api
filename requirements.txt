@@ -37,7 +37,7 @@ defusedxml==0.7.1
 diff-match-patch==20200713
 distro==1.8.0
 Django==4.1.7
-django-allauth==0.39.1
+django-allauth==0.52.0
 django-countries==5.4
 django-crontab==0.7.1
 django-debug-toolbar==2.0
