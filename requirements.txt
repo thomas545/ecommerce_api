@@ -47,7 +47,7 @@ django-extensions==3.2.1
 django-extra-fields==3.0.2
 django-filter==22.1
 django-haystack==3.2.1
-django-import-export==1.2.0
+django-import-export==3.1.0
 django-jet==1.0.8
 django-js-asset==1.2.2
 django-mptt==0.10.0
