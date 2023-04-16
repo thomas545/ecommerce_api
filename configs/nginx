@@ -1,0 +1,17 @@
+server {
+    listen 80;
+    server_name _;
+
+    ssl_certificate      /etc/ssl/certs/{crt_name}.crt;
+    ssl_certificate_key  /etc/ssl/private/{key_name}.key;
+
+    proxy_read_timeout 3600;
+    proxy_connect_timeout 3600;
+    proxy_send_timeout 3600;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+
+}
