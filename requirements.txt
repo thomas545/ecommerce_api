@@ -71,7 +71,7 @@ drf-writable-nested==0.7.0
 elastalert==0.2.4
 elasticsearch==8.7.0
 elasticsearch-dsl==7.4.1
-entrypoints==0.3
+entrypoints==0.4
 envparse==0.2.0
 et-xmlfile==1.0.1
 exotel==0.1.5
