@@ -95,7 +95,7 @@ importlib-metadata==6.4.1
 incremental==22.10.0
 jdcal==1.4.1
 jeepney==0.8.0
-Jinja2==2.11.1
+Jinja2==3.1.2
 jira==2.0.0
 jmespath==0.9.4
 jsonschema==3.2.0
