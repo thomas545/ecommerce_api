@@ -171,7 +171,7 @@ sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
 sqlparse==0.4.4
 stomp.py==8.1.0
-tablib==0.14.0
+tablib==3.4.0
 texttable==0.9.1
 thehive4py==1.6.0
 toml==0.10.1
