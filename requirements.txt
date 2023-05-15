@@ -19,7 +19,7 @@ bleach==6.0.0
 blist==1.3.6
 boto3==1.26.134
 botocore==1.29.134
-cached-property==1.5.1
+cached-property==1.5.2
 celery==4.3.0
 certifi==2019.6.16
 cffi==1.12.3
