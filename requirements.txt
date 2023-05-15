@@ -65,7 +65,7 @@ docker-compose==1.29.2
 docker-pycreds==0.4.0
 dockerpty==0.4.1
 docopt==0.6.2
-docutils==0.15.2
+docutils==0.20
 drf-haystack==1.8.7
 drf-writable-nested==0.5.4
 elastalert==0.2.4
