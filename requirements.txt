@@ -104,7 +104,7 @@ kombu==5.2.4
 livereload==2.6.3
 MarkupPy==1.14
 MarkupSafe==2.1.2
-mccabe==0.6.1
+mccabe==0.7.0
 mock==3.0.5
 model-mommy==2.0.0
 msgpack==0.6.2
