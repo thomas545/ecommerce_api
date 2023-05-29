@@ -99,7 +99,7 @@ Jinja2==3.1.2
 jira==3.5.0
 jmespath==1.0.1
 jsonschema==4.17.3
-keyring==21.2.1
+keyring==23.13.1
 kombu==4.6.4
 livereload==2.6.1
 MarkupPy==1.14
