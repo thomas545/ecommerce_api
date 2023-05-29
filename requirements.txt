@@ -1,5 +1,5 @@
 aioredis==2.0.1
-alabaster==0.7.12
+alabaster==0.7.13
 amqp==2.5.1
 appdirs==1.4.4
 APScheduler==3.6.1
