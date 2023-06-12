@@ -119,7 +119,7 @@ paramiko==3.2.0
 pathspec==0.11.1
 pathtools==0.1.2
 pbr==5.11.1
-phonenumbers==8.10.16
+phonenumbers==8.13.13
 Pillow==8.3.2
 pkginfo==1.5.0.1
 port-for==0.3.1
