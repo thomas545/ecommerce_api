@@ -9,7 +9,7 @@ asn1crypto==1.5.1
 async-timeout==4.0.2
 attrs==23.1.0
 autobahn==23.6.1
-Automat==0.7.0
+Automat==22.10.0
 aws-requests-auth==0.4.2
 Babel==2.7.0
 bcrypt==3.1.7
