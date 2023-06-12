@@ -149,7 +149,7 @@ PyYAML==6.0
 qrcode==7.4.2
 readme-renderer==37.3
 redis==4.5.5
-regex==2020.5.14
+regex==2023.6.3
 requests==2.20.1
 requests-oauthlib==1.2.0
 requests-toolbelt==0.9.1
