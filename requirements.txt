@@ -162,7 +162,7 @@ six==1.16.0
 sniffio==1.3.0
 snowballstemmer==2.2.0
 Sphinx==7.1.0
-sphinx-autobuild==0.7.1
+sphinx-autobuild==2021.3.14
 sphinxcontrib-applehelp==1.0.2
 sphinxcontrib-devhelp==1.0.2
 sphinxcontrib-htmlhelp==1.0.3
