@@ -35,7 +35,7 @@ cryptography==41.0.2
 daphne==4.0.0
 defusedxml==0.7.1
 diff-match-patch==20230430
-distro==1.5.0
+distro==1.8.0
 Django==2.1.11
 django-allauth==0.39.1
 django-countries==5.4
