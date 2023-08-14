@@ -75,7 +75,7 @@ entrypoints==0.4
 envparse==0.2.0
 et-xmlfile==1.1.0
 exotel==0.1.5
-fcm-django==0.2.21
+fcm-django==2.0.0
 flake8==3.7.8
 future==0.17.1
 googletrans==2.4.0
