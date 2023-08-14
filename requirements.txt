@@ -3,7 +3,7 @@ alabaster==0.7.13
 amqp==5.1.1
 appdirs==1.4.4
 APScheduler==3.10.3
-argh==0.26.2
+argh==0.28.1
 asgiref==3.2.2
 asn1crypto==0.24.0
 async-timeout==3.0.1
