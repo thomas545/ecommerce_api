@@ -158,7 +158,7 @@ rstcheck==6.1.2
 s3transfer==0.6.2
 SecretStorage==3.3.3
 serpy==0.3.1
-six==1.12.0
+six==1.16.0
 sniffio==1.1.0
 snowballstemmer==2.0.0
 Sphinx==2.4.4
