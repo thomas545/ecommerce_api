@@ -5,7 +5,7 @@ appdirs==1.4.4
 APScheduler==3.10.4
 argh==0.28.1
 asgiref==3.7.2
-asn1crypto==0.24.0
+asn1crypto==1.5.1
 async-timeout==3.0.1
 attrs==19.1.0
 autobahn==19.9.3
