@@ -87,7 +87,7 @@ hpack==4.0.0
 hstspreload==2023.1.1
 httpcore==0.17.3
 httpx==0.24.1
-hyperframe==5.2.0
+hyperframe==6.0.1
 hyperlink==19.0.0
 idna==2.7
 imagesize==1.2.0
