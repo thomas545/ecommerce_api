@@ -19,7 +19,7 @@ async-timeout==4.0.3
 atomicwrites==1.4.1
 attrs==23.1.0
 autobahn==23.6.2
-Automat==20.2.0
+Automat==22.10.0
 autopep8 @ file:///tmp/build/80754af9/autopep8_1620866417880/work
 Babel @ file:///tmp/build/80754af9/babel_1620871417480/work
 backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
