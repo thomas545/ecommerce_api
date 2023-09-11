@@ -185,7 +185,7 @@ jupyter==1.0.0
 jupyter-client==8.3.1
 jupyter-console==6.6.3
 jupyter-core==5.3.1
-jupyter-server @ file:///C:/ci/jupyter_server_1616084298419/work
+jupyter-server==2.7.3
 jupyterlab @ file:///tmp/build/80754af9/jupyterlab_1635799997693/work
 jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_1601490720602/work
 jupyterlab-server @ file:///tmp/build/80754af9/jupyterlab_server_1633419203660/work
