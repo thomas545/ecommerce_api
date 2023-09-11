@@ -73,7 +73,7 @@ cryptography==41.0.3
 cycler==0.11.0
 Cython==3.0.2
 cytoolz==0.12.2
-daal4py==2021.3.0
+daal4py==2023.2.1
 daphne==3.0.2
 dask==2021.10.0
 debugpy @ file:///C:/ci/debugpy_1629222819322/work
