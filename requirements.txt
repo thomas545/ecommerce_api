@@ -233,7 +233,7 @@ numexpr==2.8.5
 numpy==1.25.2
 numpydoc==1.5.0
 oauthlib==3.2.2
-olefile @ file:///Users/ktietz/demo/mc3/conda-bld/olefile_1629805411829/work
+olefile==0.46
 openpyxl @ file:///tmp/build/80754af9/openpyxl_1632777717936/work
 packaging @ file:///tmp/build/80754af9/packaging_1625611678980/work
 pandas @ file:///C:/ci/pandas_1635506685681/work
