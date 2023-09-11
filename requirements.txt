@@ -148,7 +148,7 @@ h2==4.1.0
 h5py==3.9.0
 haystack==0.42
 HeapDict==1.0.1
-hiredis==2.0.0
+hiredis==2.2.3
 hpack==3.0.0
 hstspreload==2021.12.1
 html5lib @ file:///Users/ktietz/demo/mc3/conda-bld/html5lib_1629144453894/work
