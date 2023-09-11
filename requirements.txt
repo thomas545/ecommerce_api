@@ -126,7 +126,7 @@ flake8==6.1.0
 Flask==2.3.3
 fonttools==4.42.1
 fsspec==2023.9.0
-future @ file:///C:/ci/future_1607568713721/work
+future==0.18.3
 gevent @ file:///C:/ci/gevent_1628273776273/work
 glob2 @ file:///home/linux1/recipes/ci/glob2_1610991677669/work
 google-api-core==2.7.1
