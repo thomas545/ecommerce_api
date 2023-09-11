@@ -24,7 +24,7 @@ autopep8==2.0.4
 Babel==2.12.1
 backcall==0.2.0
 backports.functools-lru-cache==1.6.6
-backports.shutil-get-terminal-size @ file:///tmp/build/80754af9/backports.shutil_get_terminal_size_1608222128777/work
+backports.shutil-get-terminal-size==1.0.0
 backports.tempfile @ file:///home/linux1/recipes/ci/backports.tempfile_1610991236607/work
 backports.weakref==1.0.post1
 bcrypt @ file:///C:/ci/bcrypt_1607022693089/work
