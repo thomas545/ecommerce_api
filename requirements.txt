@@ -123,7 +123,7 @@ fcm-django==2.0.0
 filelock==3.12.3
 firebase-admin==6.2.0
 flake8==6.1.0
-Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
+Flask==2.3.3
 fonttools==4.25.0
 fsspec @ file:///tmp/build/80754af9/fsspec_1636116461911/work
 future @ file:///C:/ci/future_1607568713721/work
