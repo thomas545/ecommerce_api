@@ -176,7 +176,7 @@ itsdangerous==2.1.2
 jdcal==1.4.1
 jedi==0.19.0
 Jinja2==3.1.2
-jinja2-time @ file:///tmp/build/80754af9/jinja2-time_1617751524098/work
+jinja2-time==0.2.0
 joblib @ file:///tmp/build/80754af9/joblib_1635411271373/work
 json5 @ file:///tmp/build/80754af9/json5_1624432770122/work
 jsonfield==3.1.0
