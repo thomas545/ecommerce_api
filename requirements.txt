@@ -276,7 +276,7 @@ pyerfa==2.0.0.3
 pyflakes==3.1.0
 Pygments==2.16.1
 PyJWT==2.8.0
-pylint @ file:///C:/ci/pylint_1627536884966/work
+pylint==2.17.5
 pyls-spyder==0.4.0
 PyNaCl @ file:///C:/ci/pynacl_1607612759007/work
 pyodbc===4.0.0-unsupported
