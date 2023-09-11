@@ -1,5 +1,5 @@
 aioredis==2.0.1
-alabaster @ file:///home/ktietz/src/ci/alabaster_1611921544520/work
+alabaster==0.7.13
 amqp==5.1.0
 anaconda-client @ file:///C:/ci/anaconda-client_1635342725944/work
 anaconda-navigator==2.1.1
