@@ -385,7 +385,7 @@ webencodings==0.5.1
 Werkzeug==2.3.7
 whichcraft==0.6.1
 widgetsnbextension==4.0.8
-Willow==1.4.1
+Willow==1.6.2
 win-inet-pton @ file:///C:/ci/win_inet_pton_1605306162074/work
 win-unicode-console==0.5
 wincertstore==0.2
