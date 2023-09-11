@@ -337,7 +337,7 @@ sphinxcontrib-applehelp==1.0.7
 sphinxcontrib-devhelp==1.0.5
 sphinxcontrib-htmlhelp==2.0.4
 sphinxcontrib-jsmath==1.0.1
-sphinxcontrib-qthelp @ file:///home/ktietz/src/ci/sphinxcontrib-qthelp_1611921055322/work
+sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml @ file:///tmp/build/80754af9/sphinxcontrib-serializinghtml_1624451540180/work
 sphinxcontrib-websupport @ file:///tmp/build/80754af9/sphinxcontrib-websupport_1597081412696/work
 spyder @ file:///C:/ci/spyder_1636480369575/work
