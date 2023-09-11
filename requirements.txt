@@ -196,7 +196,7 @@ kombu==5.3.2
 l18n==2021.3
 lazy-object-proxy==1.9.0
 libarchive-c==5.0
-llvmlite==0.37.0
+llvmlite==0.40.1
 locket==0.2.1
 lxml @ file:///C:/ci/lxml_1616443418777/work
 Markdown==3.3.6
