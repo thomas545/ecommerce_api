@@ -160,7 +160,7 @@ hyperlink==21.0.0
 idna==3.4
 imagecodecs==2023.9.4
 imageio==2.31.3
-imagesize @ file:///Users/ktietz/demo/mc3/conda-bld/imagesize_1628863108022/work
+imagesize==1.4.1
 importlib-metadata @ file:///C:/ci/importlib-metadata_1631916826748/work
 incremental==21.3.0
 inflection==0.5.1
