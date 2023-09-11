@@ -147,7 +147,7 @@ h11==0.14.0
 h2==4.1.0
 h5py==3.9.0
 haystack==0.42
-HeapDict @ file:///Users/ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work
+HeapDict==1.0.1
 hiredis==2.0.0
 hpack==3.0.0
 hstspreload==2021.12.1
