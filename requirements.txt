@@ -10,7 +10,7 @@ appdirs==1.4.4
 argh==0.29.3
 argon2-cffi==23.1.0
 arrow==1.2.3
-asgiref==3.5.0
+asgiref==3.7.2
 asn1crypto @ file:///tmp/build/80754af9/asn1crypto_1596577642040/work
 astroid @ file:///C:/ci/astroid_1628063282661/work
 astropy @ file:///C:/ci/astropy_1629829318700/work
