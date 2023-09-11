@@ -394,7 +394,7 @@ xlrd==2.0.1
 XlsxWriter==3.1.3
 xlwings==0.30.11
 xlwt==1.3.0
-xmltodict @ file:///Users/ktietz/demo/mc3/conda-bld/xmltodict_1629301980723/work
+xmltodict==0.13.0
 yapf @ file:///tmp/build/80754af9/yapf_1615749224965/work
 zict==2.0.0
 zipp @ file:///tmp/build/80754af9/zipp_1633618647012/work
