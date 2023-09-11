@@ -369,7 +369,7 @@ twilio==8.8.0
 Twisted==23.8.0
 twisted-iocpsupport==1.0.4
 txaio==23.1.1
-typed-ast @ file:///C:/ci/typed-ast_1624953797214/work
+typed-ast==1.5.5
 typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1631814937681/work
 tzdata==2021.5
 ujson @ file:///C:/ci/ujson_1611259568517/work
