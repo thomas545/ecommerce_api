@@ -78,7 +78,7 @@ daphne==4.0.0
 dask==2023.9.1
 debugpy==1.7.0
 decorator==5.1.1
-defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
+defusedxml==0.7.1
 diff-match-patch @ file:///Users/ktietz/demo/mc3/conda-bld/diff-match-patch_1630511840874/work
 distributed @ file:///C:/ci/distributed_1635968318313/work
 Django==3.2.12
