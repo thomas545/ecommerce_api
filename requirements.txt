@@ -16,7 +16,7 @@ astroid==2.15.6
 astropy==5.3.3
 async-generator==1.10
 async-timeout==4.0.3
-atomicwrites==1.4.0
+atomicwrites==1.4.1
 attrs @ file:///tmp/build/80754af9/attrs_1620827162558/work
 autobahn==22.2.2
 Automat==20.2.0
