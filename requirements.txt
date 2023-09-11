@@ -5,7 +5,7 @@ anaconda-client==1.2.2
 anaconda-navigator==2.1.1
 anaconda-project==0.8.2
 anyascii==0.3.2
-anyio @ file:///C:/ci/anyio_1620153135622/work/dist
+anyio==4.0.0
 appdirs==1.4.4
 argh==0.26.2
 argon2-cffi @ file:///C:/ci/argon2-cffi_1613037869401/work
