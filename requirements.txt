@@ -175,7 +175,7 @@ isort==5.12.0
 itsdangerous==2.1.2
 jdcal==1.4.1
 jedi==0.19.0
-Jinja2 @ file:///tmp/build/80754af9/jinja2_1612213139570/work
+Jinja2==3.1.2
 jinja2-time @ file:///tmp/build/80754af9/jinja2-time_1617751524098/work
 joblib @ file:///tmp/build/80754af9/joblib_1635411271373/work
 json5 @ file:///tmp/build/80754af9/json5_1624432770122/work
