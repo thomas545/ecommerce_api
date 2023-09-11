@@ -250,7 +250,7 @@ pep8==1.7.1
 pexpect==4.8.0
 phonenumbers==8.13.20
 pickleshare==0.7.5
-Pillow==8.4.0
+Pillow==10.0.0
 pkginfo==1.7.1
 pluggy @ file:///C:/ci/pluggy_1615976440052/work
 ply==3.11
