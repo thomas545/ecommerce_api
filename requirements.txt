@@ -237,7 +237,7 @@ olefile==0.46
 openpyxl==3.1.2
 packaging==23.1
 pandas==2.1.0
-pandocfilters @ file:///C:/ci/pandocfilters_1605114832805/work
+pandocfilters==1.5.0
 paramiko @ file:///tmp/build/80754af9/paramiko_1598886428689/work
 parso @ file:///tmp/build/80754af9/parso_1617223946239/work
 partd @ file:///tmp/build/80754af9/partd_1618000087440/work
