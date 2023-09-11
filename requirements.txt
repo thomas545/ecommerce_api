@@ -219,7 +219,7 @@ munkres==1.1.4
 mypy-extensions==1.0.0
 mysqlclient==2.2.0
 navigator-updater==0.2.1
-nbclassic @ file:///tmp/build/80754af9/nbclassic_1616085367084/work
+nbclassic==1.0.0
 nbclient @ file:///tmp/build/80754af9/nbclient_1614364831625/work
 nbconvert @ file:///C:/ci/nbconvert_1624479160025/work
 nbformat @ file:///tmp/build/80754af9/nbformat_1617383369282/work
