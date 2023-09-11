@@ -379,7 +379,7 @@ uritemplate==4.1.1
 urllib3==2.0.4
 vine==5.0.0
 wagtail==5.1.1
-watchdog @ file:///C:/ci/watchdog_1624955113064/work
+watchdog==3.0.0
 wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
 webencodings==0.5.1
 Werkzeug @ file:///tmp/build/80754af9/werkzeug_1635505089296/work
