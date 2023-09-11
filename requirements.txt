@@ -29,7 +29,7 @@ backports.tempfile==1.0
 backports.weakref==1.0.post1
 bcrypt==4.0.1
 beautifulsoup4==4.12.2
-billiard==3.6.4.0
+billiard==4.1.0
 binaryornot @ file:///tmp/build/80754af9/binaryornot_1617751525010/work
 bitarray @ file:///C:/ci/bitarray_1629133068652/work
 bkcharts==0.2
