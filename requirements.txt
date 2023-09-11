@@ -357,7 +357,7 @@ testpath==0.6.0
 text-unidecode==1.3
 textdistance==4.5.0
 threadpoolctl==3.2.0
-three-merge @ file:///tmp/build/80754af9/three-merge_1607553261110/work
+three-merge==0.1.1
 tifffile @ file:///tmp/build/80754af9/tifffile_1627275862826/work
 tinycss @ file:///tmp/build/80754af9/tinycss_1617713798712/work
 toml @ file:///tmp/build/80754af9/toml_1616166611790/work
