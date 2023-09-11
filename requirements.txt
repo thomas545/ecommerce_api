@@ -169,7 +169,7 @@ install==1.3.5
 intervaltree==3.1.0
 ipykernel==6.25.2
 ipython==8.15.0
-ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
+ipython-genutils==0.2.0
 ipywidgets @ file:///tmp/build/80754af9/ipywidgets_1634143127070/work
 isort @ file:///tmp/build/80754af9/isort_1628603791788/work
 itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
