@@ -353,7 +353,7 @@ TBB==2021.10.0
 tblib==2.0.0
 telepath==0.3.1
 terminado==0.17.1
-testpath @ file:///tmp/build/80754af9/testpath_1624638946665/work
+testpath==0.6.0
 text-unidecode @ file:///Users/ktietz/demo/mc3/conda-bld/text-unidecode_1629401354553/work
 textdistance @ file:///tmp/build/80754af9/textdistance_1612461398012/work
 threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
