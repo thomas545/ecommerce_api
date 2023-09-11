@@ -332,7 +332,7 @@ snowballstemmer==2.2.0
 sortedcollections==2.1.0
 sortedcontainers==2.4.0
 soupsieve==2.5
-Sphinx==4.2.0
+Sphinx==7.2.5
 sphinxcontrib-applehelp @ file:///home/ktietz/src/ci/sphinxcontrib-applehelp_1611920841464/work
 sphinxcontrib-devhelp @ file:///home/ktietz/src/ci/sphinxcontrib-devhelp_1611920923094/work
 sphinxcontrib-htmlhelp @ file:///tmp/build/80754af9/sphinxcontrib-htmlhelp_1623945626792/work
