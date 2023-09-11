@@ -213,7 +213,7 @@ mkl-service==2.4.0
 mock==5.1.0
 more-itertools==10.1.0
 mpmath==1.3.0
-msgpack @ file:///C:/ci/msgpack-python_1612287350784/work
+msgpack==1.0.5
 multipledispatch @ file:///C:/ci/multipledispatch_1607574329826/work
 munkres==1.1.4
 mypy-extensions==0.4.3
