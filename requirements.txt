@@ -370,7 +370,7 @@ Twisted==23.8.0
 twisted-iocpsupport==1.0.4
 txaio==23.1.1
 typed-ast==1.5.5
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1631814937681/work
+typing-extensions==4.7.1
 tzdata==2021.5
 ujson @ file:///C:/ci/ujson_1611259568517/work
 unicodecsv==0.14.1
