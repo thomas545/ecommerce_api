@@ -31,7 +31,7 @@ bcrypt==4.0.1
 beautifulsoup4==4.12.2
 billiard==4.1.0
 binaryornot==0.4.4
-bitarray @ file:///C:/ci/bitarray_1629133068652/work
+bitarray==2.8.1
 bkcharts==0.2
 black==19.10b0
 bleach @ file:///tmp/build/80754af9/bleach_1628110601003/work
