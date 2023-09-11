@@ -355,7 +355,7 @@ telepath==0.3.1
 terminado==0.17.1
 testpath==0.6.0
 text-unidecode==1.3
-textdistance @ file:///tmp/build/80754af9/textdistance_1612461398012/work
+textdistance==4.5.0
 threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
 three-merge @ file:///tmp/build/80754af9/three-merge_1607553261110/work
 tifffile @ file:///tmp/build/80754af9/tifffile_1627275862826/work
