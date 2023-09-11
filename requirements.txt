@@ -368,7 +368,7 @@ traitlets==5.9.0
 twilio==8.8.0
 Twisted==23.8.0
 twisted-iocpsupport==1.0.4
-txaio==22.2.1
+txaio==23.1.1
 typed-ast @ file:///C:/ci/typed-ast_1624953797214/work
 typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1631814937681/work
 tzdata==2021.5
