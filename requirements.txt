@@ -300,7 +300,7 @@ PyWavelets==1.4.1
 pywin32==306
 pywin32-ctypes==0.2.2
 pywinpty==2.0.11
-PyYAML==6.0
+PyYAML==6.0.1
 pyzmq @ file:///C:/ci/pyzmq_1628276105793/work
 QDarkStyle @ file:///tmp/build/80754af9/qdarkstyle_1617386714626/work
 qstylizer @ file:///tmp/build/80754af9/qstylizer_1617713584600/work/dist/qstylizer-0.1.10-py2.py3-none-any.whl
