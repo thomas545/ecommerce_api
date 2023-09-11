@@ -220,7 +220,7 @@ mypy-extensions==1.0.0
 mysqlclient==2.2.0
 navigator-updater==0.2.1
 nbclassic==1.0.0
-nbclient @ file:///tmp/build/80754af9/nbclient_1614364831625/work
+nbclient==0.8.0
 nbconvert @ file:///C:/ci/nbconvert_1624479160025/work
 nbformat @ file:///tmp/build/80754af9/nbformat_1617383369282/work
 nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1613680548246/work
