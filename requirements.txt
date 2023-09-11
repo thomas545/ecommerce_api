@@ -278,7 +278,7 @@ Pygments==2.16.1
 PyJWT==2.8.0
 pylint==2.17.5
 pyls-spyder==0.4.0
-PyNaCl @ file:///C:/ci/pynacl_1607612759007/work
+PyNaCl==1.5.0
 pyodbc===4.0.0-unsupported
 pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1635333100036/work
 pyparsing @ file:///tmp/build/80754af9/pyparsing_1635766073266/work
