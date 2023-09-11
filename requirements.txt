@@ -364,7 +364,7 @@ toml==0.10.2
 toolz==0.12.0
 tornado==6.3.3
 tqdm==4.66.1
-traitlets @ file:///tmp/build/80754af9/traitlets_1632522747050/work
+traitlets==5.9.0
 twilio==7.7.1
 Twisted==22.2.0
 twisted-iocpsupport==1.0.2
