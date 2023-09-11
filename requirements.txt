@@ -247,7 +247,7 @@ pathspec==0.11.2
 patsy==0.5.3
 pefile==2023.2.7
 pep8==1.7.1
-pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
+pexpect==4.8.0
 phonenumbers==8.12.44
 pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
 Pillow==8.4.0
