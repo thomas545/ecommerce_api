@@ -259,7 +259,7 @@ prometheus-client==0.17.1
 prompt-toolkit==3.0.39
 proto-plus==1.22.3
 protobuf==4.24.3
-proxycrawl==3.2.1
+proxycrawl==3.2.2
 psutil @ file:///C:/ci/psutil_1612298199233/work
 psycopg2==2.9.3
 ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
