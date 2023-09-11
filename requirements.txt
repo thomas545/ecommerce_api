@@ -296,7 +296,7 @@ python-ptrace==0.9.8
 python-slugify==8.0.1
 python3-openid==3.2.0
 pytz==2023.3.post1
-PyWavelets @ file:///C:/ci/pywavelets_1607645631519/work
+PyWavelets==1.4.1
 pywin32==228
 pywin32-ctypes @ file:///C:/ci/pywin32-ctypes_1607553594546/work
 pywinpty @ file:///C:/ci/pywinpty_1607419945780/work
