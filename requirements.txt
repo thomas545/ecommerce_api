@@ -190,7 +190,7 @@ jupyterlab==4.0.5
 jupyterlab-pygments==0.2.2
 jupyterlab-server==2.24.0
 jupyterlab-widgets==3.0.8
-keyring @ file:///C:/ci/keyring_1629321702436/work
+keyring==24.2.0
 kiwisolver @ file:///C:/ci/kiwisolver_1612282555033/work
 kombu==5.2.4
 l18n==2021.3
