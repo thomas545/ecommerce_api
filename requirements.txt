@@ -13,7 +13,7 @@ arrow==1.2.3
 asgiref==3.7.2
 asn1crypto==1.5.1
 astroid==2.15.6
-astropy @ file:///C:/ci/astropy_1629829318700/work
+astropy==5.3.3
 async-generator @ file:///home/ktietz/src/ci/async_generator_1611927993394/work
 async-timeout==4.0.2
 atomicwrites==1.4.0
