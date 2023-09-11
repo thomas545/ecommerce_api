@@ -200,7 +200,7 @@ llvmlite==0.40.1
 locket==1.0.0
 lxml==4.9.3
 Markdown==3.4.4
-markdown2==2.4.2
+markdown2==2.4.10
 MarkupSafe @ file:///C:/ci/markupsafe_1607027406824/work
 matplotlib @ file:///C:/ci/matplotlib-suite_1634667159685/work
 matplotlib-inline @ file:///tmp/build/80754af9/matplotlib-inline_1628242447089/work
