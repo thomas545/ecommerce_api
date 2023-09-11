@@ -199,7 +199,7 @@ libarchive-c==5.0
 llvmlite==0.40.1
 locket==1.0.0
 lxml==4.9.3
-Markdown==3.3.6
+Markdown==3.4.4
 markdown2==2.4.2
 MarkupSafe @ file:///C:/ci/markupsafe_1607027406824/work
 matplotlib @ file:///C:/ci/matplotlib-suite_1634667159685/work
