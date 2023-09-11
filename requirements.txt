@@ -115,7 +115,7 @@ docutils==0.20.1
 draftjs-exporter==5.0.0
 drf-haystack==1.8.12
 elasticsearch==8.9.0
-elasticsearch-dsl==7.4.0
+elasticsearch-dsl==8.9.0
 entrypoints==0.3
 et-xmlfile==1.1.0
 fastcache @ file:///C:/ci/fastcache_1607571310570/work
