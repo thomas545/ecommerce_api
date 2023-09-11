@@ -124,7 +124,7 @@ filelock==3.12.3
 firebase-admin==6.2.0
 flake8==6.1.0
 Flask==2.3.3
-fonttools==4.25.0
+fonttools==4.42.1
 fsspec @ file:///tmp/build/80754af9/fsspec_1636116461911/work
 future @ file:///C:/ci/future_1607568713721/work
 gevent @ file:///C:/ci/gevent_1628273776273/work
