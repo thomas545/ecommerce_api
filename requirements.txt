@@ -82,7 +82,7 @@ defusedxml==0.7.1
 diff-match-patch==20230430
 distributed==2023.9.1
 Django==4.2.5
-django-allauth==0.49.0
+django-allauth==0.56.1
 django-core==1.4.1
 django-countries==7.3.2
 django-crispy-forms==1.14.0
