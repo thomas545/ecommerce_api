@@ -153,7 +153,7 @@ hpack==4.0.0
 hstspreload==2023.1.1
 html5lib==1.1
 httpcore==0.18.0
-httplib2==0.20.4
+httplib2==0.22.0
 httpx==0.13.3
 hyperframe==5.2.0
 hyperlink==21.0.0
