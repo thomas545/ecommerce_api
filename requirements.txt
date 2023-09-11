@@ -21,7 +21,7 @@ attrs==23.1.0
 autobahn==23.6.2
 Automat==22.10.0
 autopep8==2.0.4
-Babel @ file:///tmp/build/80754af9/babel_1620871417480/work
+Babel==2.12.1
 backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
 backports.functools-lru-cache @ file:///tmp/build/80754af9/backports.functools_lru_cache_1618170165463/work
 backports.shutil-get-terminal-size @ file:///tmp/build/80754af9/backports.shutil_get_terminal_size_1608222128777/work
