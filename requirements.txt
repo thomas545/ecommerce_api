@@ -121,7 +121,7 @@ et-xmlfile==1.1.0
 fastcache==1.1.0
 fcm-django==2.0.0
 filelock==3.12.3
-firebase-admin==5.2.0
+firebase-admin==6.2.0
 flake8 @ file:///tmp/build/80754af9/flake8_1620776156532/work
 Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
 fonttools==4.25.0
