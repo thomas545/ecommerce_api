@@ -374,7 +374,7 @@ typing-extensions==4.7.1
 tzdata==2023.3
 ujson==5.8.0
 unicodecsv==0.14.1
-Unidecode @ file:///tmp/build/80754af9/unidecode_1614712377438/work
+Unidecode==1.3.6
 uritemplate==4.1.1
 urllib3==1.26.7
 vine==5.0.0
