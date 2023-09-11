@@ -180,7 +180,7 @@ jinja2-time==0.2.0
 joblib==1.3.2
 json5==0.9.14
 jsonfield==3.1.0
-jsonschema @ file:///Users/ktietz/demo/mc3/conda-bld/jsonschema_1630511932244/work
+jsonschema==4.19.0
 jupyter @ file:///C:/ci/jupyter_1607685287094/work
 jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1616770841739/work
 jupyter-console @ file:///tmp/build/80754af9/jupyter_console_1616615302928/work
