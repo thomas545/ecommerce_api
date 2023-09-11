@@ -34,7 +34,7 @@ binaryornot==0.4.4
 bitarray==2.8.1
 bkcharts==0.2
 black==23.9.1
-bleach @ file:///tmp/build/80754af9/bleach_1628110601003/work
+bleach==6.0.0
 bokeh @ file:///C:/ci/bokeh_1635306491714/work
 boto==2.49.0
 Bottleneck @ file:///C:/ci/bottleneck_1607557040328/work
