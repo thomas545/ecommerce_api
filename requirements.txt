@@ -298,7 +298,7 @@ python3-openid==3.2.0
 pytz==2023.3.post1
 PyWavelets==1.4.1
 pywin32==306
-pywin32-ctypes @ file:///C:/ci/pywin32-ctypes_1607553594546/work
+pywin32-ctypes==0.2.2
 pywinpty @ file:///C:/ci/pywinpty_1607419945780/work
 PyYAML==6.0
 pyzmq @ file:///C:/ci/pyzmq_1628276105793/work
