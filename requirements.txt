@@ -52,7 +52,7 @@ charset-normalizer==3.2.0
 click==8.1.7
 click-didyoumean==0.3.0
 click-plugins==1.1.1
-click-repl==0.2.0
+click-repl==0.3.0
 cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1632508026186/work
 clyent==1.2.2
 colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
