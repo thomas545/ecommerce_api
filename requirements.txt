@@ -14,7 +14,7 @@ asgiref==3.7.2
 asn1crypto==1.5.1
 astroid==2.15.6
 astropy==5.3.3
-async-generator @ file:///home/ktietz/src/ci/async_generator_1611927993394/work
+async-generator==1.10
 async-timeout==4.0.2
 atomicwrites==1.4.0
 attrs @ file:///tmp/build/80754af9/attrs_1620827162558/work
