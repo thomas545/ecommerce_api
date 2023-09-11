@@ -55,7 +55,7 @@ click-plugins==1.1.1
 click-repl==0.3.0
 cloudpickle==2.2.1
 clyent==1.2.2
-colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+colorama==0.4.6
 comtypes==1.1.10
 conda==4.10.3
 conda-build==3.21.6
