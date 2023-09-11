@@ -60,7 +60,7 @@ comtypes==1.2.0
 conda==4.10.3
 conda-build==3.21.6
 conda-content-trust==0.1.2
-conda-pack @ file:///tmp/build/80754af9/conda-pack_1611163042455/work
+conda-pack==0.7.1
 conda-package-handling @ file:///C:/ci/conda-package-handling_1618262410900/work
 conda-repo-cli @ file:///tmp/build/80754af9/conda-repo-cli_1620168426516/work
 conda-token @ file:///tmp/build/80754af9/conda-token_1620076980546/work
