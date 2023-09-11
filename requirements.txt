@@ -322,7 +322,7 @@ scipy==1.11.2
 seaborn==0.12.2
 Send2Trash==1.8.2
 serpy==0.3.1
-service-identity==21.1.0
+service-identity==23.1.0
 simplegeneric==0.8.1
 singledispatch @ file:///tmp/build/80754af9/singledispatch_1629321204894/work
 sip==4.19.13
