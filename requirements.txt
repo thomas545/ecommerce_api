@@ -195,7 +195,7 @@ kiwisolver==1.4.5
 kombu==5.3.2
 l18n==2021.3
 lazy-object-proxy==1.9.0
-libarchive-c @ file:///tmp/build/80754af9/python-libarchive-c_1617780486945/work
+libarchive-c==5.0
 llvmlite==0.37.0
 locket==0.2.1
 lxml @ file:///C:/ci/lxml_1616443418777/work
