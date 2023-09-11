@@ -398,5 +398,5 @@ xmltodict==0.13.0
 yapf==0.40.1
 zict==3.0.0
 zipp==3.16.2
-zope.event==4.5.0
+zope.event==5.0
 zope.interface @ file:///C:/ci/zope.interface_1625036252485/work
