@@ -339,7 +339,7 @@ sphinxcontrib-htmlhelp==2.0.4
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
-sphinxcontrib-websupport @ file:///tmp/build/80754af9/sphinxcontrib-websupport_1597081412696/work
+sphinxcontrib-websupport==1.2.6
 spyder @ file:///C:/ci/spyder_1636480369575/work
 spyder-kernels @ file:///C:/ci/spyder-kernels_1634237096710/work
 SQLAlchemy @ file:///C:/ci/sqlalchemy_1626948551162/work
