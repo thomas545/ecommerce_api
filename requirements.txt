@@ -319,7 +319,7 @@ scikit-image==0.21.0
 scikit-learn==1.3.0
 scikit-learn-intelex==2023.2.1
 scipy==1.11.2
-seaborn @ file:///tmp/build/80754af9/seaborn_1629307859561/work
+seaborn==0.12.2
 Send2Trash @ file:///tmp/build/80754af9/send2trash_1632406701022/work
 serpy==0.3.1
 service-identity==21.1.0
