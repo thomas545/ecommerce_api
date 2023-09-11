@@ -315,7 +315,7 @@ rope==1.9.0
 rsa==4.9
 Rtree==1.0.1
 ruamel-yaml-conda==0.15.80
-scikit-image==0.18.3
+scikit-image==0.21.0
 scikit-learn @ file:///C:/ci/scikit-learn_1622739499047/work
 scikit-learn-intelex==2021.20210714.120553
 scipy @ file:///C:/ci/scipy_1630606917240/work
