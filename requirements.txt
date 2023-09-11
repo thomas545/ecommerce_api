@@ -331,7 +331,7 @@ sniffio==1.3.0
 snowballstemmer==2.2.0
 sortedcollections==2.1.0
 sortedcontainers==2.4.0
-soupsieve @ file:///tmp/build/80754af9/soupsieve_1616183228191/work
+soupsieve==2.5
 Sphinx==4.2.0
 sphinxcontrib-applehelp @ file:///home/ktietz/src/ci/sphinxcontrib-applehelp_1611920841464/work
 sphinxcontrib-devhelp @ file:///home/ktietz/src/ci/sphinxcontrib-devhelp_1611920923094/work
