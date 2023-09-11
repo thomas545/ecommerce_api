@@ -198,7 +198,7 @@ lazy-object-proxy==1.9.0
 libarchive-c==5.0
 llvmlite==0.40.1
 locket==1.0.0
-lxml @ file:///C:/ci/lxml_1616443418777/work
+lxml==4.9.3
 Markdown==3.3.6
 markdown2==2.4.2
 MarkupSafe @ file:///C:/ci/markupsafe_1607027406824/work
