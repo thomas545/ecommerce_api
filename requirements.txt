@@ -70,7 +70,7 @@ construct==2.10.68
 contextlib2==21.6.0
 cookiecutter==2.3.0
 cryptography==41.0.3
-cycler==0.10.0
+cycler==0.11.0
 Cython @ file:///C:/ci/cython_1636018292912/work
 cytoolz==0.11.0
 daal4py==2021.3.0
