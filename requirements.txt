@@ -12,7 +12,7 @@ argon2-cffi==23.1.0
 arrow==1.2.3
 asgiref==3.7.2
 asn1crypto==1.5.1
-astroid @ file:///C:/ci/astroid_1628063282661/work
+astroid==2.15.6
 astropy @ file:///C:/ci/astropy_1629829318700/work
 async-generator @ file:///home/ktietz/src/ci/async_generator_1611927993394/work
 async-timeout==4.0.2
