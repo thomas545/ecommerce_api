@@ -27,7 +27,7 @@ backports.functools-lru-cache==1.6.6
 backports.shutil-get-terminal-size==1.0.0
 backports.tempfile==1.0
 backports.weakref==1.0.post1
-bcrypt @ file:///C:/ci/bcrypt_1607022693089/work
+bcrypt==4.0.1
 beautifulsoup4==4.9.3
 billiard==3.6.4.0
 binaryornot @ file:///tmp/build/80754af9/binaryornot_1617751525010/work
