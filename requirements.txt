@@ -212,7 +212,7 @@ mkl-random==1.2.2
 mkl-service==2.4.0
 mock==5.1.0
 more-itertools==10.1.0
-mpmath==1.2.1
+mpmath==1.3.0
 msgpack @ file:///C:/ci/msgpack-python_1612287350784/work
 multipledispatch @ file:///C:/ci/multipledispatch_1607574329826/work
 munkres==1.1.4
