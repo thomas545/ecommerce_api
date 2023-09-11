@@ -389,7 +389,7 @@ Willow==1.6.2
 win-inet-pton==1.1.0
 win-unicode-console==0.5
 wincertstore==0.2
-wrapt @ file:///C:/ci/wrapt_1607574570428/work
+wrapt==1.15.0
 xlrd @ file:///tmp/build/80754af9/xlrd_1608072521494/work
 XlsxWriter @ file:///tmp/build/80754af9/xlsxwriter_1628603415431/work
 xlwings==0.24.9
