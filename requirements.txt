@@ -43,7 +43,7 @@ CacheControl==0.13.1
 cached-property==1.5.2
 cachetools==5.3.1
 celery==5.3.4
-certifi==2021.10.8
+certifi==2023.7.22
 cffi @ file:///C:/ci/cffi_1625831756778/work
 channels==3.0.4
 channels-redis==3.4.0
