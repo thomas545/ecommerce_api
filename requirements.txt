@@ -47,7 +47,7 @@ certifi==2023.7.22
 cffi==1.15.1
 channels==4.0.0
 channels-redis==4.1.0
-chardet==3.0.4
+chardet==5.2.0
 charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
 click==8.0.3
 click-didyoumean==0.3.0
