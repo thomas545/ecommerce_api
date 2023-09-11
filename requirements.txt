@@ -262,7 +262,7 @@ protobuf==4.24.3
 proxycrawl==3.2.2
 psutil==5.9.5
 psycopg2==2.9.7
-ptyprocess @ file:///tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
+ptyprocess==0.7.0
 py @ file:///tmp/build/80754af9/py_1607971587848/work
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
