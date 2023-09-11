@@ -386,7 +386,7 @@ Werkzeug==2.3.7
 whichcraft==0.6.1
 widgetsnbextension==4.0.8
 Willow==1.6.2
-win-inet-pton @ file:///C:/ci/win_inet_pton_1605306162074/work
+win-inet-pton==1.1.0
 win-unicode-console==0.5
 wincertstore==0.2
 wrapt @ file:///C:/ci/wrapt_1607574570428/work
