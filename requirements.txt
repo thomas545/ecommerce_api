@@ -258,7 +258,7 @@ poyo==0.5.0
 prometheus-client==0.17.1
 prompt-toolkit==3.0.39
 proto-plus==1.22.3
-protobuf==3.19.4
+protobuf==4.24.3
 proxycrawl==3.2.1
 psutil @ file:///C:/ci/psutil_1612298199233/work
 psycopg2==2.9.3
