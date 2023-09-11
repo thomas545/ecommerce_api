@@ -366,7 +366,7 @@ tornado==6.3.3
 tqdm==4.66.1
 traitlets==5.9.0
 twilio==8.8.0
-Twisted==22.2.0
+Twisted==23.8.0
 twisted-iocpsupport==1.0.2
 txaio==22.2.1
 typed-ast @ file:///C:/ci/typed-ast_1624953797214/work
