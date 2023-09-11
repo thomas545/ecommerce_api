@@ -76,7 +76,7 @@ cytoolz==0.12.2
 daal4py==2023.2.1
 daphne==4.0.0
 dask==2023.9.1
-debugpy @ file:///C:/ci/debugpy_1629222819322/work
+debugpy==1.7.0
 decorator @ file:///tmp/build/80754af9/decorator_1632776554403/work
 defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 diff-match-patch @ file:///Users/ktietz/demo/mc3/conda-bld/diff-match-patch_1630511840874/work
