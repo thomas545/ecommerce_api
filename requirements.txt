@@ -158,7 +158,7 @@ httpx==0.25.0
 hyperframe==6.0.1
 hyperlink==21.0.0
 idna==3.4
-imagecodecs @ file:///C:/ci/imagecodecs_1635511087451/work
+imagecodecs==2023.9.4
 imageio @ file:///tmp/build/80754af9/imageio_1617700267927/work
 imagesize @ file:///Users/ktietz/demo/mc3/conda-bld/imagesize_1628863108022/work
 importlib-metadata @ file:///C:/ci/importlib-metadata_1631916826748/work
