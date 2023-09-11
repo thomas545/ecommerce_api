@@ -351,7 +351,7 @@ tables==3.8.0
 tablib==3.5.0
 TBB==2021.10.0
 tblib==2.0.0
-telepath==0.2
+telepath==0.3.1
 terminado==0.9.4
 testpath @ file:///tmp/build/80754af9/testpath_1624638946665/work
 text-unidecode @ file:///Users/ktietz/demo/mc3/conda-bld/text-unidecode_1629401354553/work
