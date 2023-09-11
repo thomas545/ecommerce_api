@@ -362,7 +362,7 @@ tifffile==2023.8.30
 tinycss==0.4
 toml==0.10.2
 toolz==0.12.0
-tornado @ file:///C:/ci/tornado_1606924294691/work
+tornado==6.3.3
 tqdm @ file:///tmp/build/80754af9/tqdm_1635330843403/work
 traitlets @ file:///tmp/build/80754af9/traitlets_1632522747050/work
 twilio==7.7.1
