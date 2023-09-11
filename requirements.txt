@@ -268,7 +268,7 @@ pyasn1==0.5.0
 pyasn1-modules==0.3.0
 pycodestyle==2.11.0
 pycosat==0.6.3
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pycparser==2.21
 pycryptodome==3.14.1
 pycurl==7.44.1
 pydocstyle @ file:///tmp/build/80754af9/pydocstyle_1621600989141/work
