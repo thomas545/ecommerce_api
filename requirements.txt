@@ -397,6 +397,6 @@ xlwt==1.3.0
 xmltodict==0.13.0
 yapf==0.40.1
 zict==3.0.0
-zipp @ file:///tmp/build/80754af9/zipp_1633618647012/work
+zipp==3.16.2
 zope.event==4.5.0
 zope.interface @ file:///C:/ci/zope.interface_1625036252485/work
