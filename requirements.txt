@@ -376,7 +376,7 @@ ujson==5.8.0
 unicodecsv==0.14.1
 Unidecode==1.3.6
 uritemplate==4.1.1
-urllib3==1.26.7
+urllib3==2.0.4
 vine==5.0.0
 wagtail==2.16.1
 watchdog @ file:///C:/ci/watchdog_1624955113064/work
