@@ -359,7 +359,7 @@ textdistance==4.5.0
 threadpoolctl==3.2.0
 three-merge==0.1.1
 tifffile==2023.8.30
-tinycss @ file:///tmp/build/80754af9/tinycss_1617713798712/work
+tinycss==0.4
 toml @ file:///tmp/build/80754af9/toml_1616166611790/work
 toolz @ file:///home/linux1/recipes/ci/toolz_1610987900194/work
 tornado @ file:///C:/ci/tornado_1606924294691/work
