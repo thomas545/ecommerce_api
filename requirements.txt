@@ -173,7 +173,7 @@ ipython-genutils==0.2.0
 ipywidgets==8.1.0
 isort==5.12.0
 itsdangerous==2.1.2
-jdcal @ file:///Users/ktietz/demo/mc3/conda-bld/jdcal_1630584345063/work
+jdcal==1.4.1
 jedi @ file:///C:/ci/jedi_1611341083684/work
 Jinja2 @ file:///tmp/build/80754af9/jinja2_1612213139570/work
 jinja2-time @ file:///tmp/build/80754af9/jinja2-time_1617751524098/work
