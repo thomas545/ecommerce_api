@@ -290,7 +290,7 @@ python-dateutil==2.8.2
 python-decouple==3.8
 python-lsp-black==1.3.0
 python-lsp-jsonrpc==1.1.1
-python-lsp-server==1.2.4
+python-lsp-server==1.8.0
 python-memcached==1.59
 python-ptrace==0.9.8
 python-slugify @ file:///tmp/build/80754af9/python-slugify_1620405669636/work
