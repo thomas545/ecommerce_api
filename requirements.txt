@@ -383,7 +383,7 @@ watchdog==3.0.0
 wcwidth==0.2.6
 webencodings==0.5.1
 Werkzeug==2.3.7
-whichcraft @ file:///tmp/build/80754af9/whichcraft_1617751293875/work
+whichcraft==0.6.1
 widgetsnbextension @ file:///C:/ci/widgetsnbextension_1607531582688/work
 Willow==1.4.1
 win-inet-pton @ file:///C:/ci/win_inet_pton_1605306162074/work
