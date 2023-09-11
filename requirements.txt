@@ -7,7 +7,7 @@ anaconda-project==0.8.2
 anyascii==0.3.2
 anyio==4.0.0
 appdirs==1.4.4
-argh==0.26.2
+argh==0.29.3
 argon2-cffi @ file:///C:/ci/argon2-cffi_1613037869401/work
 arrow @ file:///C:/ci/arrow_1617738834352/work
 asgiref==3.5.0
