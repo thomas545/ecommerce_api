@@ -242,7 +242,7 @@ paramiko==3.3.1
 parso==0.8.3
 partd==1.4.0
 path==16.7.1
-pathlib2 @ file:///C:/ci/pathlib2_1625585796814/work
+pathlib2==2.3.7.post1
 pathspec==0.7.0
 patsy==0.5.2
 pefile==2021.9.3
