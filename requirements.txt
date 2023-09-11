@@ -191,7 +191,7 @@ jupyterlab-pygments==0.2.2
 jupyterlab-server==2.24.0
 jupyterlab-widgets==3.0.8
 keyring==24.2.0
-kiwisolver @ file:///C:/ci/kiwisolver_1612282555033/work
+kiwisolver==1.4.5
 kombu==5.2.4
 l18n==2021.3
 lazy-object-proxy @ file:///C:/ci/lazy-object-proxy_1616529288960/work
