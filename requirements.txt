@@ -329,7 +329,7 @@ sip==6.7.11
 six==1.16.0
 sniffio==1.3.0
 snowballstemmer==2.2.0
-sortedcollections @ file:///tmp/build/80754af9/sortedcollections_1611172717284/work
+sortedcollections==2.1.0
 sortedcontainers @ file:///tmp/build/80754af9/sortedcontainers_1623949099177/work
 soupsieve @ file:///tmp/build/80754af9/soupsieve_1616183228191/work
 Sphinx==4.2.0
