@@ -325,7 +325,7 @@ serpy==0.3.1
 service-identity==23.1.0
 simplegeneric==0.8.1
 singledispatch==4.1.0
-sip==4.19.13
+sip==6.7.11
 six @ file:///tmp/build/80754af9/six_1623709665295/work
 sniffio @ file:///C:/ci/sniffio_1614030527509/work
 snowballstemmer @ file:///tmp/build/80754af9/snowballstemmer_1611258885636/work
