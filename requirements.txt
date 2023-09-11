@@ -109,7 +109,7 @@ django-rest-auth==0.9.5
 django-rest-knox==4.2.0
 django-taggit==4.0.0
 django-treebeard==4.7
-djangorestframework==3.12.4
+djangorestframework==3.14.0
 djangorestframework-jwt==1.11.0
 docutils @ file:///C:/ci/docutils_1620828264669/work
 draftjs-exporter==2.1.7
