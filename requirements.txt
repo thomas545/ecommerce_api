@@ -35,7 +35,7 @@ bitarray==2.8.1
 bkcharts==0.2
 black==23.9.1
 bleach==6.0.0
-bokeh @ file:///C:/ci/bokeh_1635306491714/work
+bokeh==3.2.2
 boto==2.49.0
 Bottleneck @ file:///C:/ci/bottleneck_1607557040328/work
 brotlipy==0.7.0
