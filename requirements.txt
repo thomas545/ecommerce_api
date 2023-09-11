@@ -161,7 +161,7 @@ idna==3.4
 imagecodecs==2023.9.4
 imageio==2.31.3
 imagesize==1.4.1
-importlib-metadata @ file:///C:/ci/importlib-metadata_1631916826748/work
+importlib-metadata==6.8.0
 incremental==21.3.0
 inflection==0.5.1
 iniconfig @ file:///home/linux1/recipes/ci/iniconfig_1610983019677/work
