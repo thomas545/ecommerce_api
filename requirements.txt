@@ -288,7 +288,7 @@ PySocks==1.7.1
 pytest==7.4.2
 python-dateutil==2.8.2
 python-decouple==3.8
-python-lsp-black @ file:///tmp/build/80754af9/python-lsp-black_1634232156041/work
+python-lsp-black==1.3.0
 python-lsp-jsonrpc==1.0.0
 python-lsp-server==1.2.4
 python-memcached==1.59
