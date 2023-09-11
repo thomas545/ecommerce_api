@@ -283,7 +283,7 @@ pyodbc===4.0.0-unsupported
 pyOpenSSL==23.2.0
 pyparsing==3.1.1
 pyreadline==2.1
-pyrsistent @ file:///C:/ci/pyrsistent_1636093225342/work
+pyrsistent==0.19.3
 PySocks @ file:///C:/ci/pysocks_1605307512533/work
 pytest==6.2.4
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
