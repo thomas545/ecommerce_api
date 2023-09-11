@@ -284,7 +284,7 @@ pyOpenSSL==23.2.0
 pyparsing==3.1.1
 pyreadline==2.1
 pyrsistent==0.19.3
-PySocks @ file:///C:/ci/pysocks_1605307512533/work
+PySocks==1.7.1
 pytest==6.2.4
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 python-decouple==3.6
