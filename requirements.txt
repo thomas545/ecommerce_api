@@ -68,7 +68,7 @@ conda-verify==3.4.2
 constantly==15.1.0
 construct==2.10.68
 contextlib2==21.6.0
-cookiecutter @ file:///tmp/build/80754af9/cookiecutter_1617748928239/work
+cookiecutter==2.3.0
 cryptography @ file:///C:/ci/cryptography_1633520531101/work
 cycler==0.10.0
 Cython @ file:///C:/ci/cython_1636018292912/work
