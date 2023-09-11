@@ -293,7 +293,7 @@ python-lsp-jsonrpc==1.1.1
 python-lsp-server==1.8.0
 python-memcached==1.59
 python-ptrace==0.9.8
-python-slugify @ file:///tmp/build/80754af9/python-slugify_1620405669636/work
+python-slugify==8.0.1
 python3-openid==3.2.0
 pytz==2021.3
 PyWavelets @ file:///C:/ci/pywavelets_1607645631519/work
