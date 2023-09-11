@@ -8,7 +8,7 @@ anyascii==0.3.2
 anyio==4.0.0
 appdirs==1.4.4
 argh==0.29.3
-argon2-cffi @ file:///C:/ci/argon2-cffi_1613037869401/work
+argon2-cffi==23.1.0
 arrow @ file:///C:/ci/arrow_1617738834352/work
 asgiref==3.5.0
 asn1crypto @ file:///tmp/build/80754af9/asn1crypto_1596577642040/work
