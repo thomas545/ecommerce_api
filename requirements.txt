@@ -302,7 +302,7 @@ pywin32-ctypes==0.2.2
 pywinpty==2.0.11
 PyYAML==6.0.1
 pyzmq==25.1.1
-QDarkStyle @ file:///tmp/build/80754af9/qdarkstyle_1617386714626/work
+QDarkStyle==3.1
 qstylizer @ file:///tmp/build/80754af9/qstylizer_1617713584600/work/dist/qstylizer-0.1.10-py2.py3-none-any.whl
 QtAwesome @ file:///tmp/build/80754af9/qtawesome_1615991616277/work
 qtconsole @ file:///tmp/build/80754af9/qtconsole_1632739723211/work
