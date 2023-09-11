@@ -285,7 +285,7 @@ pyparsing==3.1.1
 pyreadline==2.1
 pyrsistent==0.19.3
 PySocks==1.7.1
-pytest==6.2.4
+pytest==7.4.2
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 python-decouple==3.6
 python-lsp-black @ file:///tmp/build/80754af9/python-lsp-black_1634232156041/work
