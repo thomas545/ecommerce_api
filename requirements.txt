@@ -341,7 +341,7 @@ sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
 sphinxcontrib-websupport==1.2.6
 spyder==5.4.5
-spyder-kernels @ file:///C:/ci/spyder-kernels_1634237096710/work
+spyder-kernels==2.4.4
 SQLAlchemy @ file:///C:/ci/sqlalchemy_1626948551162/work
 sqlparse==0.4.2
 statsmodels==0.12.2
