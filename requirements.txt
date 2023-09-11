@@ -39,7 +39,7 @@ bokeh==3.2.2
 boto==2.49.0
 Bottleneck==1.3.7
 brotlipy==0.7.0
-CacheControl==0.12.10
+CacheControl==0.13.1
 cached-property @ file:///tmp/build/80754af9/cached-property_1600785575025/work
 cachetools==5.0.0
 celery==5.2.3
