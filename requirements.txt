@@ -304,7 +304,7 @@ PyYAML==6.0.1
 pyzmq==25.1.1
 QDarkStyle==3.1
 qstylizer==0.2.2
-QtAwesome @ file:///tmp/build/80754af9/qtawesome_1615991616277/work
+QtAwesome==1.2.3
 qtconsole @ file:///tmp/build/80754af9/qtconsole_1632739723211/work
 QtPy @ file:///tmp/build/80754af9/qtpy_1629397026935/work
 regex @ file:///C:/ci/regex_1628063427816/work
