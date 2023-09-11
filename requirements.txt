@@ -1,7 +1,7 @@
 aioredis==2.0.1
 alabaster==0.7.13
 amqp==5.1.1
-anaconda-client @ file:///C:/ci/anaconda-client_1635342725944/work
+anaconda-client==1.2.2
 anaconda-navigator==2.1.1
 anaconda-project @ file:///tmp/build/80754af9/anaconda-project_1626085644852/work
 anyascii==0.3.0
