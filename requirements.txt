@@ -3,7 +3,7 @@ alabaster==0.7.13
 amqp==5.1.1
 anaconda-client==1.2.2
 anaconda-navigator==2.1.1
-anaconda-project @ file:///tmp/build/80754af9/anaconda-project_1626085644852/work
+anaconda-project==0.8.2
 anyascii==0.3.0
 anyio @ file:///C:/ci/anyio_1620153135622/work/dist
 appdirs==1.4.4
