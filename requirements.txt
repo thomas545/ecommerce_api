@@ -360,7 +360,7 @@ threadpoolctl==3.2.0
 three-merge==0.1.1
 tifffile==2023.8.30
 tinycss==0.4
-toml @ file:///tmp/build/80754af9/toml_1616166611790/work
+toml==0.10.2
 toolz @ file:///home/linux1/recipes/ci/toolz_1610987900194/work
 tornado @ file:///C:/ci/tornado_1606924294691/work
 tqdm @ file:///tmp/build/80754af9/tqdm_1635330843403/work
