@@ -324,7 +324,7 @@ Send2Trash==1.8.2
 serpy==0.3.1
 service-identity==23.1.0
 simplegeneric==0.8.1
-singledispatch @ file:///tmp/build/80754af9/singledispatch_1629321204894/work
+singledispatch==4.1.0
 sip==4.19.13
 six @ file:///tmp/build/80754af9/six_1623709665295/work
 sniffio @ file:///C:/ci/sniffio_1614030527509/work
