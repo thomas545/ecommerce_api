@@ -170,7 +170,7 @@ intervaltree==3.1.0
 ipykernel==6.25.2
 ipython==8.15.0
 ipython-genutils==0.2.0
-ipywidgets @ file:///tmp/build/80754af9/ipywidgets_1634143127070/work
+ipywidgets==8.1.0
 isort @ file:///tmp/build/80754af9/isort_1628603791788/work
 itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
 jdcal @ file:///Users/ktietz/demo/mc3/conda-bld/jdcal_1630584345063/work
