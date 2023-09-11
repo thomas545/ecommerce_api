@@ -272,7 +272,7 @@ pycparser==2.21
 pycryptodome==3.18.0
 pycurl==7.45.2
 pydocstyle==6.3.0
-pyerfa @ file:///C:/ci/pyerfa_1621560974055/work
+pyerfa==2.0.0.3
 pyflakes @ file:///tmp/build/80754af9/pyflakes_1617200973297/work
 Pygments @ file:///tmp/build/80754af9/pygments_1629234116488/work
 PyJWT==1.7.1
