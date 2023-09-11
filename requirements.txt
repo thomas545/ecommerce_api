@@ -274,7 +274,7 @@ pycurl==7.45.2
 pydocstyle==6.3.0
 pyerfa==2.0.0.3
 pyflakes==3.1.0
-Pygments @ file:///tmp/build/80754af9/pygments_1629234116488/work
+Pygments==2.16.1
 PyJWT==1.7.1
 pylint @ file:///C:/ci/pylint_1627536884966/work
 pyls-spyder==0.4.0
