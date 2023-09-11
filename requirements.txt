@@ -235,7 +235,7 @@ numpydoc==1.5.0
 oauthlib==3.2.2
 olefile==0.46
 openpyxl==3.1.2
-packaging @ file:///tmp/build/80754af9/packaging_1625611678980/work
+packaging==23.1
 pandas @ file:///C:/ci/pandas_1635506685681/work
 pandocfilters @ file:///C:/ci/pandocfilters_1605114832805/work
 paramiko @ file:///tmp/build/80754af9/paramiko_1598886428689/work
