@@ -66,7 +66,7 @@ conda-repo-cli @ file:///tmp/build/80754af9/conda-repo-cli_1620168426516/work
 conda-token @ file:///tmp/build/80754af9/conda-token_1620076980546/work
 conda-verify==3.4.2
 constantly==15.1.0
-construct==2.5.3
+construct==2.10.68
 contextlib2 @ file:///Users/ktietz/demo/mc3/conda-bld/contextlib2_1630668244042/work
 cookiecutter @ file:///tmp/build/80754af9/cookiecutter_1617748928239/work
 cryptography @ file:///C:/ci/cryptography_1633520531101/work
