@@ -184,7 +184,7 @@ jsonschema==4.19.0
 jupyter==1.0.0
 jupyter-client==8.3.1
 jupyter-console==6.6.3
-jupyter-core @ file:///C:/ci/jupyter_core_1633420716440/work
+jupyter-core==5.3.1
 jupyter-server @ file:///C:/ci/jupyter_server_1616084298419/work
 jupyterlab @ file:///tmp/build/80754af9/jupyterlab_1635799997693/work
 jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_1601490720602/work
