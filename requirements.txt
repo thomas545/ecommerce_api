@@ -223,7 +223,7 @@ nbclassic==1.0.0
 nbclient==0.8.0
 nbconvert==7.8.0
 nbformat==5.9.2
-nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1613680548246/work
+nest-asyncio==1.5.7
 networkx @ file:///tmp/build/80754af9/networkx_1633639043937/work
 nltk==3.6.5
 nose @ file:///tmp/build/80754af9/nose_1606773131901/work
