@@ -236,7 +236,7 @@ oauthlib==3.2.2
 olefile==0.46
 openpyxl==3.1.2
 packaging==23.1
-pandas @ file:///C:/ci/pandas_1635506685681/work
+pandas==2.1.0
 pandocfilters @ file:///C:/ci/pandocfilters_1605114832805/work
 paramiko @ file:///tmp/build/80754af9/paramiko_1598886428689/work
 parso @ file:///tmp/build/80754af9/parso_1617223946239/work
