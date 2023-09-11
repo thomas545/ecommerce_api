@@ -244,7 +244,7 @@ partd==1.4.0
 path==16.7.1
 pathlib2==2.3.7.post1
 pathspec==0.11.2
-patsy==0.5.2
+patsy==0.5.3
 pefile==2021.9.3
 pep8==1.7.1
 pexpect @ file:///tmp/build/80754af9/pexpect_1605563209008/work
