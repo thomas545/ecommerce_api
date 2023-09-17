@@ -1,9 +1,6 @@
 aioredis==2.0.1
 alabaster==0.7.13
 amqp==5.1.1
-anaconda-client==1.2.2
-anaconda-navigator==2.1.1
-anaconda-project==0.8.2
 anyascii==0.3.2
 anyio==4.0.0
 appdirs==1.4.4
@@ -57,14 +54,6 @@ cloudpickle==2.2.1
 clyent==1.2.2
 colorama==0.4.6
 comtypes==1.2.0
-conda==4.10.3
-conda-build==3.21.6
-conda-content-trust==0.1.2
-conda-pack==0.7.1
-conda-package-handling==2.2.0
-conda-repo-cli
-conda-token
-conda-verify==3.4.2
 constantly==15.1.0
 construct==2.10.68
 contextlib2==21.6.0
