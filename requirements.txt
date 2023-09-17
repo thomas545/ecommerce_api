@@ -62,8 +62,8 @@ conda-build==3.21.6
 conda-content-trust==0.1.2
 conda-pack==0.7.1
 conda-package-handling==2.2.0
-conda-repo-cli @ file:///tmp/build/80754af9/conda-repo-cli_1620168426516/work
-conda-token @ file:///tmp/build/80754af9/conda-token_1620076980546/work
+conda-repo-cli
+conda-token
 conda-verify==3.4.2
 constantly==15.1.0
 construct==2.10.68
