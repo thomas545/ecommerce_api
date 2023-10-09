@@ -175,7 +175,7 @@ jupyter-client==8.3.1
 jupyter-console==6.6.3
 jupyter-core==5.3.2
 jupyter-server==2.7.3
-jupyterlab==4.0.5
+jupyterlab==4.0.6
 jupyterlab-pygments==0.2.2
 jupyterlab-server==2.24.0
 jupyterlab-widgets==3.0.8
