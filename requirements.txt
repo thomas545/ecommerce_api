@@ -58,7 +58,7 @@ constantly==15.1.0
 construct==2.10.68
 contextlib2==21.6.0
 cookiecutter==2.4.0
-cryptography==41.0.3
+cryptography==41.0.4
 cycler==0.11.0
 Cython==3.0.2
 cytoolz==0.12.2
