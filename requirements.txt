@@ -60,7 +60,7 @@ contextlib2==21.6.0
 cookiecutter==2.4.0
 cryptography==41.0.4
 cycler==0.12.1
-Cython==3.0.2
+Cython==3.0.3
 cytoolz==0.12.2
 daal4py==2023.2.1
 daphne==4.0.0
