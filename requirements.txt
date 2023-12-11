@@ -114,7 +114,7 @@ firebase-admin==6.3.0
 flake8==6.1.0
 Flask==3.0.0
 fonttools==4.46.0
-fsspec==2023.9.0
+fsspec==2023.12.1
 future==0.18.3
 gevent==23.9.0.post1
 glob2==0.7
