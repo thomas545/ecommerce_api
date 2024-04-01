@@ -191,7 +191,7 @@ lxml==5.2.0
 Markdown==3.6
 markdown2==2.4.13
 MarkupSafe==2.1.5
-matplotlib==3.7.2
+matplotlib==3.8.3
 matplotlib-inline==0.1.6
 mccabe==0.7.0
 menuinst==1.0.0
