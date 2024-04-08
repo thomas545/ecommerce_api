@@ -179,7 +179,7 @@ jupyterlab==4.1.6
 jupyterlab-pygments==0.3.0
 jupyterlab-server==2.26.0
 jupyterlab-widgets==3.0.10
-keyring==24.2.0
+keyring==25.1.0
 kiwisolver==1.4.5
 kombu==5.3.2
 l18n==2021.3
