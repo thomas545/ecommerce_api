@@ -330,7 +330,7 @@ sphinxcontrib-qthelp==1.0.7
 sphinxcontrib-serializinghtml==1.1.10
 sphinxcontrib-websupport==1.2.7
 spyder==5.5.4
-spyder-kernels==2.4.4
+spyder-kernels==2.5.1
 SQLAlchemy==2.0.20
 sqlparse==0.4.4
 statsmodels==0.14.0
