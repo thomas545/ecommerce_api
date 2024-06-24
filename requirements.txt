@@ -360,7 +360,7 @@ twisted-iocpsupport==1.0.4
 txaio==23.1.1
 typed-ast==1.5.5
 typing-extensions==4.12.2
-tzdata==2023.3
+tzdata==2024.1
 ujson==5.8.0
 unicodecsv==0.14.1
 Unidecode==1.3.6
