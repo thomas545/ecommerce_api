@@ -156,7 +156,7 @@ inflection==0.5.1
 iniconfig==2.0.0
 install==1.3.5
 intervaltree==3.1.0
-ipykernel==6.25.2
+ipykernel==6.29.5
 ipython==8.15.0
 ipython-genutils==0.2.0
 ipywidgets==8.1.0
