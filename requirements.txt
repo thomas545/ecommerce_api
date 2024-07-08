@@ -88,7 +88,7 @@ django-js-asset==2.2.0
 django-markdown-deux==1.0.6
 django-model-utils==4.5.1
 django-modelcluster==6.3
-django-mptt==0.14.0
+django-mptt==0.16.0
 django-nine==0.2.7
 django-notifications-hq==1.8.2
 django-pagedown==2.2.1
