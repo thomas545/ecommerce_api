@@ -302,7 +302,7 @@ requests-oauthlib==2.0.0
 rfc3986==2.0.0
 rope==1.13.0
 rsa==4.9
-Rtree==1.0.1
+Rtree==1.3.0
 ruamel-yaml-conda==0.15.80
 scikit-image==0.21.0
 scikit-learn==1.3.0
