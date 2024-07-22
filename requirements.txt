@@ -329,7 +329,7 @@ sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.8
 sphinxcontrib-serializinghtml==1.1.10
 sphinxcontrib-websupport==1.2.7
-spyder==5.4.5
+spyder==5.5.5
 spyder-kernels==2.4.4
 SQLAlchemy==2.0.20
 sqlparse==0.4.4
