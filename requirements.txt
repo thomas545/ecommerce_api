@@ -300,7 +300,7 @@ regex==2024.7.24
 requests==2.32.3
 requests-oauthlib==2.0.0
 rfc3986==2.0.0
-rope==1.9.0
+rope==1.13.0
 rsa==4.9
 Rtree==1.0.1
 ruamel-yaml-conda==0.15.80
