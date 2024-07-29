@@ -232,7 +232,7 @@ parso==0.8.4
 partd==1.4.2
 path==17.0.0
 pathlib2==2.3.7.post1
-pathspec==0.11.2
+pathspec==0.12.1
 patsy==0.5.3
 pefile==2023.2.7
 pep8==1.7.1
