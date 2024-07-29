@@ -110,7 +110,7 @@ et-xmlfile==1.1.0
 fastcache==1.1.0
 fcm-django==2.2.1
 filelock==3.15.4
-firebase-admin==6.2.0
+firebase-admin==6.5.0
 flake8==6.1.0
 Flask==2.3.3
 fonttools==4.42.1
