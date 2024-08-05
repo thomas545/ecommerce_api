@@ -250,7 +250,7 @@ proto-plus==1.24.0
 protobuf==5.27.3
 proxycrawl==3.2.2
 psutil==6.0.0
-psycopg2==2.9.7
+psycopg2==2.9.9
 ptyprocess==0.7.0
 py==1.11.0
 pyasn1==0.5.0
