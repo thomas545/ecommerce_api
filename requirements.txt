@@ -345,7 +345,7 @@ terminado==0.18.1
 testpath==0.6.0
 text-unidecode==1.3
 textdistance==4.6.3
-threadpoolctl==3.2.0
+threadpoolctl==3.5.0
 three-merge==0.1.1
 tifffile==2023.8.30
 tinycss==0.4
