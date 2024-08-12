@@ -4,7 +4,7 @@ amqp==5.2.0
 anyascii==0.3.2
 anyio==4.4.0
 appdirs==1.4.4
-argh==0.29.3
+argh==0.31.3
 argon2-cffi==23.1.0
 arrow==1.2.3
 asgiref==3.7.2
