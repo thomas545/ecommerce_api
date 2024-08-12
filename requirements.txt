@@ -82,7 +82,7 @@ django-elasticsearch-dsl-drf==0.22.5
 django-extensions==3.2.3
 django-extra-fields==3.0.2
 django-filter==24.3
-django-haystack==3.2.1
+django-haystack==3.3.0
 django-jet==1.0.8
 django-js-asset==2.1.0
 django-markdown-deux==1.0.6
