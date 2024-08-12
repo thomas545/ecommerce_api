@@ -230,7 +230,7 @@ pandocfilters==1.5.1
 paramiko==3.4.1
 parso==0.8.4
 partd==1.4.2
-path==16.7.1
+path==17.0.0
 pathlib2==2.3.7.post1
 pathspec==0.11.2
 patsy==0.5.3
