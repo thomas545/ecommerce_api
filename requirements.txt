@@ -292,7 +292,7 @@ pywinpty==2.0.13
 PyYAML==6.0.2
 pyzmq==26.1.0
 QDarkStyle==3.2.3
-qstylizer==0.2.2
+qstylizer==0.2.3
 QtAwesome==1.2.3
 qtconsole==5.4.4
 QtPy==2.4.0
