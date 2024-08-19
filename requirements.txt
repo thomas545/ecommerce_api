@@ -43,7 +43,7 @@ celery==5.4.0
 certifi==2024.7.4
 cffi==1.17.0
 channels==4.1.0
-channels-redis==4.1.0
+channels-redis==4.2.0
 chardet==5.2.0
 charset-normalizer==3.2.0
 click==8.1.7
