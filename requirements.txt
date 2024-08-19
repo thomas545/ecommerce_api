@@ -41,7 +41,7 @@ cached-property==1.5.2
 cachetools==5.5.0
 celery==5.4.0
 certifi==2024.7.4
-cffi==1.15.1
+cffi==1.17.0
 channels==4.0.0
 channels-redis==4.1.0
 chardet==5.2.0
