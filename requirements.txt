@@ -98,7 +98,7 @@ django-rest-auth==0.9.5
 django-rest-knox==5.0.1
 django-taggit==6.0.0
 django-treebeard==4.7.1
-djangorestframework==3.14.0
+djangorestframework==3.15.2
 djangorestframework-jwt==1.11.0
 docutils==0.20.1
 draftjs-exporter==5.0.0
