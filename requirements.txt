@@ -16,7 +16,7 @@ async-timeout==4.0.3
 atomicwrites==1.4.1
 attrs==24.2.0
 autobahn==24.4.2
-Automat==22.10.0
+Automat==24.8.1
 autopep8==2.0.4
 Babel==2.12.1
 backcall==0.2.0
