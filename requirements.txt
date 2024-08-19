@@ -272,7 +272,7 @@ pyodbc===4.0.0-unsupported
 pyOpenSSL==24.2.1
 pyparsing==3.1.2
 pyreadline==2.1
-pyrsistent==0.19.3
+pyrsistent==0.20.0
 PySocks==1.7.1
 pytest==7.4.2
 python-dateutil==2.8.2
