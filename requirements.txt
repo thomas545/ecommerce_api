@@ -1,5 +1,5 @@
 aioredis==2.0.1
-alabaster==0.7.13
+alabaster==1.0.0
 amqp==5.1.1
 anyascii==0.3.2
 anyio==4.0.0
