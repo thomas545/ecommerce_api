@@ -185,7 +185,7 @@ kombu==5.4.0
 l18n==2021.3
 lazy-object-proxy==1.10.0
 libarchive-c==5.1
-llvmlite==0.40.1
+llvmlite==0.43.0
 locket==1.0.0
 lxml==4.9.3
 Markdown==3.4.4
