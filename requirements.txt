@@ -10,7 +10,7 @@ arrow==1.3.0
 asgiref==3.8.1
 asn1crypto==1.5.1
 astroid==3.3.2
-astropy==5.3.3
+astropy==6.1.2
 async-generator==1.10
 async-timeout==4.0.3
 atomicwrites==1.4.1
