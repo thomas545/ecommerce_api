@@ -171,7 +171,7 @@ json5==0.9.25
 jsonfield==3.1.0
 jsonschema==4.23.0
 jupyter==1.0.0
-jupyter-client==8.3.1
+jupyter-client==8.6.2
 jupyter-console==6.6.3
 jupyter-core==5.3.1
 jupyter-server==2.7.3
