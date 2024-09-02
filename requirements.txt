@@ -254,7 +254,7 @@ psycopg2==2.9.9
 ptyprocess==0.7.0
 py==1.11.0
 pyasn1==0.6.0
-pyasn1-modules==0.3.0
+pyasn1-modules==0.4.0
 pycodestyle==2.11.0
 pycosat==0.6.3
 pycparser==2.21
