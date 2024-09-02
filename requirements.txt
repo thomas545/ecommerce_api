@@ -305,7 +305,7 @@ rsa==4.9
 Rtree==1.3.0
 ruamel-yaml-conda==0.15.80
 scikit-image==0.24.0
-scikit-learn==1.3.0
+scikit-learn==1.5.1
 scikit-learn-intelex==2023.2.1
 scipy==1.11.2
 seaborn==0.12.2
