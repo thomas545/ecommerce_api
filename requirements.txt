@@ -192,7 +192,7 @@ Markdown==3.7
 markdown2==2.5.0
 MarkupSafe==2.1.5
 matplotlib==3.9.2
-matplotlib-inline==0.1.6
+matplotlib-inline==0.1.7
 mccabe==0.7.0
 menuinst==1.0.0
 mistune==3.0.1
