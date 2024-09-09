@@ -368,7 +368,7 @@ uritemplate==4.1.1
 urllib3==2.2.2
 vine==5.1.0
 wagtail==6.2.1
-watchdog==3.0.0
+watchdog==5.0.2
 wcwidth==0.2.6
 webencodings==0.5.1
 Werkzeug==2.3.7
