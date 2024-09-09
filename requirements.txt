@@ -339,7 +339,7 @@ sympy==1.13.2
 tables==3.10.1
 tablib==3.6.1
 TBB==2021.13.1
-tblib==2.0.0
+tblib==3.0.0
 telepath==0.3.1
 terminado==0.17.1
 testpath==0.6.0
