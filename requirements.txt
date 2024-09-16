@@ -306,7 +306,7 @@ Rtree==1.3.0
 ruamel-yaml-conda==0.15.80
 scikit-image==0.24.0
 scikit-learn==1.5.2
-scikit-learn-intelex==2023.2.1
+scikit-learn-intelex==2024.6.0
 scipy==1.11.2
 seaborn==0.12.2
 Send2Trash==1.8.2
