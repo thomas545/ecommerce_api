@@ -184,7 +184,7 @@ kiwisolver==1.4.7
 kombu==5.4.1
 l18n==2021.3
 lazy-object-proxy==1.10.0
-libarchive-c==5.0
+libarchive-c==5.1
 llvmlite==0.40.1
 locket==1.0.0
 lxml==4.9.3
