@@ -111,7 +111,7 @@ fastcache==1.1.0
 fcm-django==2.2.1
 filelock==3.16.0
 firebase-admin==6.5.0
-flake8==6.1.0
+flake8==7.1.1
 Flask==2.3.3
 fonttools==4.42.1
 fsspec==2023.9.0
