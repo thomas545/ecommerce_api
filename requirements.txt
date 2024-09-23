@@ -28,7 +28,7 @@ bcrypt==4.2.0
 beautifulsoup4==4.12.3
 billiard==4.2.1
 binaryornot==0.4.4
-bitarray==2.8.1
+bitarray==2.9.2
 bkcharts==0.2
 black==23.9.1
 bleach==6.0.0
