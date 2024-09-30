@@ -59,7 +59,7 @@ construct==2.10.70
 contextlib2==21.6.0
 cookiecutter==2.6.0
 cryptography==43.0.1
-cycler==0.11.0
+cycler==0.12.1
 Cython==3.0.2
 cytoolz==0.12.2
 daal4py==2023.2.1
