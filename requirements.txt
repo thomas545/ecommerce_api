@@ -118,7 +118,7 @@ fsspec==2024.9.0
 future==1.0.0
 gevent==24.2.1
 glob2==0.7
-google-api-core==2.11.1
+google-api-core==2.20.0
 google-api-python-client==2.98.0
 google-auth==2.23.0
 google-auth-httplib2==0.1.1
