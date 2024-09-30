@@ -336,7 +336,7 @@ sqlparse==0.5.1
 statsmodels==0.14.3
 swapper==1.4.0
 sympy==1.13.3
-tables==3.8.0
+tables==3.10.1
 tablib==3.5.0
 TBB==2021.10.0
 tblib==2.0.0
