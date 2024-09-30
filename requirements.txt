@@ -309,7 +309,7 @@ scikit-learn==1.5.2
 scikit-learn-intelex==2024.7.0
 scipy==1.14.1
 seaborn==0.13.2
-Send2Trash==1.8.2
+Send2Trash==1.8.3
 serpy==0.3.1
 service-identity==23.1.0
 simplegeneric==0.8.1
