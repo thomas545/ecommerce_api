@@ -287,7 +287,7 @@ python3-openid==3.2.0
 pytz==2024.2
 PyWavelets==1.7.0
 pywin32==307
-pywin32-ctypes==0.2.2
+pywin32-ctypes==0.2.3
 pywinpty==2.0.11
 PyYAML==6.0.1
 pyzmq==25.1.1
