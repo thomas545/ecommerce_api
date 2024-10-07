@@ -55,7 +55,7 @@ clyent==1.2.2
 colorama==0.4.6
 comtypes==1.4.7
 constantly==23.10.4
-construct==2.10.68
+construct==2.10.70
 contextlib2==21.6.0
 cookiecutter==2.3.0
 cryptography==41.0.3
