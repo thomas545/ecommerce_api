@@ -57,7 +57,7 @@ comtypes==1.4.7
 constantly==23.10.4
 construct==2.10.70
 contextlib2==21.6.0
-cookiecutter==2.3.0
+cookiecutter==2.6.0
 cryptography==41.0.3
 cycler==0.11.0
 Cython==3.0.2
