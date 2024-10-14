@@ -223,7 +223,7 @@ numpy==2.1.2
 numpydoc==1.8.0
 oauthlib==3.2.2
 olefile==0.47
-openpyxl==3.1.2
+openpyxl==3.1.5
 packaging==23.1
 pandas==2.1.0
 pandocfilters==1.5.0
