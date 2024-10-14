@@ -369,7 +369,7 @@ urllib3==2.2.3
 vine==5.1.0
 wagtail==6.2.2
 watchdog==5.0.3
-wcwidth==0.2.6
+wcwidth==0.2.13
 webencodings==0.5.1
 Werkzeug==2.3.7
 whichcraft==0.6.1
