@@ -143,7 +143,7 @@ hstspreload==2024.10.1
 html5lib==1.1
 httpcore==1.0.6
 httplib2==0.22.0
-httpx==0.25.0
+httpx==0.27.2
 hyperframe==6.0.1
 hyperlink==21.0.0
 idna==3.4
