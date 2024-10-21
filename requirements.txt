@@ -95,7 +95,7 @@ django-pagedown==2.2.1
 django-phonenumber-field==8.0.0
 django-randompinfield==0.4.7
 django-rest-auth==0.9.5
-django-rest-knox==4.2.0
+django-rest-knox==5.0.2
 django-taggit==4.0.0
 django-treebeard==4.7
 djangorestframework==3.14.0
