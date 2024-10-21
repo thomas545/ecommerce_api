@@ -119,7 +119,7 @@ future==1.0.0
 gevent==24.10.3
 glob2==0.7
 google-api-core==2.21.0
-google-api-python-client==2.98.0
+google-api-python-client==2.149.0
 google-auth==2.23.0
 google-auth-httplib2==0.1.1
 google-cloud-core==2.3.3
