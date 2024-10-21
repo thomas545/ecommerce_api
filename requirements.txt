@@ -255,7 +255,7 @@ ptyprocess==0.7.0
 py==1.11.0
 pyasn1==0.6.1
 pyasn1-modules==0.4.1
-pycodestyle==2.11.0
+pycodestyle==2.12.1
 pycosat==0.6.3
 pycparser==2.21
 pycryptodome==3.18.0
