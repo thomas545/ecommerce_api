@@ -284,7 +284,7 @@ python-memcached==1.62
 python-ptrace==0.9.9
 python-slugify==8.0.4
 python3-openid==3.2.0
-pytz==2023.3.post1
+pytz==2024.2
 PyWavelets==1.4.1
 pywin32==306
 pywin32-ctypes==0.2.2
