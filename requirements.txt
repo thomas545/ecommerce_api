@@ -177,7 +177,7 @@ jupyter-core==5.7.2
 jupyter-server==2.14.2
 jupyterlab==4.3.0
 jupyterlab-pygments==0.3.0
-jupyterlab-server==2.24.0
+jupyterlab-server==2.27.3
 jupyterlab-widgets==3.0.8
 keyring==24.2.0
 kiwisolver==1.4.5
