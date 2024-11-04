@@ -278,7 +278,7 @@ pytest==8.3.3
 python-dateutil==2.9.0.post0
 python-decouple==3.8
 python-lsp-black==2.0.0
-python-lsp-jsonrpc==1.1.1
+python-lsp-jsonrpc==1.1.2
 python-lsp-server==1.8.0
 python-memcached==1.59
 python-ptrace==0.9.8
