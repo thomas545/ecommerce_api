@@ -15,7 +15,7 @@ async-generator==1.10
 async-timeout==5.0.0
 atomicwrites==1.4.1
 attrs==24.2.0
-autobahn==23.6.2
+autobahn==24.4.2
 Automat==22.10.0
 autopep8==2.0.4
 Babel==2.12.1
