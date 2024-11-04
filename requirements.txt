@@ -373,7 +373,7 @@ wcwidth==0.2.13
 webencodings==0.5.1
 Werkzeug==3.1.2
 whichcraft==0.6.1
-widgetsnbextension==4.0.8
+widgetsnbextension==4.0.13
 Willow==1.6.2
 win-inet-pton==1.1.0
 win-unicode-console==0.5
