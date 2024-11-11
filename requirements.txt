@@ -68,7 +68,7 @@ dask==2024.11.1
 debugpy==1.8.8
 decorator==5.1.1
 defusedxml==0.7.1
-diff-match-patch==20230430
+diff-match-patch==20241021
 distributed==2023.9.1
 Django==4.2.5
 django-allauth==0.56.1
