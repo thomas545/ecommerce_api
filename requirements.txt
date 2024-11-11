@@ -210,7 +210,7 @@ mysqlclient==2.2.5
 navigator-updater==0.2.1
 nbclassic==1.1.0
 nbclient==0.10.0
-nbconvert==7.8.0
+nbconvert==7.16.4
 nbformat==5.9.2
 nest-asyncio==1.5.7
 networkx==3.1
