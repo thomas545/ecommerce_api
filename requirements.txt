@@ -2,7 +2,7 @@ aioredis==2.0.1
 alabaster==1.0.0
 amqp==5.2.0
 anyascii==0.3.2
-anyio==4.0.0
+anyio==4.6.2.post1
 appdirs==1.4.4
 argh==0.29.3
 argon2-cffi==23.1.0
