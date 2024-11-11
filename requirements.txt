@@ -12,7 +12,7 @@ asn1crypto==1.5.1
 astroid==3.3.5
 astropy==6.1.6
 async-generator==1.10
-async-timeout==4.0.3
+async-timeout==5.0.1
 atomicwrites==1.4.1
 attrs==23.1.0
 autobahn==23.6.2
