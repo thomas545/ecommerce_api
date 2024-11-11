@@ -104,7 +104,7 @@ docutils==0.21.2
 draftjs-exporter==5.0.0
 drf-haystack==1.9.1
 elasticsearch==8.15.1
-elasticsearch-dsl==8.9.0
+elasticsearch-dsl==8.15.4
 entrypoints==0.4
 et-xmlfile==1.1.0
 fastcache==1.1.0
