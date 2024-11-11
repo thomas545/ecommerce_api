@@ -106,7 +106,7 @@ drf-haystack==1.9.1
 elasticsearch==8.15.1
 elasticsearch-dsl==8.15.4
 entrypoints==0.4
-et-xmlfile==1.1.0
+et-xmlfile==2.0.0
 fastcache==1.1.0
 fcm-django==2.0.0
 filelock==3.12.3
