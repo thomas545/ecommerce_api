@@ -355,7 +355,7 @@ tornado==6.4.1
 tqdm==4.67.0
 traitlets==5.14.3
 twilio==9.3.6
-Twisted==23.8.0
+Twisted==24.10.0
 twisted-iocpsupport==1.0.4
 txaio==23.1.1
 typed-ast==1.5.5
