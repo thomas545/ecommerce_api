@@ -170,7 +170,7 @@ joblib==1.4.2
 json5==0.9.28
 jsonfield==3.1.0
 jsonschema==4.23.0
-jupyter==1.0.0
+jupyter==1.1.1
 jupyter-client==8.3.1
 jupyter-console==6.6.3
 jupyter-core==5.3.1
