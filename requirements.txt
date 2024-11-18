@@ -139,7 +139,7 @@ haystack==0.42
 HeapDict==1.0.1
 hiredis==3.0.0
 hpack==4.0.0
-hstspreload==2023.1.1
+hstspreload==2024.11.1
 html5lib==1.1
 httpcore==0.18.0
 httplib2==0.22.0
