@@ -233,7 +233,7 @@ partd==1.4.2
 path==17.0.0
 pathlib2==2.3.7.post1
 pathspec==0.12.1
-patsy==0.5.3
+patsy==1.0.1
 pefile==2023.2.7
 pep8==1.7.1
 pexpect==4.8.0
