@@ -234,7 +234,7 @@ path==17.0.0
 pathlib2==2.3.7.post1
 pathspec==0.12.1
 patsy==1.0.1
-pefile==2023.2.7
+pefile==2024.8.26
 pep8==1.7.1
 pexpect==4.8.0
 phonenumbers==8.13.20
