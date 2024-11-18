@@ -108,7 +108,7 @@ elasticsearch-dsl==8.16.0
 entrypoints==0.4
 et-xmlfile==2.0.0
 fastcache==1.1.0
-fcm-django==2.0.0
+fcm-django==2.2.1
 filelock==3.12.3
 firebase-admin==6.2.0
 flake8==6.1.0
