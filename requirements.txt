@@ -244,7 +244,7 @@ pkginfo==1.12.0
 pluggy==1.5.0
 ply==3.11
 poyo==0.5.0
-prometheus-client==0.21.0
+prometheus-client==0.21.1
 prompt-toolkit==3.0.48
 proto-plus==1.25.0
 protobuf==5.28.3
