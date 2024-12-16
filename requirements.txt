@@ -274,7 +274,7 @@ pyparsing==3.2.0
 pyreadline==2.1
 pyrsistent==0.20.0
 PySocks==1.7.1
-pytest==8.3.3
+pytest==8.3.4
 python-dateutil==2.9.0.post0
 python-decouple==3.8
 python-lsp-black==2.0.0
