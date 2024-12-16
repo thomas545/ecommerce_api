@@ -120,7 +120,7 @@ gevent==24.11.1
 glob2==0.7
 google-api-core==2.24.0
 google-api-python-client==2.155.0
-google-auth==2.36.0
+google-auth==2.37.0
 google-auth-httplib2==0.2.0
 google-cloud-core==2.4.1
 google-cloud-firestore==2.19.0
