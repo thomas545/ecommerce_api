@@ -14,7 +14,7 @@ astropy==7.0.0
 async-generator==1.10
 async-timeout==5.0.1
 atomicwrites==1.4.1
-attrs==24.2.0
+attrs==24.3.0
 autobahn==24.4.2
 Automat==24.8.1
 autopep8==2.3.1
