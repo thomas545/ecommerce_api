@@ -237,7 +237,7 @@ patsy==1.0.1
 pefile==2024.8.26
 pep8==1.7.1
 pexpect==4.9.0
-phonenumbers==8.13.50
+phonenumbers==8.13.52
 pickleshare==0.7.5
 Pillow==11.0.0
 pkginfo==1.11.2
