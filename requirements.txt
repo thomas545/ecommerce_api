@@ -113,7 +113,7 @@ filelock==3.16.1
 firebase-admin==6.6.0
 flake8==7.1.1
 Flask==3.1.0
-fonttools==4.55.0
+fonttools==4.55.3
 fsspec==2024.10.0
 future==1.0.0
 gevent==24.11.1
