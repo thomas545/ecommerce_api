@@ -352,7 +352,7 @@ tinycss==0.4
 toml==0.10.2
 toolz==1.0.0
 tornado==6.4.2
-tqdm==4.67.0
+tqdm==4.67.1
 traitlets==5.14.3
 twilio==9.3.7
 Twisted==24.10.0
