@@ -76,7 +76,7 @@ django-core==1.4.1
 django-countries==7.6.1
 django-crispy-forms==2.3
 django-crontab==0.7.1
-django-debug-toolbar==4.4.6
+django-debug-toolbar==5.0.1
 django-elasticsearch-dsl==8.0
 django-elasticsearch-dsl-drf==0.22.5
 django-extensions==3.2.3
