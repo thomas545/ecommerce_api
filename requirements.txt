@@ -38,7 +38,7 @@ Bottleneck==1.4.2
 brotlipy==0.7.0
 CacheControl==0.14.2
 cached-property==2.0.1
-cachetools==5.5.0
+cachetools==5.5.1
 celery==5.4.0
 certifi==2024.8.30
 cffi==1.17.1
