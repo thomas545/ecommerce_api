@@ -109,7 +109,7 @@ entrypoints==0.4
 et-xmlfile==2.0.0
 fastcache==1.1.0
 fcm-django==2.2.1
-filelock==3.16.1
+filelock==3.17.0
 firebase-admin==6.6.0
 flake8==7.1.1
 Flask==3.1.0
