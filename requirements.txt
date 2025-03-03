@@ -32,7 +32,7 @@ bitarray==3.1.0
 bkcharts==0.2
 black==25.1.0
 bleach==6.2.0
-bokeh==3.6.1
+bokeh==3.6.3
 boto==2.49.0
 Bottleneck==1.4.2
 brotlipy==0.7.0
