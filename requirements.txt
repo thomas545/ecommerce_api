@@ -288,7 +288,7 @@ pytz==2025.1
 PyWavelets==1.8.0
 pywin32==308
 pywin32-ctypes==0.2.3
-pywinpty==2.0.14
+pywinpty==2.0.15
 PyYAML==6.0.2
 pyzmq==26.2.0
 QDarkStyle==3.2.3
