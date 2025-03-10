@@ -208,7 +208,7 @@ munkres==1.1.4
 mypy-extensions==1.0.0
 mysqlclient==2.2.7
 navigator-updater==0.2.1
-nbclassic==1.1.0
+nbclassic==1.2.0
 nbclient==0.10.0
 nbconvert==7.16.4
 nbformat==5.10.4
