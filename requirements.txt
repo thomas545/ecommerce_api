@@ -116,7 +116,7 @@ Flask==3.1.0
 fonttools==4.58.0
 fsspec==2025.3.2
 future==1.0.0
-gevent==24.11.1
+gevent==25.5.1
 glob2==0.7
 google-api-core==2.23.0
 google-api-python-client==2.153.0
