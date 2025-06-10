@@ -42,7 +42,7 @@ cachetools==6.0.0
 celery==5.5.3
 certifi==2025.4.26
 cffi==1.17.1
-channels==4.2.0
+channels==4.2.2
 channels-redis==4.2.1
 chardet==5.2.0
 charset-normalizer==3.4.0
