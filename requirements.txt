@@ -220,7 +220,7 @@ notebook==7.4.5
 numba==0.62.0
 numexpr==2.12.1
 numpy==2.3.3
-numpydoc==1.8.0
+numpydoc==1.9.0
 oauthlib==3.2.2
 olefile==0.47
 openpyxl==3.1.5
