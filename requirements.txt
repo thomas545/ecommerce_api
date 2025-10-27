@@ -30,7 +30,7 @@ billiard==4.2.2
 binaryornot==0.4.4
 bitarray==3.7.2
 bkcharts==0.2
-black==24.10.0
+black==25.9.0
 bleach==6.2.0
 bokeh==3.6.1
 boto==2.49.0
