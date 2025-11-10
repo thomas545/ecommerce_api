@@ -40,7 +40,7 @@ CacheControl==0.14.3
 cached-property==2.0.1
 cachetools==6.2.1
 celery==5.5.3
-certifi==2024.8.30
+certifi==2025.10.5
 cffi==1.17.1
 channels==4.2.0
 channels-redis==4.2.1
