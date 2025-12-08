@@ -388,4 +388,4 @@ yapf==0.43.0
 zict==3.0.0
 zipp==3.23.0
 zope.event==6.1
-zope.interface==7.1.1
+zope.interface==8.1.1
