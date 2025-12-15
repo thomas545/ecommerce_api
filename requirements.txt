@@ -17,7 +17,7 @@ atomicwrites==1.4.1
 attrs==25.4.0
 autobahn==25.12.2
 Automat==25.4.16
-autopep8==2.3.1
+autopep8==2.3.2
 Babel==2.16.0
 backcall==0.2.0
 backports.functools-lru-cache==2.0.0
