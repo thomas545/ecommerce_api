@@ -74,7 +74,7 @@ Django==6.0
 django-allauth==65.13.1
 django-core==1.4.1
 django-countries==8.2.0
-django-crispy-forms==2.3
+django-crispy-forms==2.5
 django-crontab==0.7.1
 django-debug-toolbar==4.4.6
 django-elasticsearch-dsl==8.0
