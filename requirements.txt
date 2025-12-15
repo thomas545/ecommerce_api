@@ -359,7 +359,7 @@ Twisted==25.5.0
 twisted-iocpsupport==25.10.1
 txaio==25.12.2
 typed-ast==1.5.5
-typing-extensions==4.12.2
+typing-extensions==4.15.0
 tzdata==2024.2
 ujson==5.10.0
 unicodecsv==0.14.1
