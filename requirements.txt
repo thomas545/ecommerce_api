@@ -371,7 +371,7 @@ wagtail==7.2.1
 watchdog==6.0.0
 wcwidth==0.2.14
 webencodings==0.5.1
-Werkzeug==3.1.3
+Werkzeug==3.1.4
 whichcraft==0.6.1
 widgetsnbextension==4.0.13
 Willow==1.9.0
