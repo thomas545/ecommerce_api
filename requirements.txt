@@ -181,7 +181,7 @@ jupyterlab-server==2.28.0
 jupyterlab-widgets==3.0.16
 keyring==25.7.0
 kiwisolver==1.4.9
-kombu==5.4.2
+kombu==5.6.1
 l18n==2021.3
 lazy-object-proxy==1.10.0
 libarchive-c==5.1
