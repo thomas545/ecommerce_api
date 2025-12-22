@@ -270,7 +270,7 @@ pyls-spyder==0.4.0
 PyNaCl==1.6.1
 pyodbc===4.0.0-unsupported
 pyOpenSSL==25.3.0
-pyparsing==3.2.0
+pyparsing==3.3.0
 pyreadline==2.1
 pyrsistent==0.20.0
 PySocks==1.7.1
