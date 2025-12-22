@@ -53,7 +53,7 @@ click-repl==0.3.0
 cloudpickle==3.1.2
 clyent==1.2.2
 colorama==0.4.6
-comtypes==1.4.8
+comtypes==1.4.14
 constantly==23.10.4
 construct==2.10.70
 contextlib2==21.6.0
