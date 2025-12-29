@@ -131,7 +131,7 @@ googleapis-common-protos==1.72.0
 googletrans==4.0.2
 greenlet==3.3.0
 grpcio==1.76.0
-grpcio-status==1.68.0
+grpcio-status==1.76.0
 h11==0.14.0
 h2==4.1.0
 h5py==3.12.1
