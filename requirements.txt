@@ -239,7 +239,7 @@ pep8==1.7.1
 pexpect==4.9.0
 phonenumbers==9.0.21
 pickleshare==0.7.5
-Pillow==11.0.0
+Pillow==12.0.0
 pkginfo==1.11.2
 pluggy==1.5.0
 ply==3.11
