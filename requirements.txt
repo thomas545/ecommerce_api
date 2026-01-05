@@ -169,7 +169,7 @@ jinja2-time==0.2.0
 joblib==1.5.3
 json5==0.13.0
 jsonfield==3.2.0
-jsonschema==4.23.0
+jsonschema==4.25.1
 jupyter==1.1.1
 jupyter-client==8.6.3
 jupyter-console==6.6.3
