@@ -367,7 +367,7 @@ Unidecode==1.4.0
 uritemplate==4.2.0
 urllib3==2.6.2
 vine==5.1.0
-wagtail==6.3
+wagtail==7.2.1
 watchdog==6.0.0
 wcwidth==0.2.13
 webencodings==0.5.1
