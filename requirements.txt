@@ -7,7 +7,7 @@ appdirs==1.4.4
 argh==0.31.3
 argon2-cffi==25.1.0
 arrow==1.4.0
-asgiref==3.8.1
+asgiref==3.11.0
 asn1crypto==1.5.1
 astroid==3.3.5
 astropy==6.1.6
