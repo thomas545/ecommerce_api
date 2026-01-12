@@ -350,7 +350,7 @@ three-merge==0.1.1
 tifffile==2025.12.20
 tinycss==0.4
 toml==0.10.2
-toolz==1.0.0
+toolz==1.1.0
 tornado==6.4.1
 tqdm==4.67.0
 traitlets==5.14.3
