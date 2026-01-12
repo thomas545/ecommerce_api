@@ -34,7 +34,7 @@ black==25.12.0
 bleach==6.3.0
 bokeh==3.8.2
 boto==2.49.0
-Bottleneck==1.4.2
+Bottleneck==1.6.0
 brotlipy==0.7.0
 CacheControl==0.14.1
 cached-property==2.0.1
