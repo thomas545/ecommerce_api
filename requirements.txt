@@ -331,7 +331,7 @@ sphinxcontrib-serializinghtml==2.0.0
 sphinxcontrib-websupport==2.0.0
 spyder==6.1.2
 spyder-kernels==3.1.2
-SQLAlchemy==2.0.36
+SQLAlchemy==2.0.45
 sqlparse==0.5.2
 statsmodels==0.14.4
 swapper==1.4.0
