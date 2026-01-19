@@ -127,7 +127,7 @@ google-cloud-firestore==2.23.0
 google-cloud-storage==3.8.0
 google-crc32c==1.8.0
 google-resumable-media==2.8.0
-googleapis-common-protos==1.66.0
+googleapis-common-protos==1.72.0
 googletrans==3.0.0
 greenlet==3.1.1
 grpcio==1.68.0
