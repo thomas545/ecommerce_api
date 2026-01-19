@@ -258,7 +258,7 @@ pyasn1-modules==0.4.2
 pycodestyle==2.14.0
 pycosat==0.6.6
 pycparser==2.23
-pycryptodome==3.21.0
+pycryptodome==3.23.0
 pycurl==7.45.3
 pydocstyle==6.3.0
 pyerfa==2.0.1.5
