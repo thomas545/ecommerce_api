@@ -228,7 +228,7 @@ packaging==26.0
 pandas==3.0.0
 pandocfilters==1.5.1
 paramiko==4.0.0
-parso==0.8.4
+parso==0.8.5
 partd==1.4.2
 path==17.0.0
 pathlib2==2.3.7.post1
