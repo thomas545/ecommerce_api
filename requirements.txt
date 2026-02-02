@@ -294,7 +294,7 @@ pyzmq==27.1.0
 QDarkStyle==3.2.3
 qstylizer==0.2.4
 QtAwesome==1.4.1
-qtconsole==5.6.1
+qtconsole==5.7.0
 QtPy==2.4.2
 regex==2024.11.6
 requests==2.32.3
