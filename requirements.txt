@@ -134,7 +134,7 @@ grpcio==1.78.0
 grpcio-status==1.78.0
 h11==0.16.0
 h2==4.3.0
-h5py==3.12.1
+h5py==3.15.1
 haystack==0.42
 HeapDict==1.0.1
 hiredis==3.0.0
