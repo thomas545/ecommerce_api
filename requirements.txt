@@ -333,7 +333,7 @@ spyder==6.1.2
 spyder-kernels==3.1.2
 SQLAlchemy==2.0.46
 sqlparse==0.5.5
-statsmodels==0.14.4
+statsmodels==0.14.6
 swapper==1.4.0
 sympy==1.13.3
 tables==3.10.1
