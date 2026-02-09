@@ -25,7 +25,7 @@ backports.shutil-get-terminal-size==1.0.0
 backports.tempfile==1.0
 backports.weakref==1.0.post1
 bcrypt==5.0.0
-beautifulsoup4==4.12.3
+beautifulsoup4==4.14.3
 billiard==4.2.1
 binaryornot==0.4.4
 bitarray==3.0.0
