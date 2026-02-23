@@ -61,7 +61,7 @@ cookiecutter==2.6.0
 cryptography==46.0.5
 cycler==0.12.1
 Cython==3.2.4
-cytoolz==1.0.0
+cytoolz==1.1.0
 daal4py==2024.7.0
 daphne==4.1.2
 dask==2024.11.2
