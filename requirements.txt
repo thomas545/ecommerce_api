@@ -296,7 +296,7 @@ qstylizer==0.2.4
 QtAwesome==1.4.1
 qtconsole==5.7.1
 QtPy==2.4.3
-regex==2024.11.6
+regex==2026.2.19
 requests==2.32.3
 requests-oauthlib==2.0.0
 rfc3986==2.0.0
