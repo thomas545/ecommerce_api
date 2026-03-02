@@ -205,7 +205,7 @@ mpmath==1.4.0
 msgpack==1.1.2
 multipledispatch==1.0.0
 munkres==1.1.4
-mypy-extensions==1.0.0
+mypy-extensions==1.1.0
 mysqlclient==2.2.6
 navigator-updater==0.2.1
 nbclassic==1.1.0
