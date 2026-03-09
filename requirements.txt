@@ -246,7 +246,7 @@ ply==3.11
 poyo==0.5.0
 prometheus-client==0.24.1
 prompt-toolkit==3.0.52
-proto-plus==1.25.0
+proto-plus==1.27.1
 protobuf==5.28.3
 proxycrawl==3.2.2
 psutil==6.1.0
