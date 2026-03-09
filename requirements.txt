@@ -150,7 +150,7 @@ idna==3.11
 imagecodecs==2026.3.6
 imageio==2.37.3
 imagesize==2.0.0
-importlib-metadata==8.5.0
+importlib-metadata==8.7.1
 incremental==24.7.2
 inflection==0.5.1
 iniconfig==2.0.0
