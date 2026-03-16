@@ -337,7 +337,7 @@ statsmodels==0.14.6
 swapper==1.4.0
 sympy==1.14.0
 tables==3.11.1
-tablib==3.7.0
+tablib==3.9.0
 TBB==2022.0.0
 tblib==3.0.0
 telepath==0.3.1
