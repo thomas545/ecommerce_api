@@ -148,7 +148,7 @@ hyperframe==6.1.0
 hyperlink==21.0.0
 idna==3.11
 imagecodecs==2026.3.6
-imageio==2.36.0
+imageio==2.37.3
 imagesize==1.4.1
 importlib-metadata==8.5.0
 incremental==24.7.2
