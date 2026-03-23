@@ -101,7 +101,7 @@ django-treebeard==5.0.5
 djangorestframework==3.17.0
 djangorestframework-jwt==1.11.0
 docutils==0.22.4
-draftjs-exporter==5.0.0
+draftjs-exporter==5.2.0
 drf-haystack==1.9.1
 elasticsearch==8.16.0
 elasticsearch-dsl==8.16.0
