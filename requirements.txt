@@ -317,7 +317,7 @@ singledispatch==4.1.2
 sip==6.15.2
 six==1.17.0
 sniffio==1.3.1
-snowballstemmer==2.2.0
+snowballstemmer==3.0.1
 sortedcollections==2.1.0
 sortedcontainers==2.4.0
 soupsieve==2.6
