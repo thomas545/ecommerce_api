@@ -46,7 +46,7 @@ channels==4.3.2
 channels-redis==4.3.0
 chardet==7.2.0
 charset-normalizer==3.4.6
-click==8.1.7
+click==8.3.1
 click-didyoumean==0.3.1
 click-plugins==1.1.1
 click-repl==0.3.0
