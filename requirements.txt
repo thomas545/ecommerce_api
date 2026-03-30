@@ -297,7 +297,7 @@ QtAwesome==1.4.1
 qtconsole==5.7.2
 QtPy==2.4.3
 regex==2026.3.32
-requests==2.32.3
+requests==2.33.1
 requests-oauthlib==2.0.0
 rfc3986==2.0.0
 rope==1.13.0
