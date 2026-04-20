@@ -44,7 +44,7 @@ certifi==2026.2.25
 cffi==2.0.0
 channels==4.3.2
 channels-redis==4.3.0
-chardet==5.2.0
+chardet==7.4.3
 charset-normalizer==3.4.0
 click==8.1.7
 click-didyoumean==0.3.1
