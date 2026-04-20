@@ -225,7 +225,7 @@ oauthlib==3.3.1
 olefile==0.47
 openpyxl==3.1.5
 packaging==26.1
-pandas==2.2.3
+pandas==3.0.2
 pandocfilters==1.5.1
 paramiko==3.5.0
 parso==0.8.4
