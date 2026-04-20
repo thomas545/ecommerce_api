@@ -387,5 +387,5 @@ xmltodict==1.0.4
 yapf==0.43.0
 zict==3.0.0
 zipp==3.23.1
-zope.event==5.0
+zope.event==6.1
 zope.interface==7.1.1
