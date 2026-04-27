@@ -27,7 +27,7 @@ backports.weakref==1.0.post1
 bcrypt==5.0.0
 beautifulsoup4==4.14.3
 billiard==4.2.4
-binaryornot==0.4.4
+binaryornot==0.6.0
 bitarray==3.0.0
 bkcharts==0.2
 black==24.10.0
