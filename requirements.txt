@@ -73,7 +73,7 @@ distributed==2026.3.0
 Django==6.0.4
 django-allauth==65.16.1
 django-core==1.4.1
-django-countries==7.6.1
+django-countries==8.2.0
 django-crispy-forms==2.3
 django-crontab==0.7.1
 django-debug-toolbar==4.4.6
