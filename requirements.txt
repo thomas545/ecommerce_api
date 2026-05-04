@@ -224,7 +224,7 @@ numpydoc==1.10.0
 oauthlib==3.3.1
 olefile==0.47
 openpyxl==3.1.5
-packaging==24.2
+packaging==26.2
 pandas==2.2.3
 pandocfilters==1.5.1
 paramiko==3.5.0
