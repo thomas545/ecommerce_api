@@ -364,7 +364,7 @@ tzdata==2026.2
 ujson==5.12.0
 unicodecsv==0.14.1
 Unidecode==1.4.0
-uritemplate==4.1.1
+uritemplate==4.2.0
 urllib3==2.2.3
 vine==5.1.0
 wagtail==6.3
