@@ -149,7 +149,7 @@ hyperlink==21.0.0
 idna==3.14
 imagecodecs==2026.5.10
 imageio==2.37.3
-imagesize==1.4.1
+imagesize==2.0.0
 importlib-metadata==8.5.0
 incremental==24.7.2
 inflection==0.5.1
