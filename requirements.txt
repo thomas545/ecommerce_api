@@ -146,7 +146,7 @@ httplib2==0.31.2
 httpx==0.28.1
 hyperframe==6.1.0
 hyperlink==21.0.0
-idna==3.10
+idna==3.14
 imagecodecs==2024.9.22
 imageio==2.36.0
 imagesize==1.4.1
