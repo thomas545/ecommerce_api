@@ -65,7 +65,7 @@ cytoolz==1.1.0
 daal4py==2024.7.0
 daphne==4.2.1
 dask==2026.3.0
-debugpy==1.8.8
+debugpy==1.8.20
 decorator==5.1.1
 defusedxml==0.7.1
 diff-match-patch==20241021
