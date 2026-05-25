@@ -36,7 +36,7 @@ bokeh==3.9.0
 boto==2.49.0
 Bottleneck==1.6.0
 brotlipy==0.7.0
-CacheControl==0.14.1
+CacheControl==0.14.4
 cached-property==2.0.1
 cachetools==5.5.0
 celery==5.4.0
