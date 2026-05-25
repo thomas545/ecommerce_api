@@ -290,7 +290,7 @@ pywin32==311
 pywin32-ctypes==0.2.3
 pywinpty==3.0.3
 PyYAML==6.0.3
-pyzmq==26.2.0
+pyzmq==27.1.0
 QDarkStyle==3.2.3
 qstylizer==0.2.3
 QtAwesome==1.3.1
