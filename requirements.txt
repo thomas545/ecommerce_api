@@ -141,7 +141,7 @@ hiredis==3.3.1
 hpack==4.1.0
 hstspreload==2025.1.1
 html5lib==1.1
-httpcore==1.0.7
+httpcore==1.0.9
 httplib2==0.22.0
 httpx==0.27.2
 hyperframe==6.0.1
