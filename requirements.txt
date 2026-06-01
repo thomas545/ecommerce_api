@@ -357,7 +357,7 @@ traitlets==5.15.0
 twilio==9.10.9
 Twisted==26.4.0
 twisted-iocpsupport==25.10.1
-txaio==23.1.1
+txaio==25.12.2
 typed-ast==1.5.5
 typing-extensions==4.12.2
 tzdata==2024.2
