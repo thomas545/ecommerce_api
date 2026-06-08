@@ -311,7 +311,7 @@ scipy==1.17.1
 seaborn==0.13.2
 Send2Trash==2.1.0
 serpy==0.3.1
-service-identity==24.2.0
+service-identity==26.1.0
 simplegeneric==0.8.1
 singledispatch==4.1.0
 sip==6.8.6
