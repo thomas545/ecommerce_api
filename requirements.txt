@@ -227,7 +227,7 @@ openpyxl==3.1.5
 packaging==26.2
 pandas==3.0.3
 pandocfilters==1.5.1
-paramiko==3.5.0
+paramiko==5.0.0
 parso==0.8.4
 partd==1.4.2
 path==17.0.0
