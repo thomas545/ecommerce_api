@@ -262,7 +262,7 @@ pycryptodome==3.23.0
 pycurl==7.46.0
 pydocstyle==6.3.0
 pyerfa==2.0.1.5
-pyflakes==3.2.0
+pyflakes==3.4.0
 Pygments==2.18.0
 PyJWT==2.10.0
 pylint==3.3.1
