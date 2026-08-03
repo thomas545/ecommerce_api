@@ -221,7 +221,7 @@ numba==0.66.0
 numexpr==2.14.2
 numpy==2.5.1
 numpydoc==1.10.0
-oauthlib==3.2.2
+oauthlib==3.3.1
 olefile==0.47
 openpyxl==3.1.5
 packaging==24.2
