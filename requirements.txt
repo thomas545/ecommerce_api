@@ -133,7 +133,7 @@ greenlet==3.5.5
 grpcio==1.83.1
 grpcio-status==1.83.1
 h11==0.16.0
-h2==4.1.0
+h2==4.4.1
 h5py==3.12.1
 haystack==0.42
 HeapDict==1.0.1
