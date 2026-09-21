@@ -102,7 +102,7 @@ djangorestframework==3.18.1
 djangorestframework-jwt==1.11.0
 docutils==0.23
 draftjs-exporter==7.1.0
-drf-haystack==1.9.1
+drf-haystack==1.9.3
 elasticsearch==8.16.0
 elasticsearch-dsl==8.16.0
 entrypoints==0.4
