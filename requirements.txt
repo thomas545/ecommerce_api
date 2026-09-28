@@ -1,6 +1,6 @@
 aioredis==2.0.1
 alabaster==1.0.0
-amqp==5.3.1
+amqp==5.4.0
 anyascii==0.3.2
 anyio==4.6.2.post1
 appdirs==1.4.4
