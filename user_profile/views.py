@@ -348,5 +348,12 @@ class UpdatePermissionView(UpdateAPIView):
 
 
 class NationalIDImageViewSet(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = NationalIDImageSerializer
     queryset = NationalIDImage.objects.all().select_related("user")
+
+    def get_queryset(self):
+        return self.queryset.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
